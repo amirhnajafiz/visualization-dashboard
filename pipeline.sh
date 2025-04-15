@@ -34,7 +34,7 @@ echo "[inf] output directories are created."
 # execute the python scripts in the correct order
 scripts=(
     "filter.py"
-    "expansion.py"
+    "decouple.py"
     "normalization.py"
     "linguistics.py"
     "merge.py"
