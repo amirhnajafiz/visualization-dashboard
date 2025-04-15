@@ -38,13 +38,13 @@ def convert_genres(path: str, genre_list: list):
 
 if __name__ == "__main__":
     # load the base dataset
-    df = pd.read_csv('datasets/mxmh_survey_results.csv')
+    df = pd.read_csv('tmp/mxmh_survey_results.csv')
 
     # get the genre of the survey results
     genre = get_genre(df)
 
     # list of existing sources
-    datasets = ['datasets/apple_music_dataset.csv', 'datasets/spotify_2000_tops.csv', 'datasets/spotify_music_dataset.csv', 'datasets/spotify_song_attributes.csv']
+    datasets = ['tmp/apple_music_dataset.csv', 'tmp/spotify_2000_tops.csv', 'tmp/spotify_music_dataset.csv', 'tmp/spotify_song_attributes.csv']
 
     for dataset in datasets:
         print(f"Converting genres in {dataset} to the closest existing value in the genre list...")

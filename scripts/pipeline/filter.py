@@ -42,31 +42,31 @@ if __name__ == "__main__":
     datasets = [
         {
             "path": "archive/apple_music_dataset.csv",
-            "output_path": "datasets/apple_music_dataset.csv",
+            "output_path": "tmp/apple_music_dataset.csv",
             "columns": ["trackCensoredName", "primaryGenreName"],
             "new_columns": ["song", "genre"]
         },
         {
             "path": "archive/spotify_2000_tops.csv",
-            "output_path": "datasets/spotify_2000_tops.csv",
+            "output_path": "tmp/spotify_2000_tops.csv",
             "columns": ["Title", "Top Genre", "Beats Per Minute (BPM)", "Energy", "Danceability", "Loudness (dB)", "Speechiness", "Acousticness", "Liveness", "Valence", "Popularity"],
             "new_columns": ["song", "genre", "bpm", "energy", "danceability", "loudness", "speechiness", "acousticness", "liveness", "valence", "popularity"]
         },
         {
             "path": "archive/spotify_music_dataset.csv",
-            "output_path": "datasets/spotify_music_dataset.csv",
+            "output_path": "tmp/spotify_music_dataset.csv",
             "columns": ["song", "genre", "popularity", "danceability", "energy", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo"],
             "new_columns": ["song", "genre", "popularity", "danceability", "energy", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo"]
         },
         {
             "path": "archive/spotify_song_attributes.csv",
-            "output_path": "datasets/spotify_song_attributes.csv",
+            "output_path": "tmp/spotify_song_attributes.csv",
             "columns": ["trackName", "genre", "danceability", "energy", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo"],
             "new_columns": ["song", "genre", "danceability", "energy", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo"]
         },
         {
             "path": "archive/mxmh_survey_results.csv",
-            "output_path": "datasets/mxmh_survey_results.csv",
+            "output_path": "tmp/mxmh_survey_results.csv",
             "columns": ["Age", "Hours per day", "While working", "Fav genre", "Exploratory", "Foreign languages", "Anxiety", "Depression", "Insomnia", "OCD", "Music effects"],
             "new_columns": ["age", "hours", "while working", "genre", "exploratory", "foreign", "anxiety", "depression", "insomnia", "ocd", "effects"]
         },

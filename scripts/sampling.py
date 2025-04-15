@@ -65,6 +65,6 @@ def sample_dataset(file_path, output_path, n_samples=1000, n_clusters=10):
     plt.show()
 
 # example usage
-file_path = 'datasets/merged_attributes_and_mental_health.csv'
-output_path = 'datasets/sampled_dataset.csv'
+file_path = 'tmp/merged_attributes_and_mental_health.csv'
+output_path = 'tmp/sampled_dataset.csv'
 sample_dataset(file_path, output_path)

@@ -7,8 +7,8 @@ def merge_songs_and_genres():
     Merge the songs and genres datasets from Apple Music and Spotify.
     """
     # read the CSV files
-    apple_music_df = pd.read_csv('datasets/apple_music_dataset.csv')
-    spotify_df = pd.read_csv('datasets/spotify_music_dataset.csv')
+    apple_music_df = pd.read_csv('tmp/apple_music_dataset.csv')
+    spotify_df = pd.read_csv('tmp/spotify_music_dataset.csv')
 
     # merge the datasets
     combined_df = pd.concat([spotify_df, apple_music_df]).drop_duplicates(subset=['song', 'genre'], keep='first')
@@ -23,16 +23,16 @@ def merge_songs_and_genres():
     combined_df = combined_df.drop_duplicates()
 
     # save the merged dataset if needed
-    combined_df.to_csv('datasets/merged_music_dataset.csv', index=False)
+    combined_df.to_csv('tmp/merged_music_dataset.csv', index=False)
 
 def merge_songs_and_attributes():
     """
     Merge the songs and attributes datasets from all sources.
     """
     # read the CSV files
-    merged_songs_df = pd.read_csv('datasets/merged_music_dataset.csv')
-    spotify_2000_df = pd.read_csv('datasets/spotify_2000_tops.csv')
-    songs_attributes = pd.read_csv('datasets/spotify_song_attributes.csv')
+    merged_songs_df = pd.read_csv('tmp/merged_music_dataset.csv')
+    spotify_2000_df = pd.read_csv('tmp/spotify_2000_tops.csv')
+    songs_attributes = pd.read_csv('tmp/spotify_song_attributes.csv')
 
     # merge the datasets
     combined_df = pd.concat([merged_songs_df, spotify_2000_df, songs_attributes], axis=0, ignore_index=True)
@@ -45,15 +45,15 @@ def merge_songs_and_attributes():
     combined_df = combined_df.interpolate(method='linear', limit_direction='both')
 
     # save the merged dataset if needed
-    combined_df.to_csv('datasets/merged_attributes_dataset.csv', index=False)
+    combined_df.to_csv('tmp/merged_attributes_dataset.csv', index=False)
 
 def merge_attributes_and_mental_health():
     """
     Merge the songs attributes and mental health datasets.
     """
     # read the CSV files
-    songs_attributes = pd.read_csv('datasets/merged_attributes_dataset.csv')
-    mental_health_df = pd.read_csv('datasets/mxmh_survey_results.csv')
+    songs_attributes = pd.read_csv('tmp/merged_attributes_dataset.csv')
+    mental_health_df = pd.read_csv('tmp/mxmh_survey_results.csv')
 
     # drop the 'song' column from songs_attributes
     songs_attributes = songs_attributes.drop(columns=['song'], errors='ignore')
@@ -72,7 +72,7 @@ def merge_attributes_and_mental_health():
     combined_df = combined_df.dropna()
 
     # save the merged dataset
-    combined_df.to_csv('datasets/merged_attributes_and_mental_health.csv', index=False)
+    combined_df.to_csv('tmp/merged_attributes_and_mental_health.csv', index=False)
 
 
 if __name__ == "__main__":

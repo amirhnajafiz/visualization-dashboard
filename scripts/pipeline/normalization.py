@@ -29,19 +29,19 @@ def normalize(df: pd.DataFrame, columns: list) -> pd.DataFrame:
 if __name__ == "__main__":
     datasets = [
         {
-            "path": "datasets/spotify_2000_tops.csv",
+            "path": "tmp/spotify_2000_tops.csv",
             "columns": ["bpm", "energy", "danceability", "loudness", "speechiness", "acousticness", "liveness", "valence", "length", "popularity"]
         },
         {
-            "path": "datasets/spotify_music_dataset.csv",
+            "path": "tmp/spotify_music_dataset.csv",
             "columns": ["popularity", "danceability", "energy", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo"]
         },
         {
-            "path": "datasets/spotify_song_attributes.csv",
+            "path": "tmp/spotify_song_attributes.csv",
             "columns": ["danceability", "energy", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo"]
         },
         {
-            "path": "datasets/mxmh_survey_results.csv",
+            "path": "tmp/mxmh_survey_results.csv",
             "columns": ["anxiety", "depression", "insomnia", "ocd"]
         },
     ]

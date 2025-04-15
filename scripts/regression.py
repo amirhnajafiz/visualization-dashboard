@@ -66,6 +66,6 @@ else:
     df_expanded = df
 
 # save the expanded dataset
-df_expanded.to_csv("datasets/mxmh_survey_results_expanded.csv", index=False)
+df_expanded.to_csv("tmp/mxmh_survey_results_expanded.csv", index=False)
 
 print(f"Dataset expanded to {len(df_expanded)} rows and saved as 'mxmh_survey_results_expanded.csv'.")
