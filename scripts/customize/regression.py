@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 
 
 # load the dataset
-df = pd.read_csv("archive/mxmh_survey_results.csv")
+df = pd.read_csv("assets/archive/mxmh_survey_results.csv")
 
 # check the current number of rows
 current_rows = len(df)
