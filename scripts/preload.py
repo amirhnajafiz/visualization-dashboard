@@ -1,4 +1,5 @@
 import pandas as pd
+import random
 
 
 
@@ -15,8 +16,8 @@ df['age'] = df['age'].apply(lambda x: int(x))
 for col in df.select_dtypes(include=['float64']).columns:
     df[col] = df[col].apply(lambda x: round(x, 2))
 
-# make 'age' columns greater than 65 to 65
-df['age'] = df['age'].apply(lambda x: 65 if x > 65 else x)
+# make 'age' columns greater than 65 to random number between 20 and 80
+df['age'] = df['age'].apply(lambda x: random.randint(20, 80) if x > 65 else x)
 
 # save the dataset
 df.to_csv('datasets/dataset.csv', index=False)
