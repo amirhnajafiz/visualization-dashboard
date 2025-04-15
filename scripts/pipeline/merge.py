@@ -22,6 +22,10 @@ def merge_songs_and_genres():
     # remove duplicates
     combined_df = combined_df.drop_duplicates()
 
+    print(f"\tSongs in the Apple Music dataset: {len(apple_music_df)}")
+    print(f"\tSongs in the Spotify dataset: {len(spotify_df)}")
+    print(f"\tNumber of songs in the merged dataset: {len(combined_df)}")
+
     # save the merged dataset if needed
     combined_df.to_csv('tmp/merged_music_dataset.csv', index=False)
 
@@ -45,6 +49,11 @@ def merge_songs_and_attributes():
     combined_df = combined_df.interpolate(method='linear', limit_direction='both')
     # remove duplicates
     combined_df = combined_df.drop_duplicates()
+
+    print(f"\tSongs in the merged dataset: {len(merged_songs_df)}")
+    print(f"\tSongs in the Spotify 2000 dataset: {len(spotify_2000_df)}")
+    print(f"\tSongs in the Spotify attributes dataset: {len(songs_attributes)}")
+    print(f"\tNumber of songs in the merged dataset: {len(combined_df)}")
 
     # save the merged dataset if needed
     combined_df.to_csv('tmp/merged_attributes_dataset.csv', index=False)
@@ -72,6 +81,10 @@ def merge_attributes_and_mental_health():
     combined_df = combined_df.drop_duplicates()
     # remove the missing values
     combined_df = combined_df.dropna()
+
+    print(f"\tSongs in the merged attributes dataset: {len(songs_attributes)}")
+    print(f"\tEntities in the mental health dataset: {len(mental_health_df)}")
+    print(f"\tNumber of entities in the merged dataset: {len(combined_df)}")
 
     # save the merged dataset
     combined_df.to_csv('tmp/merged_attributes_and_mental_health.csv', index=False)
