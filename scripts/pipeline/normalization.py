@@ -30,7 +30,7 @@ if __name__ == "__main__":
     datasets = [
         {
             "path": "tmp/spotify_2000_tops.csv",
-            "columns": ["bpm", "energy", "danceability", "loudness", "speechiness", "acousticness", "liveness", "valence", "length", "popularity"]
+            "columns": ["bpm", "energy", "danceability", "loudness", "speechiness", "acousticness", "liveness", "valence", "popularity"]
         },
         {
             "path": "tmp/spotify_music_dataset.csv",
