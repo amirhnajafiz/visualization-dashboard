@@ -19,7 +19,7 @@ echo "[inf] using $PYTHON_CMD to run the scripts."
 # global variables
 OUTPUT_DIR="tmp"
 DIRECTORY="scripts/pipeline"
-DATA_DIR="datasets"
+DATA_DIR="assets/datasets"
 
 # check if the output directory exists, if not create it
 if [ ! -d "$OUTPUT_DIR" ]; then
