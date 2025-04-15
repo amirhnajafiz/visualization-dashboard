@@ -1,0 +1,1001 @@
+age,hours,while working,genre,exploratory,foreign,anxiety,depression,insomnia,ocd,effects
+18.0,3.0,Yes,Latin,Yes,Yes,0.3,0.0,0.1,0.0,
+63.0,1.5,Yes,Rock,Yes,No,0.7,0.2,0.2,0.1,
+18.0,4.0,No,Video game music,No,Yes,0.7,0.7,1.0,0.2,No effect
+61.0,2.5,Yes,Jazz,Yes,Yes,0.9,0.7,0.3,0.3,Improve
+18.0,4.0,Yes,R&B,Yes,No,0.7,0.2,0.5,0.9,Improve
+18.0,5.0,Yes,Jazz,Yes,Yes,0.8,0.8,0.7,0.7,Improve
+18.0,3.0,Yes,Video game music,Yes,Yes,0.4,0.8,0.6,0.0,Improve
+21.0,1.0,Yes,K pop,Yes,Yes,0.5,0.3,0.5,0.3,Improve
+19.0,6.0,Yes,Rock,No,No,0.2,0.0,0.0,0.0,Improve
+18.0,1.0,Yes,R&B,Yes,Yes,0.2,0.2,0.5,0.1,Improve
+18.0,3.0,Yes,Country,Yes,No,0.7,0.7,0.4,0.7,No effect
+19.0,8.0,Yes,EDM,Yes,No,0.1,0.0,0.0,0.1,Improve
+,3.0,Yes,Hip hop,Yes,Yes,0.9,0.3,0.2,0.7,Improve
+19.0,2.0,Yes,Country,Yes,No,0.2,0.1,0.2,0.0,Improve
+18.0,4.0,Yes,Jazz,Yes,Yes,0.6,0.4,0.7,0.0,Improve
+17.0,2.0,No,Pop,Yes,Yes,0.7,0.5,0.4,0.1,Worsen
+16.0,8.0,Yes,Hip hop,Yes,Yes,0.8,0.8,0.4,0.3,Improve
+16.0,12.0,Yes,Hip hop,Yes,Yes,0.5,0.7,1.0,0.0,Improve
+17.0,24.0,Yes,Rap,Yes,No,0.7,0.5,0.0,0.3,Improve
+15.0,3.0,No,Hip hop,No,No,0.7,0.3,0.0,0.2,Improve
+15.0,8.0,Yes,Hip hop,Yes,Yes,0.6,0.9,0.3,0.0,Improve
+17.0,4.0,Yes,Rap,Yes,No,1.0,1.0,0.2,0.4,Improve
+19.0,5.0,Yes,R&B,Yes,Yes,0.6,0.7,0.5,0.4,Improve
+18.0,2.0,Yes,Pop,No,Yes,0.3,0.3,0.8,0.6,No effect
+16.0,3.0,Yes,Rock,Yes,Yes,1.0,0.6,0.8,1.0,Improve
+18.0,2.0,No,Pop,Yes,Yes,0.7,0.4,0.2,0.5,Improve
+14.0,12.0,Yes,Rock,Yes,Yes,0.8,0.6,1.0,0.5,Improve
+18.0,6.0,Yes,Pop,No,Yes,0.3,0.2,0.1,0.2,Improve
+17.0,2.0,Yes,Pop,Yes,Yes,0.6,0.6,0.4,0.5,Improve
+17.0,1.0,Yes,Pop,Yes,No,0.8,0.2,0.1,0.5,Improve
+20.0,5.0,Yes,Rock,Yes,Yes,0.7,0.7,0.2,0.0,Improve
+19.0,2.0,Yes,Classical,No,No,0.4,0.4,0.4,0.3,No effect
+19.0,6.0,Yes,Metal,Yes,Yes,0.9,0.8,0.2,0.3,Improve
+17.0,4.0,No,Rock,Yes,Yes,0.5,0.6,0.6,0.1,Improve
+16.0,1.0,Yes,Classical,No,No,0.0,0.0,0.0,0.0,No effect
+18.0,5.0,Yes,Pop,Yes,No,0.3,0.2,0.1,0.1,Improve
+21.0,4.0,Yes,Pop,No,Yes,0.6,0.8,0.0,0.2,Improve
+17.0,3.0,Yes,Pop,Yes,No,0.2,0.0,0.4,0.0,No effect
+26.0,0.5,No,Rock,No,Yes,0.9,0.8,0.1,0.0,No effect
+20.0,4.0,Yes,EDM,Yes,No,0.7,0.2,0.8,0.6,Improve
+23.0,2.0,Yes,Video game music,Yes,No,0.4,0.2,0.3,0.4,Improve
+18.0,5.0,Yes,Rock,Yes,No,0.7,0.6,0.5,0.0,Improve
+37.0,0.25,No,Video game music,Yes,No,0.3,0.2,1.0,0.0,No effect
+17.0,3.0,Yes,Classical,Yes,Yes,0.6,0.6,0.8,0.2,Improve
+18.0,4.0,Yes,Metal,Yes,Yes,0.1,0.0,0.8,0.2,No effect
+17.0,1.0,Yes,Folk,No,No,0.7,0.3,0.1,0.5,Improve
+36.0,1.0,No,Classical,No,No,0.8,0.9,0.3,0.0,No effect
+24.0,3.0,Yes,Rock,Yes,Yes,0.9,0.6,0.4,0.3,Improve
+18.0,5.0,Yes,Metal,Yes,Yes,0.7,0.9,0.5,0.0,Improve
+19.0,3.0,Yes,Pop,No,Yes,0.7,0.4,0.2,0.4,No effect
+17.0,2.0,Yes,EDM,Yes,No,0.0,0.0,0.0,0.0,Improve
+16.0,6.0,Yes,K pop,Yes,Yes,0.7,0.8,0.7,0.5,Improve
+23.0,1.0,No,Rap,No,Yes,1.0,0.6,0.3,1.0,No effect
+23.0,12.0,Yes,Pop,Yes,Yes,0.3,0.7,0.5,0.5,No effect
+22.0,4.0,Yes,Rock,Yes,Yes,0.8,0.7,0.4,0.3,Improve
+16.0,2.0,Yes,Classical,Yes,No,0.0,0.0,0.1,0.3,Improve
+18.0,6.0,Yes,Rock,Yes,No,0.8,0.6,0.2,1.0,No effect
+42.0,0.0,,Rock,No,Yes,0.9,0.0,1.0,0.0,No effect
+23.0,7.0,Yes,Folk,Yes,Yes,0.6,0.4,0.2,0.3,Improve
+23.0,1.0,Yes,Video game music,No,No,0.7,0.0,0.0,0.2,Improve
+19.0,1.0,No,K pop,Yes,Yes,1.0,0.1,0.0,0.0,Improve
+22.0,1.0,No,Rock,Yes,No,0.8,0.7,0.0,0.5,Improve
+15.0,2.0,Yes,Rock,No,No,0.3,0.2,0.6,0.7,Improve
+25.0,2.0,No,Metal,No,Yes,0.5,0.5,0.3,0.1,No effect
+32.0,5.0,Yes,Rock,No,Yes,1.0,1.0,0.3,0.1,Worsen
+36.0,6.0,Yes,Metal,Yes,Yes,0.5,0.4,1.0,0.2,Improve
+24.0,3.0,No,Rock,Yes,Yes,0.0,0.0,0.8,0.0,No effect
+29.0,4.0,No,Hip hop,Yes,No,0.8,0.8,0.5,1.0,Improve
+41.0,3.0,Yes,Metal,Yes,Yes,1.0,0.7,0.8,0.0,Improve
+36.0,2.0,Yes,Rock,Yes,No,0.7,0.3,0.1,0.1,Improve
+19.0,3.0,Yes,Rock,Yes,No,0.8,0.7,0.4,0.0,Improve
+31.0,2.0,Yes,Rock,Yes,Yes,1.0,0.2,0.0,0.5,No effect
+16.0,4.0,Yes,Rock,No,Yes,0.9,0.8,0.1,0.2,Improve
+26.0,2.0,Yes,Hip hop,Yes,Yes,0.6,0.3,0.1,0.1,Improve
+22.0,0.5,No,Hip hop,No,No,0.7,0.7,0.0,0.1,No effect
+16.0,5.0,Yes,Jazz,Yes,Yes,0.7,0.7,0.8,0.4,Improve
+17.0,5.0,Yes,Metal,Yes,Yes,0.4,0.1,0.0,0.0,Improve
+19.0,10.0,Yes,R&B,Yes,Yes,0.7,0.2,0.1,0.5,Improve
+18.0,2.0,No,EDM,No,Yes,0.9,0.0,0.5,1.0,Improve
+18.0,4.0,Yes,Hip hop,Yes,Yes,0.2,0.7,0.1,0.1,Improve
+19.0,5.0,No,Rock,Yes,Yes,1.0,0.8,0.7,0.0,Improve
+19.0,3.0,Yes,Jazz,Yes,No,0.3,0.0,0.0,0.0,Improve
+22.0,2.0,Yes,K pop,Yes,Yes,0.7,0.8,0.5,0.1,No effect
+16.0,2.5,Yes,Rock,Yes,Yes,0.2,0.1,0.0,0.0,Improve
+19.0,3.0,Yes,R&B,Yes,Yes,0.5,0.4,0.0,0.1,Improve
+37.0,1.0,Yes,Rock,No,No,0.9,1.0,0.6,1.0,No effect
+14.0,7.0,Yes,Jazz,No,No,0.2,0.0,0.0,0.0,Improve
+33.0,1.0,No,Metal,No,Yes,0.5,0.2,0.5,0.1,Improve
+26.0,1.0,No,R&B,No,No,0.3,0.2,0.0,0.0,No effect
+32.0,3.0,Yes,Hip hop,No,No,0.2,0.0,0.7,0.0,No effect
+30.0,5.0,Yes,Metal,Yes,No,0.7,0.6,0.6,0.2,No effect
+43.0,6.0,Yes,Video game music,Yes,Yes,0.5,0.4,0.8,0.3,No effect
+24.0,4.0,Yes,Classical,Yes,Yes,0.4,0.6,0.5,0.3,Improve
+36.0,1.0,Yes,Rock,Yes,No,0.6,0.2,0.3,0.1,Improve
+19.0,4.0,Yes,Video game music,Yes,No,0.8,0.2,0.1,0.6,Improve
+22.0,10.0,Yes,Metal,Yes,Yes,0.9,0.6,0.0,0.6,Improve
+20.0,3.0,No,EDM,Yes,Yes,0.0,0.3,0.7,0.0,Improve
+31.0,2.0,No,Rock,Yes,No,0.8,0.9,0.6,0.2,Improve
+19.0,4.0,Yes,Metal,Yes,Yes,0.4,0.1,0.1,0.1,Improve
+15.0,8.0,Yes,Rock,No,No,0.8,0.7,0.5,0.0,Improve
+18.0,2.0,No,Metal,Yes,Yes,0.3,0.4,0.6,0.1,Improve
+25.0,0.5,No,Classical,No,No,0.1,0.1,0.3,0.1,Improve
+17.0,5.0,Yes,Metal,Yes,No,1.0,0.8,0.6,0.7,No effect
+28.0,1.0,No,Rock,Yes,No,0.6,0.6,0.2,0.0,No effect
+20.0,3.0,Yes,Rock,Yes,Yes,0.6,0.7,0.0,0.0,Improve
+21.0,2.0,Yes,Metal,Yes,Yes,0.8,0.4,1.0,0.0,No effect
+41.0,3.0,Yes,Pop,No,Yes,0.9,0.7,0.6,0.2,No effect
+20.0,2.0,Yes,Pop,Yes,No,0.7,0.4,0.6,0.5,Improve
+34.0,4.0,Yes,Metal,Yes,Yes,0.6,0.7,0.0,0.0,No effect
+21.0,3.0,Yes,Metal,Yes,No,1.0,0.0,1.0,1.0,Improve
+23.0,2.0,Yes,Metal,Yes,Yes,0.6,0.3,0.0,0.1,Improve
+16.0,3.0,No,Pop,No,No,0.7,0.5,0.5,0.3,Improve
+19.0,4.0,Yes,Pop,Yes,No,0.7,1.0,0.5,0.0,Improve
+22.0,2.0,Yes,Rock,Yes,Yes,0.8,0.6,0.0,0.0,Improve
+19.0,8.0,Yes,K pop,Yes,Yes,0.4,0.3,0.0,0.0,Improve
+23.0,4.0,Yes,Hip hop,Yes,Yes,0.7,0.6,0.7,0.5,Improve
+23.0,2.0,No,Metal,No,Yes,0.7,0.3,0.2,0.3,Improve
+22.0,1.0,No,EDM,Yes,No,0.2,0.7,0.5,0.0,Improve
+17.0,3.0,Yes,Rock,Yes,No,0.7,0.8,0.6,0.5,Improve
+28.0,0.5,No,Folk,Yes,No,0.4,0.7,0.1,0.0,Improve
+23.0,2.0,No,Rock,Yes,Yes,0.7,0.8,0.5,0.1,No effect
+19.0,3.0,Yes,Rock,Yes,Yes,0.5,0.2,0.8,0.6,Improve
+17.0,2.0,Yes,Hip hop,Yes,Yes,1.0,0.7,0.4,0.2,Improve
+21.0,1.0,No,Rock,Yes,No,0.6,0.5,0.0,0.0,No effect
+29.0,5.0,Yes,Jazz,Yes,Yes,0.7,0.2,0.3,0.1,Improve
+22.0,10.0,No,EDM,No,Yes,0.4,0.7,0.7,0.3,Improve
+18.0,4.0,Yes,Pop,Yes,Yes,0.4,0.5,0.6,0.5,Improve
+13.0,2.0,Yes,Rock,Yes,No,0.7,1.0,0.5,0.6,Worsen
+24.0,1.0,No,Metal,Yes,No,0.6,0.4,0.5,0.0,Improve
+35.0,6.0,Yes,Rock,Yes,Yes,0.4,0.1,0.3,0.1,No effect
+29.0,1.0,Yes,Video game music,Yes,No,0.6,0.6,0.1,0.2,Improve
+28.0,6.0,Yes,Rock,No,No,1.0,0.8,0.7,0.1,Improve
+32.0,7.0,Yes,Pop,Yes,Yes,1.0,0.8,0.2,0.8,Improve
+32.0,1.0,No,EDM,Yes,No,0.3,0.6,0.2,0.0,No effect
+21.0,3.0,Yes,Rock,Yes,No,0.8,0.9,0.2,0.0,Improve
+18.0,2.0,Yes,Video game music,No,Yes,0.8,0.3,0.8,0.7,Improve
+19.0,3.0,Yes,Classical,Yes,No,0.3,0.3,0.1,0.2,Improve
+18.0,2.0,Yes,Pop,Yes,Yes,0.6,0.5,0.2,0.0,Improve
+16.0,3.0,Yes,Pop,No,No,0.0,0.0,0.4,0.0,No effect
+25.0,1.5,Yes,Pop,No,No,0.6,0.5,0.0,0.2,Improve
+17.0,4.0,Yes,Lofi,Yes,Yes,0.3,0.8,0.0,0.0,Improve
+16.0,2.0,Yes,Rap,Yes,Yes,0.1,0.8,0.0,0.0,No effect
+27.0,10.0,Yes,Metal,Yes,Yes,0.5,0.6,0.6,0.3,Improve
+53.0,7.0,Yes,Pop,Yes,Yes,0.0,0.0,0.0,0.0,Improve
+25.0,1.0,Yes,EDM,No,No,0.0,0.8,0.0,0.0,Improve
+34.0,2.0,No,Metal,No,No,0.3,0.7,0.0,0.0,Improve
+22.0,6.0,Yes,Jazz,Yes,Yes,0.8,0.8,0.8,0.5,Improve
+17.0,2.0,Yes,Jazz,Yes,No,0.5,0.2,0.3,0.4,Improve
+26.0,3.0,Yes,Folk,Yes,No,0.8,0.8,0.3,0.0,Improve
+19.0,8.0,Yes,EDM,Yes,No,0.6,0.8,0.8,0.0,Improve
+21.0,3.0,Yes,Pop,Yes,Yes,0.6,0.8,0.6,0.0,Worsen
+32.0,3.0,Yes,Rock,Yes,Yes,0.6,0.6,0.7,0.5,Improve
+21.0,3.0,Yes,Rock,No,No,0.9,1.0,0.3,0.0,No effect
+25.0,2.0,No,Pop,No,No,0.7,0.7,0.5,0.0,Improve
+26.0,1.0,No,Rock,No,No,1.0,0.7,0.2,0.8,No effect
+21.0,2.0,Yes,Metal,Yes,Yes,0.1,0.3,0.0,0.6,No effect
+17.0,2.0,Yes,Pop,No,Yes,0.5,0.3,0.2,0.1,Improve
+28.0,4.0,Yes,Rock,Yes,Yes,0.6,0.8,0.1,0.6,Improve
+41.0,4.0,Yes,Pop,Yes,No,0.7,0.2,0.0,0.7,Improve
+18.0,1.0,Yes,Metal,Yes,Yes,0.6,0.9,0.9,0.0,Improve
+22.0,2.0,No,R&B,No,Yes,0.1,0.1,0.4,0.1,No effect
+18.0,2.0,Yes,K pop,No,Yes,0.0,0.2,0.0,0.0,
+49.0,1.0,Yes,EDM,Yes,No,0.8,0.8,0.2,0.0,Improve
+21.0,3.0,Yes,Metal,Yes,No,0.3,0.3,0.7,0.0,No effect
+27.0,10.0,Yes,Metal,Yes,Yes,0.8,0.8,0.3,0.0,Improve
+19.0,1.0,No,Metal,Yes,Yes,0.6,0.4,0.0,0.3,No effect
+27.0,3.0,Yes,Metal,Yes,Yes,0.1,0.0,0.0,0.0,Improve
+27.0,1.5,Yes,Rock,No,No,0.5,0.5,0.4,0.4,Improve
+19.0,3.0,Yes,K pop,Yes,Yes,0.8,0.9,0.6,0.0,
+42.0,2.5,Yes,Rock,No,Yes,0.8,0.8,0.7,0.6,Improve
+60.0,2.0,Yes,Gospel,No,No,0.3,0.0,0.2,0.0,Improve
+19.0,5.0,Yes,Metal,No,Yes,0.0,0.5,0.1,0.0,No effect
+20.0,2.0,Yes,Pop,Yes,No,0.6,0.3,0.0,0.0,Improve
+28.0,2.0,No,Metal,No,No,0.1,0.7,0.5,0.1,Improve
+16.0,2.0,No,Video game music,Yes,No,0.4,0.2,0.1,0.1,No effect
+18.0,2.0,Yes,R&B,No,Yes,0.5,0.6,0.0,0.1,No effect
+34.0,1.0,Yes,Rock,Yes,Yes,0.1,0.0,0.0,0.0,No effect
+18.0,1.5,Yes,Pop,Yes,No,0.8,0.6,0.5,0.2,Improve
+21.0,5.0,Yes,Folk,Yes,Yes,0.9,0.4,0.0,0.3,Improve
+38.0,0.5,No,Rock,Yes,Yes,0.4,0.6,0.6,0.4,Improve
+17.0,2.0,Yes,Rock,No,Yes,0.7,0.3,0.1,0.5,Improve
+35.0,0.5,No,Pop,No,No,1.0,0.3,0.1,0.0,No effect
+21.0,2.0,Yes,Rock,No,Yes,0.8,0.8,0.3,0.0,Improve
+25.0,2.5,Yes,R&B,No,No,0.7,0.6,0.5,0.4,Improve
+18.0,2.0,Yes,K pop,Yes,Yes,0.7,0.2,0.3,0.5,Improve
+16.0,2.0,No,Pop,Yes,No,1.0,0.35,0.5,1.0,Improve
+19.0,1.0,Yes,Pop,Yes,Yes,0.7,0.5,0.1,0.2,Improve
+31.0,4.0,Yes,Classical,No,Yes,0.6,0.8,0.9,0.5,Improve
+26.0,5.0,Yes,Rock,No,No,0.2,0.9,0.2,0.1,No effect
+16.0,2.0,Yes,Rock,No,No,0.7,0.4,1.0,0.2,Improve
+26.0,2.0,Yes,Rock,Yes,Yes,0.7,0.5,0.6,0.0,Improve
+17.0,2.0,Yes,R&B,Yes,Yes,0.6,0.1,0.0,0.0,Improve
+22.0,1.0,Yes,Video game music,Yes,Yes,0.3,0.6,0.1,0.1,Improve
+20.0,4.0,Yes,R&B,Yes,Yes,0.9,1.0,0.3,0.0,Improve
+30.0,1.0,No,Rock,Yes,No,0.8,0.5,0.8,0.9,Improve
+26.0,4.0,Yes,Pop,No,No,0.8,0.7,0.7,0.3,Improve
+19.0,5.0,Yes,Rock,Yes,Yes,0.9,0.9,0.9,0.3,No effect
+21.0,5.0,Yes,Country,Yes,No,0.9,0.8,0.9,0.7,Improve
+33.0,7.0,Yes,Rock,Yes,Yes,0.9,0.3,0.7,0.8,Improve
+28.0,2.0,Yes,Rock,Yes,No,1.0,0.8,0.6,0.2,Improve
+25.0,3.0,Yes,Rock,Yes,Yes,0.9,0.6,0.3,0.0,Improve
+22.0,2.0,Yes,Pop,No,No,0.7,0.7,0.8,0.3,Improve
+19.0,3.0,Yes,Rock,Yes,Yes,0.9,1.0,0.4,0.0,Improve
+44.0,3.0,Yes,Folk,Yes,Yes,0.9,0.9,0.8,0.2,Improve
+22.0,3.0,Yes,Rock,No,No,0.9,1.0,0.3,0.9,Improve
+26.0,5.0,Yes,Metal,Yes,Yes,1.0,0.9,0.8,0.8,Improve
+23.0,6.0,Yes,Classical,No,Yes,0.6,0.5,0.6,0.8,Improve
+17.0,2.0,No,R&B,No,Yes,0.8,0.6,1.0,0.3,Improve
+42.0,2.0,No,Metal,Yes,No,0.8,0.3,0.6,0.4,Improve
+30.0,1.0,No,Rock,Yes,No,0.4,0.2,0.1,0.3,Improve
+35.0,1.0,Yes,Pop,Yes,Yes,0.2,0.1,0.1,0.1,No effect
+20.0,3.0,No,Rock,Yes,No,1.0,1.0,0.7,0.3,Improve
+18.0,3.0,Yes,Rap,Yes,Yes,0.8,0.9,0.0,0.0,Improve
+21.0,1.0,No,Pop,No,Yes,0.4,0.9,0.6,0.2,No effect
+19.0,6.0,Yes,Rock,Yes,Yes,0.4,0.2,0.0,0.0,Improve
+37.0,4.0,Yes,Rock,Yes,No,0.9,0.2,0.7,0.7,Improve
+31.0,2.0,Yes,Metal,Yes,Yes,0.8,0.6,0.7,0.5,Improve
+29.0,2.0,Yes,Folk,Yes,Yes,0.6,0.5,0.4,0.2,Improve
+20.0,3.0,Yes,Rock,Yes,Yes,0.8,0.5,0.2,0.3,Improve
+36.0,8.0,Yes,Video game music,No,Yes,0.7,0.6,0.6,0.1,No effect
+18.0,3.0,Yes,Rock,Yes,No,1.0,0.2,0.0,0.0,Improve
+18.0,2.0,Yes,K pop,Yes,Yes,0.6,0.0,0.0,0.0,Improve
+25.0,7.0,Yes,Pop,No,Yes,0.2,0.0,0.1,0.0,Improve
+18.0,12.0,Yes,K pop,Yes,Yes,0.3,0.7,0.5,0.2,Improve
+31.0,9.0,Yes,Pop,Yes,Yes,0.9,0.0,0.2,0.0,Improve
+17.0,2.0,Yes,Pop,Yes,Yes,0.5,0.4,0.1,0.1,Improve
+21.0,1.0,Yes,Folk,No,Yes,0.8,0.4,0.0,0.1,Improve
+30.0,1.0,No,Country,No,No,0.8,1.0,0.2,0.0,Improve
+40.0,2.0,Yes,Metal,Yes,Yes,0.3,0.6,0.2,0.1,No effect
+64.0,4.0,Yes,Rock,No,No,0.4,0.4,0.2,0.1,Improve
+14.0,2.0,Yes,Rock,Yes,Yes,0.7,0.5,0.2,0.6,Improve
+26.0,6.0,Yes,Rock,Yes,No,0.3,0.2,0.0,0.0,No effect
+35.0,4.0,Yes,Country,Yes,Yes,0.9,0.9,0.5,0.1,Improve
+33.0,1.0,No,Rock,No,No,0.3,1.0,0.4,0.1,No effect
+30.0,6.0,Yes,Folk,Yes,Yes,0.9,0.0,0.5,0.0,No effect
+31.0,2.0,No,Metal,Yes,,0.7,0.6,0.6,0.5,Improve
+27.0,5.0,Yes,Folk,Yes,Yes,0.0,0.9,0.4,0.0,Improve
+53.0,1.5,No,Pop,Yes,Yes,0.2,0.2,0.2,0.1,No effect
+23.0,5.0,Yes,Metal,Yes,Yes,0.6,0.9,0.2,0.1,Improve
+25.0,2.0,Yes,EDM,Yes,No,0.6,0.4,0.1,0.0,Improve
+16.0,4.0,Yes,K pop,Yes,Yes,0.8,0.9,0.4,0.0,Improve
+18.0,2.0,Yes,Rock,Yes,No,0.6,0.7,0.4,0.3,Improve
+29.0,5.0,Yes,Classical,Yes,Yes,0.7,0.2,0.2,0.0,Improve
+31.0,6.0,Yes,EDM,Yes,Yes,0.8,0.6,0.5,0.6,No effect
+31.0,1.0,No,Rock,No,Yes,0.3,1.0,0.0,0.0,Worsen
+38.0,6.0,Yes,Pop,Yes,Yes,0.9,0.4,0.9,0.7,Improve
+17.0,4.0,No,Classical,Yes,Yes,0.7,0.9,0.2,0.8,Worsen
+25.0,2.0,No,EDM,No,Yes,1.0,0.3,0.1,0.4,Improve
+20.0,2.0,No,Metal,No,Yes,0.0,0.0,0.0,0.1,No effect
+15.0,2.0,Yes,EDM,No,No,0.9,0.6,0.1,0.7,No effect
+16.0,4.0,Yes,Lofi,Yes,No,0.7,0.1,0.3,0.5,Improve
+20.0,2.0,Yes,EDM,No,Yes,0.9,0.7,0.5,0.7,Improve
+23.0,6.0,Yes,Rap,Yes,Yes,0.3,0.1,0.2,0.7,Improve
+22.0,3.0,Yes,Hip hop,Yes,Yes,0.6,0.6,0.8,0.0,Improve
+15.0,5.0,Yes,Rock,Yes,Yes,1.0,0.6,0.0,0.4,Improve
+17.0,0.5,Yes,Video game music,No,Yes,0.6,0.3,0.1,0.1,Improve
+22.0,1.0,Yes,Video game music,Yes,Yes,0.3,0.3,0.0,0.7,No effect
+21.0,10.0,Yes,Metal,Yes,Yes,0.9,1.0,0.2,0.2,No effect
+19.0,2.0,Yes,Pop,No,Yes,0.7,0.5,0.0,0.2,No effect
+32.0,0.5,No,Classical,Yes,No,0.3,0.0,0.4,0.4,No effect
+34.0,1.0,No,Rock,No,Yes,0.9,0.9,0.6,0.4,Improve
+18.0,2.0,Yes,Metal,Yes,Yes,0.5,0.7,0.7,0.2,Improve
+21.0,3.0,Yes,Country,Yes,No,0.0,0.8,0.0,0.5,Improve
+20.0,3.0,No,Country,Yes,Yes,0.8,0.4,0.3,0.4,Improve
+19.0,2.0,Yes,Country,Yes,No,0.7,0.2,0.0,0.7,No effect
+25.0,1.0,No,Pop,No,Yes,0.9,0.9,0.6,0.9,No effect
+31.0,8.0,Yes,Classical,Yes,Yes,0.5,0.7,0.5,0.4,Improve
+21.0,1.0,Yes,Pop,Yes,Yes,0.5,0.1,0.0,0.0,Improve
+31.0,1.0,No,Folk,Yes,Yes,0.4,0.1,0.3,0.0,Improve
+20.0,1.0,No,Pop,Yes,No,0.3,0.5,0.3,0.0,Improve
+19.0,5.0,Yes,Rock,Yes,No,0.2,0.2,0.0,0.6,Improve
+19.0,5.0,Yes,EDM,Yes,Yes,0.0,0.1,0.3,0.5,Improve
+23.0,4.0,Yes,Metal,Yes,Yes,0.7,0.8,0.6,0.2,Improve
+24.0,8.0,Yes,Video game music,Yes,No,0.6,0.4,0.8,0.8,Improve
+20.0,0.7,No,Rock,No,No,0.5,0.6,0.8,0.2,Improve
+15.0,3.0,No,Video game music,No,No,0.6,0.6,0.2,0.6,No effect
+17.0,7.0,Yes,Hip hop,No,Yes,0.8,0.9,0.3,0.4,Improve
+20.0,1.5,No,Video game music,No,Yes,0.8,0.4,0.3,0.3,Worsen
+14.0,4.0,Yes,Video game music,Yes,Yes,0.8,0.6,0.5,0.7,Improve
+24.0,4.0,Yes,Metal,Yes,Yes,0.8,0.8,0.7,0.7,Improve
+14.0,10.0,Yes,Video game music,No,No,0.5,0.2,0.5,0.0,Improve
+23.0,2.0,Yes,Rock,Yes,No,0.6,0.8,0.4,0.2,No effect
+28.0,2.0,Yes,Rock,No,No,0.7,0.5,0.2,0.1,No effect
+22.0,6.0,Yes,Jazz,Yes,Yes,0.8,0.8,0.7,0.1,Improve
+25.0,0.5,Yes,Rock,Yes,Yes,1.0,0.2,0.0,0.0,Improve
+27.0,2.0,Yes,Pop,Yes,Yes,0.8,0.7,0.7,0.5,Improve
+18.0,5.0,Yes,Rock,Yes,Yes,0.8,0.8,0.8,0.6,Improve
+17.0,3.0,Yes,Pop,Yes,No,0.8,1.0,0.9,0.2,Improve
+23.0,4.5,Yes,Rock,No,Yes,0.6,0.1,0.8,0.4,No effect
+40.0,3.0,Yes,Rock,Yes,Yes,0.0,0.4,0.4,0.0,Improve
+27.0,20.0,Yes,Rock,Yes,Yes,0.8,1.0,1.0,0.8,No effect
+18.0,1.0,No,Pop,Yes,No,0.3,0.2,0.0,0.1,No effect
+16.0,2.5,No,Metal,Yes,No,0.5,0.3,0.3,0.1,Improve
+18.0,1.0,No,Rock,Yes,Yes,0.8,0.9,0.6,0.1,Improve
+23.0,2.0,No,Jazz,No,Yes,1.0,0.3,0.0,1.0,No effect
+15.0,5.0,Yes,Metal,Yes,No,0.6,0.7,0.8,0.2,Improve
+20.0,3.0,Yes,Metal,Yes,No,0.7,0.4,0.7,0.0,Improve
+16.0,3.0,Yes,Rock,Yes,No,0.9,0.8,0.6,0.2,Improve
+16.0,0.5,No,Rock,No,Yes,0.8,0.0,0.0,0.0,Improve
+20.0,8.0,Yes,Country,Yes,No,0.8,0.9,0.2,0.5,No effect
+33.0,2.0,Yes,Metal,Yes,Yes,0.7,0.2,0.3,0.0,Improve
+22.0,3.0,Yes,Rock,Yes,Yes,1.0,1.0,0.4,0.0,Improve
+21.0,3.0,Yes,Hip hop,Yes,Yes,0.8,0.8,0.3,0.3,Improve
+21.0,5.0,Yes,Metal,Yes,Yes,0.8,0.7,0.7,0.4,Improve
+29.0,1.5,Yes,Rock,Yes,Yes,0.8,0.7,0.1,0.2,Improve
+56.0,1.0,Yes,Pop,No,No,0.6,0.5,1.0,0.2,No effect
+17.0,2.0,Yes,Pop,Yes,No,0.7,0.6,0.0,0.4,Improve
+22.0,1.0,Yes,Pop,No,No,0.7,0.4,0.0,0.0,Improve
+26.0,4.0,Yes,Pop,Yes,Yes,0.8,0.7,0.2,1.0,No effect
+30.0,1.0,Yes,EDM,Yes,Yes,0.4,0.4,0.4,0.0,Improve
+49.0,2.0,Yes,Folk,Yes,No,0.0,0.0,0.2,0.0,No effect
+22.0,2.0,Yes,EDM,Yes,Yes,0.6,0.4,0.0,0.1,Improve
+32.0,2.0,No,Rock,Yes,No,0.4,0.7,0.0,0.0,Improve
+32.0,1.0,No,Rock,No,No,0.8,0.4,0.3,0.0,No effect
+22.0,6.0,Yes,Country,Yes,No,0.5,0.5,0.3,0.3,Improve
+17.0,2.0,Yes,Rock,Yes,Yes,0.0,0.8,0.0,0.0,Improve
+21.0,4.0,Yes,Rock,Yes,No,0.7,0.4,0.6,0.1,Improve
+17.0,1.5,Yes,Rock,Yes,Yes,0.8,0.7,0.7,0.3,No effect
+25.0,3.0,Yes,Metal,No,No,0.9,0.8,0.6,0.2,Improve
+15.0,4.0,Yes,Rock,Yes,No,0.8,0.6,0.4,0.0,Improve
+13.0,10.0,Yes,Rap,Yes,No,0.7,0.2,0.0,0.8,Improve
+38.0,3.0,Yes,Rock,No,Yes,0.6,0.7,0.7,0.7,No effect
+23.0,3.0,No,Rock,Yes,No,0.7,0.6,0.4,0.2,Improve
+17.0,3.0,Yes,Pop,Yes,Yes,0.1,0.1,0.1,0.0,Improve
+59.0,2.0,Yes,Pop,Yes,No,0.1,0.1,0.3,0.0,Improve
+22.0,2.0,Yes,Pop,Yes,No,0.2,0.7,0.1,0.2,Improve
+17.0,3.0,Yes,Pop,Yes,Yes,0.6,0.2,0.3,0.1,No effect
+27.0,2.0,No,Pop,No,No,0.7,0.7,0.3,0.2,No effect
+23.0,5.0,Yes,Video game music,No,No,0.8,0.7,0.0,0.3,No effect
+15.0,6.0,Yes,Rock,No,No,0.8,0.3,0.5,0.2,Improve
+22.0,3.0,Yes,EDM,Yes,No,0.5,0.4,0.2,0.0,Improve
+23.0,5.0,Yes,Lofi,Yes,Yes,0.7,1.0,1.0,0.1,Improve
+19.0,5.0,Yes,Country,Yes,Yes,0.7,0.6,0.8,0.4,Improve
+32.0,6.0,Yes,Rock,No,No,0.8,0.7,0.0,0.9,Improve
+40.0,6.0,Yes,Rock,Yes,Yes,1.0,0.7,0.3,0.3,No effect
+21.0,3.0,Yes,Country,Yes,No,0.6,0.5,0.5,0.3,Improve
+21.0,10.0,Yes,Rock,Yes,Yes,0.8,0.7,0.6,0.8,No effect
+23.0,2.0,Yes,Video game music,Yes,Yes,1.0,0.7,0.7,0.3,Worsen
+21.0,2.0,Yes,EDM,No,Yes,1.0,1.0,0.5,0.7,
+35.0,3.0,No,Folk,Yes,No,0.8,0.2,0.2,0.8,No effect
+18.0,1.5,No,Hip hop,No,No,0.3,0.7,0.4,0.0,Improve
+21.0,10.0,Yes,Pop,Yes,No,0.9,0.7,0.5,0.5,Improve
+22.0,2.0,Yes,Video game music,No,Yes,0.5,0.3,0.0,0.0,Improve
+23.0,3.0,Yes,Rock,Yes,Yes,1.0,0.7,0.0,1.0,Improve
+13.0,2.5,Yes,Folk,No,No,0.8,0.0,0.0,0.3,Improve
+19.0,3.0,Yes,K pop,Yes,Yes,0.6,0.0,0.3,0.0,Improve
+33.0,0.5,Yes,Rock,No,No,0.7,0.9,0.4,0.6,Improve
+18.0,16.0,Yes,Jazz,Yes,Yes,0.3,0.2,0.5,0.6,Improve
+17.0,6.0,Yes,Classical,Yes,Yes,0.4,0.2,0.0,0.0,Improve
+16.0,3.0,Yes,EDM,Yes,Yes,0.4,0.2,0.0,0.0,Improve
+18.0,0.5,No,Rock,Yes,No,0.5,0.3,0.1,0.0,No effect
+19.0,5.0,Yes,K pop,Yes,Yes,0.4,0.2,0.2,0.1,Improve
+15.0,2.0,No,Rap,Yes,Yes,0.4,0.0,0.6,0.5,No effect
+17.0,2.0,Yes,Pop,Yes,Yes,0.7,0.6,0.3,0.1,Improve
+25.0,2.0,Yes,Lofi,Yes,Yes,0.7,0.8,0.6,0.2,Improve
+24.0,1.5,Yes,Video game music,No,Yes,0.3,0.4,0.1,0.1,Improve
+23.0,1.0,Yes,Jazz,Yes,No,0.9,0.7,0.2,0.1,Improve
+16.0,10.0,Yes,EDM,Yes,Yes,1.0,0.9,0.3,0.2,Improve
+25.0,2.0,Yes,Metal,Yes,Yes,0.9,0.9,0.7,0.3,Improve
+16.0,15.0,Yes,EDM,Yes,No,0.8,1.0,0.9,0.2,Improve
+20.0,0.5,No,Metal,Yes,Yes,0.8,0.9,0.6,0.4,Improve
+17.0,3.0,Yes,Metal,Yes,No,0.5,0.6,0.9,0.9,Improve
+29.0,2.0,Yes,Metal,Yes,No,0.9,0.3,0.7,0.2,Improve
+20.0,4.0,Yes,Hip hop,Yes,No,0.3,0.2,0.1,0.6,Improve
+16.0,2.0,Yes,Folk,Yes,No,0.7,0.7,0.4,0.0,Improve
+21.0,1.0,Yes,Rock,Yes,No,0.7,0.9,0.1,0.2,Improve
+16.0,24.0,Yes,Rock,Yes,Yes,0.5,0.1,0.9,0.1,Improve
+43.0,1.0,Yes,Pop,Yes,No,0.3,0.3,0.0,0.0,Improve
+32.0,2.0,Yes,Classical,Yes,No,0.8,0.7,0.5,0.4,Improve
+10.0,2.0,Yes,Pop,Yes,Yes,0.8,0.2,0.1,0.1,Improve
+27.0,3.0,Yes,Metal,Yes,Yes,0.4,0.0,0.0,0.0,Improve
+24.0,3.0,Yes,Classical,No,Yes,0.9,0.6,0.1,0.1,Improve
+18.0,2.0,Yes,Hip hop,Yes,Yes,1.0,0.7,0.2,0.0,Improve
+17.0,7.0,Yes,Rock,No,No,0.8,0.7,0.7,0.4,Improve
+19.0,6.0,Yes,Metal,Yes,No,0.1,0.0,0.0,0.0,Improve
+16.0,3.0,Yes,Rock,Yes,Yes,0.5,0.7,0.1,0.4,Improve
+64.0,5.0,Yes,Rock,Yes,No,0.7,0.6,0.9,0.2,Improve
+33.0,4.0,Yes,Lofi,Yes,Yes,0.8,0.8,0.2,0.2,Improve
+32.0,3.0,Yes,Rock,No,Yes,0.2,0.2,0.8,0.0,No effect
+15.0,2.0,Yes,Pop,Yes,No,0.6,0.0,0.0,0.2,Improve
+27.0,3.0,Yes,Metal,Yes,Yes,0.2,0.0,0.1,0.0,Improve
+20.0,2.0,Yes,Rock,Yes,No,0.6,0.2,0.6,0.7,No effect
+23.0,2.0,Yes,Pop,Yes,Yes,0.6,0.1,0.0,0.5,Improve
+19.0,3.0,No,Classical,Yes,No,0.7,0.6,0.4,0.0,Improve
+12.0,2.0,Yes,Classical,No,No,0.0,0.0,0.3,0.0,Improve
+16.0,3.0,Yes,Classical,No,No,0.9,0.7,1.0,0.6,No effect
+17.0,0.0,No,Video game music,No,Yes,1.0,0.0,0.0,0.0,No effect
+14.0,1.0,Yes,Pop,Yes,No,0.6,0.6,0.3,0.0,Improve
+32.0,2.0,Yes,Metal,Yes,No,0.4,0.3,0.1,0.6,Improve
+20.0,2.0,Yes,Pop,No,Yes,0.6,0.2,0.2,0.1,No effect
+54.0,6.0,Yes,Classical,No,No,0.2,0.2,0.3,0.2,Improve
+18.0,5.0,Yes,K pop,Yes,Yes,0.7,0.4,0.5,0.6,Improve
+14.0,2.0,Yes,Classical,Yes,No,0.7,0.5,0.3,0.2,Improve
+13.0,4.0,Yes,Classical,Yes,No,0.8,0.5,1.0,0.3,Improve
+19.0,8.0,Yes,Country,Yes,No,0.7,0.5,0.6,0.5,Improve
+14.0,4.0,Yes,Classical,Yes,No,0.6,0.8,0.8,0.2,Improve
+14.0,1.5,No,Classical,Yes,,0.1,0.2,0.4,0.3,Improve
+18.0,2.0,Yes,Rap,Yes,Yes,0.3,0.2,0.0,0.2,Improve
+15.0,5.0,Yes,Folk,Yes,Yes,0.6,0.7,0.7,0.4,Improve
+24.0,6.0,Yes,Classical,No,No,0.6,0.7,0.2,0.0,No effect
+17.0,2.0,Yes,Pop,No,Yes,0.9,0.8,0.4,0.8,Improve
+44.0,2.0,No,Rock,Yes,No,0.7,0.7,0.2,0.1,Improve
+23.0,1.0,No,Rock,Yes,No,0.1,0.0,0.1,0.0,Improve
+21.0,1.0,No,Rap,No,No,0.4,0.3,0.4,0.5,Improve
+57.0,2.0,No,R&B,Yes,No,0.2,0.0,0.0,0.0,Improve
+23.0,2.0,Yes,Rock,Yes,Yes,0.0,0.5,0.7,0.0,No effect
+18.0,1.0,Yes,Pop,No,Yes,0.8,0.7,0.7,0.0,Improve
+26.0,14.0,Yes,Hip hop,Yes,Yes,0.5,1.0,0.8,0.0,No effect
+13.0,3.0,Yes,Classical,No,No,0.8,0.7,0.9,0.2,Improve
+15.0,3.0,Yes,Classical,Yes,No,0.9,0.6,0.8,0.5,Improve
+57.0,2.0,Yes,Rock,Yes,No,0.2,0.2,0.7,0.0,No effect
+12.0,0.5,Yes,Classical,Yes,Yes,0.7,0.8,0.6,0.2,Improve
+26.0,6.0,Yes,EDM,No,Yes,1.0,1.0,0.8,0.2,No effect
+17.0,1.0,Yes,Country,No,No,0.8,0.5,0.2,0.3,Improve
+17.0,2.0,Yes,Classical,Yes,Yes,0.7,0.8,0.2,0.5,Improve
+69.0,4.0,Yes,Classical,Yes,Yes,0.1,0.1,0.2,0.0,Improve
+17.0,3.0,Yes,R&B,Yes,Yes,0.9,1.0,1.0,0.3,No effect
+32.0,12.0,Yes,Jazz,Yes,Yes,0.9,0.4,0.4,0.4,Improve
+22.0,3.0,No,Classical,Yes,No,0.8,0.2,0.4,0.0,No effect
+38.0,1.0,No,Metal,Yes,Yes,0.1,0.1,0.5,0.1,Improve
+18.0,10.0,Yes,EDM,Yes,No,1.0,0.9,0.9,0.8,Improve
+14.0,5.0,Yes,Classical,Yes,Yes,0.3,0.0,0.2,0.3,Improve
+14.0,0.5,Yes,Video game music,Yes,Yes,0.4,0.0,0.4,0.0,Improve
+19.0,5.0,Yes,Metal,Yes,Yes,0.2,0.3,0.5,0.2,Improve
+20.0,3.0,Yes,Classical,Yes,No,0.2,0.3,0.3,0.0,Improve
+18.0,2.0,No,Rock,Yes,No,0.8,0.4,0.3,0.0,Improve
+30.0,13.0,,K pop,Yes,Yes,1.0,1.0,1.0,0.7,Improve
+31.0,4.0,Yes,Classical,Yes,Yes,0.8,0.8,0.9,0.3,Improve
+72.0,6.0,Yes,Rock,No,No,0.0,0.1,0.0,0.2,Improve
+73.0,3.0,Yes,R&B,Yes,Yes,0.5,0.4,0.0,0.1,Improve
+16.0,4.0,Yes,Pop,Yes,Yes,0.75,0.5,0.7,0.85,Improve
+19.0,3.0,No,Rap,Yes,Yes,0.3,0.3,0.0,0.0,Improve
+16.0,2.0,Yes,Classical,No,No,0.7,0.5,0.3,0.1,Improve
+12.0,2.0,Yes,Classical,Yes,Yes,0.8,0.0,0.1,0.6,Improve
+39.0,1.0,Yes,Hip hop,Yes,Yes,0.6,0.4,0.1,0.1,Improve
+15.0,6.0,Yes,K pop,Yes,Yes,0.8,0.8,0.7,1.0,No effect
+14.0,9.0,Yes,R&B,Yes,Yes,1.0,0.8,0.9,0.5,Improve
+21.0,1.0,No,Country,No,No,0.3,0.0,0.2,0.0,Improve
+38.0,1.0,Yes,Video game music,No,No,0.5,0.5,0.7,0.1,Worsen
+23.0,0.5,No,Hip hop,Yes,Yes,0.7,0.7,0.6,0.5,Improve
+16.0,1.0,No,EDM,Yes,No,0.7,0.4,0.6,0.3,Improve
+21.0,1.5,Yes,Folk,No,No,0.3,0.3,0.1,0.0,
+13.0,6.0,Yes,Rap,Yes,No,0.4,0.0,0.0,0.2,Worsen
+16.0,4.0,Yes,Rock,Yes,No,0.3,0.0,0.6,0.9,Improve
+18.0,6.0,Yes,Rock,Yes,No,0.5,0.1,0.6,0.0,Improve
+21.0,4.0,Yes,Metal,Yes,Yes,1.0,0.6,0.8,0.0,Improve
+17.0,1.5,Yes,Classical,Yes,Yes,0.7,0.5,0.1,0.2,No effect
+24.0,2.0,Yes,Rock,Yes,Yes,0.7,0.7,0.0,0.4,No effect
+14.0,2.0,Yes,Pop,Yes,No,0.6,0.0,0.0,0.0,Improve
+25.0,4.0,Yes,Rock,Yes,Yes,0.6,0.2,0.3,0.2,Improve
+22.0,3.0,Yes,Lofi,Yes,Yes,0.7,0.6,0.7,0.9,Improve
+20.0,4.0,Yes,Rock,Yes,Yes,0.5,0.7,0.7,0.0,No effect
+23.0,2.0,Yes,Pop,No,No,0.7,0.6,0.4,0.3,Improve
+61.0,2.0,Yes,Rock,Yes,No,0.2,0.2,0.2,0.0,Improve
+24.0,6.0,Yes,Video game music,No,Yes,0.9,0.5,0.0,0.7,Improve
+34.0,0.0,No,Rock,No,Yes,0.3,0.7,0.8,0.0,Worsen
+49.0,1.0,No,Pop,Yes,No,0.4,0.5,0.9,0.1,Improve
+33.0,4.0,Yes,Rock,Yes,Yes,0.1,0.0,0.7,0.0,Improve
+22.0,2.0,No,Metal,No,No,0.3,0.2,0.0,0.2,No effect
+38.0,3.0,Yes,Metal,Yes,Yes,0.1,0.6,0.1,0.2,Improve
+23.0,4.0,No,Hip hop,Yes,No,0.8,1.0,0.4,0.0,No effect
+34.0,2.0,No,Video game music,No,Yes,0.8,1.0,1.0,0.0,No effect
+40.0,3.0,Yes,Metal,Yes,Yes,0.3,0.0,0.8,0.1,No effect
+27.0,1.0,No,Hip hop,Yes,No,0.3,0.4,0.1,0.0,Improve
+54.0,10.0,Yes,Rock,Yes,No,0.2,0.1,0.2,0.2,Improve
+16.0,10.0,No,Rock,Yes,No,0.0,0.0,0.0,0.0,No effect
+23.0,10.0,Yes,Video game music,No,Yes,0.8,0.8,0.5,0.0,Improve
+35.0,4.0,No,Country,Yes,No,0.1,0.1,0.1,0.0,No effect
+22.0,4.0,Yes,Folk,Yes,Yes,0.8,0.7,0.6,0.2,Improve
+41.0,3.0,No,Metal,Yes,Yes,0.6,0.5,0.4,0.0,No effect
+63.0,2.0,Yes,Rock,Yes,No,0.5,0.4,0.6,0.2,Improve
+28.0,1.0,No,Rock,Yes,No,0.3,0.1,0.0,0.2,No effect
+22.0,6.0,Yes,Country,Yes,No,0.4,0.8,0.2,0.2,Improve
+58.0,1.0,Yes,Rock,Yes,No,0.5,0.6,0.3,0.1,Improve
+58.0,1.0,Yes,Classical,Yes,No,0.0,0.0,0.2,0.1,Improve
+67.0,4.0,Yes,Rock,No,No,0.7,0.6,0.7,0.4,Improve
+70.0,2.0,Yes,Country,No,No,0.8,0.5,0.6,0.1,Improve
+60.0,2.0,Yes,Rock,No,Yes,0.4,0.4,0.2,0.0,Improve
+15.0,2.0,Yes,Pop,Yes,No,0.9,0.8,1.0,0.9,Improve
+18.0,6.0,Yes,EDM,Yes,Yes,0.5,0.5,0.7,0.0,Improve
+58.0,3.0,Yes,Hip hop,Yes,Yes,0.4,0.6,0.8,0.1,Improve
+28.0,1.0,Yes,Lofi,Yes,Yes,0.4,0.8,0.5,0.0,Improve
+22.0,4.0,Yes,Lofi,Yes,No,0.9,1.0,0.6,0.7,Improve
+49.0,0.5,No,Classical,No,No,0.3,0.2,0.2,0.2,Improve
+20.0,8.0,Yes,Rock,Yes,Yes,0.6,0.2,0.2,0.1,Improve
+55.0,15.0,Yes,Rock,No,No,0.2,0.0,0.3,0.0,No effect
+48.0,1.5,Yes,Metal,No,No,1.0,0.8,0.0,0.4,Improve
+14.0,2.0,Yes,K pop,Yes,Yes,0.4,0.4,0.2,0.2,Improve
+18.0,3.0,Yes,Pop,Yes,Yes,0.7,0.8,0.6,0.2,Improve
+25.0,1.0,Yes,Pop,Yes,Yes,0.7,0.6,0.5,0.5,Improve
+71.0,0.25,Yes,Gospel,No,Yes,0.1,0.0,0.0,0.0,Improve
+60.0,1.0,No,Gospel,No,No,0.6,0.2,0.8,0.0,Improve
+18.0,1.0,Yes,Video game music,No,No,0.4,0.5,0.7,0.0,No effect
+19.0,5.0,Yes,Hip hop,No,Yes,1.0,0.7,0.0,0.0,Improve
+74.0,1.0,No,Pop,No,No,0.4,0.2,0.1,0.0,Improve
+36.0,1.0,Yes,Hip hop,No,No,0.7,0.6,0.2,0.3,Improve
+14.0,7.0,Yes,Lofi,Yes,Yes,0.3,0.2,0.8,0.0,Improve
+20.0,3.0,No,Hip hop,Yes,Yes,1.0,0.7,0.4,0.3,Improve
+15.0,3.0,Yes,K pop,Yes,Yes,0.4,0.0,0.0,0.0,No effect
+19.0,7.0,Yes,Rock,No,No,0.7,0.7,0.0,0.0,Improve
+29.0,8.0,Yes,EDM,No,Yes,0.6,0.7,0.4,0.1,Improve
+24.0,2.0,Yes,Metal,Yes,No,0.7,0.6,0.2,0.7,Improve
+18.0,2.0,Yes,Pop,Yes,Yes,0.6,0.5,0.8,0.0,Improve
+21.0,2.0,Yes,Rock,Yes,Yes,1.0,1.0,0.2,0.3,Improve
+19.0,2.0,Yes,K pop,Yes,Yes,0.7,0.6,0.5,0.1,Improve
+25.0,4.0,No,Video game music,Yes,Yes,0.3,0.0,0.0,0.0,Improve
+28.0,8.0,Yes,Rock,Yes,Yes,0.8,0.2,0.1,0.0,No effect
+27.0,4.0,Yes,Rap,Yes,No,0.7,0.6,0.6,0.5,Improve
+60.0,1.0,No,Rock,Yes,No,0.3,0.2,0.5,0.0,No effect
+25.0,5.0,No,Metal,No,Yes,0.8,0.2,0.1,0.0,Improve
+60.0,2.0,Yes,Rock,No,No,0.7,0.7,0.2,0.4,Improve
+43.0,1.0,No,Country,No,No,0.5,0.1,0.1,0.1,Improve
+51.0,5.0,Yes,Rock,No,No,0.1,0.2,0.1,0.0,No effect
+63.0,8.0,Yes,Rock,Yes,No,0.2,0.1,0.2,0.2,Improve
+64.0,2.0,Yes,Classical,No,No,0.5,0.2,0.4,0.0,Improve
+22.0,2.0,Yes,Pop,No,No,0.7,0.2,0.1,0.0,Improve
+24.0,1.0,Yes,Folk,No,Yes,1.0,1.0,0.7,0.8,Improve
+19.0,8.0,Yes,Pop,Yes,Yes,0.7,0.2,0.1,0.6,Improve
+56.0,8.0,Yes,Pop,Yes,No,0.6,0.4,0.1,0.0,Improve
+20.0,1.0,No,EDM,Yes,No,0.5,0.9,0.6,0.1,Improve
+19.0,1.0,Yes,Video game music,No,No,0.7,0.5,0.7,0.0,Improve
+20.0,8.0,Yes,Jazz,Yes,Yes,0.7,0.6,0.7,0.4,Improve
+60.0,2.0,Yes,Rock,No,No,0.0,0.0,0.0,0.0,Improve
+65.0,6.0,Yes,R&B,No,Yes,0.3,0.5,0.0,0.2,No effect
+28.0,3.0,No,Metal,Yes,Yes,0.8,0.8,0.5,0.2,Improve
+18.0,4.0,Yes,EDM,No,Yes,0.8,0.7,1.0,0.6,Improve
+42.0,2.0,Yes,Rock,No,Yes,0.2,0.4,0.5,0.2,Improve
+80.0,3.0,Yes,Classical,No,No,0.7,0.3,0.9,0.2,Improve
+22.0,4.0,No,Pop,Yes,No,0.8,0.7,0.4,0.4,Improve
+56.0,2.0,No,Jazz,Yes,Yes,0.0,0.0,0.0,0.5,No effect
+20.0,1.0,Yes,Pop,No,Yes,0.8,0.6,0.9,0.8,Improve
+15.0,1.0,Yes,Video game music,Yes,Yes,0.4,0.2,0.3,0.2,Improve
+67.0,1.0,No,Rock,No,No,0.3,0.2,0.2,0.2,
+57.0,2.0,Yes,Gospel,No,No,0.6,0.4,1.0,0.0,Improve
+22.0,7.0,Yes,Pop,Yes,Yes,0.8,0.8,1.0,0.0,Improve
+17.0,5.0,Yes,Pop,Yes,Yes,0.5,0.5,0.5,0.5,Improve
+19.0,3.0,Yes,Rock,No,No,1.0,0.8,0.6,0.2,No effect
+50.0,1.0,No,Rock,No,No,0.0,0.0,0.7,0.0,Improve
+24.0,6.0,Yes,Rock,Yes,Yes,0.8,0.8,1.0,0.0,Improve
+67.0,2.0,No,Rock,Yes,No,0.8,0.2,0.0,0.0,No effect
+18.0,3.0,Yes,Metal,Yes,No,0.7,0.8,0.4,1.0,Improve
+20.0,1.5,Yes,Country,No,No,0.0,0.2,0.0,0.1,Improve
+15.0,4.0,Yes,Pop,Yes,No,0.3,0.5,0.4,0.0,Improve
+17.0,2.0,Yes,Pop,Yes,Yes,0.5,0.2,0.3,0.1,Improve
+32.0,2.0,Yes,Folk,Yes,No,0.6,0.1,0.0,0.0,Improve
+18.0,2.0,No,Rap,Yes,Yes,0.6,0.3,0.4,0.2,Improve
+18.0,1.0,Yes,Rock,Yes,No,0.5,0.6,0.8,0.2,Improve
+18.0,3.0,Yes,K pop,Yes,Yes,0.8,0.4,0.7,0.5,Improve
+19.0,3.0,Yes,Pop,Yes,No,0.1,0.1,0.2,0.3,Improve
+18.0,2.0,No,Rock,Yes,No,0.8,0.3,0.1,0.3,Improve
+17.0,6.0,Yes,Rap,Yes,No,0.3,0.3,0.0,0.0,Improve
+34.0,3.0,Yes,Classical,No,Yes,0.0,0.0,0.0,0.0,No effect
+18.0,3.0,Yes,Pop,No,No,0.5,0.4,0.2,0.0,No effect
+18.0,2.0,Yes,R&B,Yes,No,0.2,0.4,0.0,0.0,Improve
+22.0,2.0,Yes,Video game music,No,No,0.4,0.6,0.0,0.2,Improve
+18.0,2.0,Yes,Pop,Yes,No,0.5,0.7,0.2,0.0,Improve
+19.0,3.0,Yes,Rock,Yes,Yes,0.4,0.0,0.7,0.0,No effect
+25.0,4.0,Yes,Pop,Yes,Yes,1.0,0.8,0.6,0.2,No effect
+17.0,2.0,Yes,R&B,Yes,No,0.3,0.3,0.1,0.0,Improve
+25.0,5.0,Yes,Rock,Yes,No,0.8,0.7,0.2,0.1,Improve
+18.0,2.0,Yes,R&B,No,No,0.3,0.3,0.0,0.3,Improve
+21.0,1.0,,K pop,Yes,,0.4,0.5,0.2,0.5,
+24.0,7.0,Yes,Folk,Yes,Yes,1.0,1.0,0.8,1.0,Improve
+16.0,3.0,Yes,K pop,No,Yes,1.0,0.2,0.7,0.8,Improve
+18.0,3.0,No,Metal,Yes,No,0.9,0.6,0.8,0.5,Improve
+18.0,4.0,Yes,R&B,Yes,Yes,0.6,0.4,0.1,0.6,Improve
+16.0,3.0,Yes,Pop,Yes,No,0.3,0.4,0.6,0.8,Improve
+68.0,1.0,Yes,Gospel,No,No,1.0,1.0,1.0,0.0,Improve
+16.0,7.0,Yes,Video game music,Yes,No,0.4,0.8,0.8,0.4,No effect
+21.0,1.0,No,R&B,Yes,Yes,0.3,0.0,0.0,0.0,Improve
+53.0,4.0,Yes,R&B,Yes,Yes,0.1,0.0,0.0,0.0,Improve
+29.0,4.0,Yes,Classical,Yes,No,0.5,0.6,0.7,0.7,No effect
+18.0,3.0,Yes,Video game music,Yes,Yes,0.7,0.0,0.3,0.1,No effect
+29.0,2.0,Yes,Pop,No,No,1.0,0.8,0.8,0.9,Improve
+18.0,4.0,Yes,R&B,Yes,Yes,0.3,0.0,0.3,0.4,Improve
+22.0,5.0,Yes,EDM,Yes,Yes,0.1,0.0,0.0,0.1,No effect
+19.0,6.0,Yes,Pop,No,No,0.6,0.6,0.0,0.0,Improve
+13.0,1.0,Yes,Video game music,Yes,No,0.4,0.3,0.4,0.0,Improve
+26.0,1.0,No,Pop,No,No,0.6,0.4,0.0,0.0,Improve
+14.0,3.0,Yes,Rock,Yes,No,0.2,0.6,0.3,0.0,Worsen
+27.0,1.0,Yes,Pop,Yes,Yes,0.8,0.3,0.3,0.3,Improve
+26.0,8.0,No,Rock,No,Yes,0.8,1.0,0.7,0.3,No effect
+59.0,1.0,No,Rock,No,No,0.1,0.0,0.0,0.1,Improve
+30.0,8.0,Yes,Rock,Yes,No,0.8,0.6,0.6,0.8,Improve
+27.0,1.0,Yes,Pop,Yes,Yes,0.6,0.3,0.1,0.7,Improve
+18.0,1.0,No,Rap,Yes,Yes,0.2,0.0,0.3,0.0,Improve
+23.0,10.0,Yes,Metal,No,Yes,0.0,0.0,0.0,0.0,No effect
+18.0,10.0,Yes,Rock,Yes,No,1.0,1.0,0.6,0.6,Improve
+40.0,5.0,Yes,Rock,Yes,Yes,0.3,0.0,0.0,0.1,Improve
+24.0,10.0,Yes,Rock,Yes,Yes,0.7,0.9,1.0,0.0,Improve
+23.0,2.0,Yes,Classical,Yes,Yes,0.8,0.7,0.6,0.2,Improve
+56.0,6.0,Yes,R&B,No,No,0.2,0.0,1.0,1.0,Improve
+29.0,2.0,Yes,R&B,Yes,No,1.0,0.7,0.9,0.3,No effect
+16.0,3.0,Yes,Pop,No,Yes,0.6,0.0,0.0,0.0,Improve
+18.0,8.0,Yes,Gospel,Yes,Yes,0.3,0.0,0.2,0.2,Improve
+21.0,8.0,Yes,Lofi,Yes,Yes,0.6,0.5,0.9,0.8,Improve
+32.0,8.0,Yes,Rock,Yes,No,0.7,0.6,0.5,0.8,Improve
+22.0,8.0,Yes,Metal,Yes,No,1.0,0.7,0.8,0.6,Improve
+17.0,12.0,Yes,Latin,Yes,No,0.0,0.3,0.9,0.5,No effect
+18.0,6.0,Yes,EDM,Yes,Yes,0.0,0.2,0.1,0.5,Improve
+18.0,4.0,Yes,R&B,No,Yes,0.2,0.0,0.0,0.0,No effect
+24.0,8.0,Yes,Jazz,Yes,No,0.2,0.2,0.4,0.0,No effect
+21.0,2.0,No,Pop,No,No,0.5,0.6,0.3,0.4,No effect
+46.0,1.0,No,Rock,No,No,0.0,0.0,0.1,0.0,No effect
+18.0,2.0,Yes,Hip hop,Yes,No,0.5,0.4,0.3,0.7,Improve
+16.0,3.0,Yes,K pop,Yes,Yes,0.2,0.7,0.0,0.0,Improve
+21.0,1.0,Yes,Video game music,Yes,Yes,0.0,0.6,0.0,0.4,Improve
+19.0,0.0,No,Classical,Yes,Yes,0.0,0.0,0.0,0.0,Improve
+20.0,2.0,Yes,Rap,Yes,Yes,0.7,0.5,0.1,0.3,Improve
+21.0,0.1,Yes,Folk,No,Yes,0.7,0.5,0.3,0.1,No effect
+56.0,2.0,Yes,Rock,No,Yes,0.3,0.3,0.1,0.8,No effect
+21.0,12.0,Yes,Rock,Yes,Yes,0.7,1.0,0.4,0.7,Worsen
+20.0,1.0,Yes,Pop,Yes,No,0.3,0.2,0.3,0.0,Improve
+21.0,1.0,Yes,Rock,No,No,0.5,0.1,0.1,0.9,Improve
+25.0,3.0,Yes,Rock,No,No,0.8,0.9,0.4,1.0,Improve
+33.0,2.0,Yes,Metal,Yes,Yes,0.4,0.8,0.0,0.0,Improve
+20.0,2.0,Yes,Rock,Yes,Yes,0.7,0.9,0.7,0.0,Improve
+17.0,3.0,Yes,Rock,Yes,No,0.1,0.5,0.6,0.4,No effect
+24.0,1.0,No,Jazz,Yes,Yes,0.3,0.2,0.1,0.0,No effect
+26.0,3.0,Yes,Jazz,Yes,Yes,0.6,0.8,0.0,0.0,Improve
+17.0,3.0,Yes,Rock,No,No,0.6,0.3,0.6,0.0,Improve
+16.0,5.0,Yes,Metal,Yes,Yes,0.7,0.4,0.8,0.0,Improve
+27.0,8.0,Yes,Metal,Yes,No,0.2,0.6,0.9,0.1,No effect
+28.0,4.0,Yes,Hip hop,Yes,Yes,0.8,0.5,0.3,0.8,Improve
+48.0,5.0,Yes,Rock,Yes,Yes,0.3,0.3,0.0,0.0,Improve
+19.0,3.0,Yes,Rap,No,Yes,0.7,0.5,0.3,0.3,Improve
+21.0,4.0,Yes,Rock,Yes,Yes,0.4,0.8,0.2,0.3,Improve
+21.0,1.0,Yes,Classical,No,No,0.3,0.0,0.0,0.5,Improve
+15.0,4.0,Yes,Metal,Yes,Yes,1.0,0.7,0.3,0.2,Improve
+20.0,1.0,No,Rock,Yes,Yes,1.0,0.4,0.8,0.0,Improve
+21.0,2.0,Yes,Video game music,No,Yes,0.2,0.2,0.0,0.0,Improve
+22.0,6.0,Yes,Folk,Yes,No,0.8,0.7,0.7,0.3,Improve
+22.0,2.0,No,Rock,No,No,1.0,0.5,0.2,0.8,Improve
+31.0,1.0,Yes,Rock,Yes,No,0.9,1.0,1.0,0.6,No effect
+20.0,4.0,Yes,Metal,Yes,No,0.5,0.2,0.1,0.6,Improve
+49.0,8.0,Yes,Classical,No,No,0.4,0.8,0.9,0.1,Improve
+42.0,2.0,Yes,Metal,Yes,Yes,0.7,0.8,0.5,0.3,Improve
+26.0,2.0,Yes,EDM,Yes,Yes,0.2,0.2,0.0,0.3,No effect
+17.0,10.0,Yes,K pop,Yes,Yes,1.0,0.3,0.0,0.4,Improve
+30.0,0.0,No,Metal,No,No,1.0,1.0,1.0,0.9,Improve
+23.0,6.0,Yes,Folk,Yes,Yes,0.3,0.7,0.7,0.4,No effect
+30.0,3.0,Yes,EDM,Yes,Yes,0.7,0.5,0.7,0.7,Improve
+31.0,2.0,Yes,Metal,No,Yes,0.7,0.4,0.8,0.8,Improve
+42.0,0.25,No,Classical,Yes,Yes,0.7,0.9,0.4,0.5,Improve
+16.0,4.0,Yes,EDM,Yes,Yes,0.4,0.7,0.1,0.3,Improve
+34.0,2.0,No,Metal,Yes,No,0.5,0.9,0.9,0.6,Improve
+21.0,2.0,Yes,Pop,Yes,No,0.5,0.4,1.0,0.7,No effect
+27.0,3.0,Yes,Pop,No,No,0.7,0.2,0.0,0.1,Improve
+18.0,6.0,Yes,Folk,Yes,Yes,0.8,0.6,0.0,0.2,Improve
+26.0,3.0,No,Metal,Yes,No,0.1,0.3,1.0,0.0,No effect
+37.0,2.0,Yes,Rock,Yes,No,0.8,1.0,1.0,0.2,Worsen
+26.0,5.0,Yes,Folk,Yes,Yes,0.4,0.7,0.6,0.0,No effect
+19.0,4.0,No,Pop,No,Yes,0.9,0.6,0.3,0.0,No effect
+22.0,4.0,Yes,Rock,Yes,No,1.0,0.7,0.4,0.4,Improve
+43.0,0.0,No,Rock,No,No,0.1,0.2,0.2,0.0,No effect
+24.0,12.0,Yes,Rock,Yes,No,0.7,1.0,0.0,0.8,Improve
+21.0,0.5,No,Pop,No,No,1.0,0.2,0.1,1.0,Worsen
+28.0,1.0,Yes,Rock,No,No,0.2,0.1,0.2,0.2,Improve
+23.0,3.0,Yes,R&B,Yes,Yes,0.3,1.0,0.0,0.0,No effect
+20.0,12.0,No,Rock,Yes,Yes,0.7,1.0,0.2,0.0,Improve
+17.0,4.0,Yes,Metal,No,No,0.4,0.2,0.0,0.0,Improve
+19.0,3.0,Yes,R&B,No,No,0.4,0.2,0.5,0.3,Improve
+32.0,1.0,Yes,Metal,Yes,Yes,0.6,0.8,0.7,0.0,Improve
+18.0,4.0,No,Folk,Yes,Yes,0.8,0.6,0.4,0.0,Improve
+20.0,2.0,Yes,Rock,Yes,No,0.2,0.2,0.0,0.0,No effect
+27.0,3.0,Yes,Rock,Yes,Yes,0.8,0.7,0.9,0.3,Improve
+15.0,3.0,Yes,Rock,No,,0.4,0.3,0.5,0.0,No effect
+26.0,1.0,Yes,Rock,Yes,Yes,0.6,0.1,0.0,0.4,No effect
+24.0,2.0,Yes,Pop,Yes,Yes,0.6,0.6,0.3,0.6,Improve
+20.0,1.0,Yes,K pop,Yes,Yes,0.8,0.7,0.1,0.1,No effect
+21.0,0.5,Yes,Pop,Yes,Yes,0.5,0.3,0.4,0.1,Improve
+16.0,2.0,Yes,Video game music,No,No,0.6,0.2,0.4,0.3,Improve
+21.0,11.0,Yes,Metal,Yes,Yes,0.5,0.6,0.6,0.0,Improve
+27.0,10.0,Yes,Jazz,Yes,Yes,0.6,1.0,0.8,0.1,Improve
+17.0,5.0,Yes,Rock,Yes,No,0.7,0.3,0.9,0.7,Improve
+21.0,1.5,Yes,Classical,Yes,Yes,0.4,0.6,0.0,0.0,No effect
+17.0,2.0,Yes,Folk,Yes,Yes,0.9,0.4,0.0,0.1,Improve
+21.0,3.0,No,Rap,Yes,Yes,0.9,0.7,0.7,0.5,Improve
+17.0,2.0,No,Rock,Yes,No,0.5,1.0,0.2,0.7,No effect
+36.0,3.0,Yes,Country,No,Yes,0.1,0.0,0.1,0.0,Improve
+18.0,4.0,No,R&B,Yes,Yes,0.8,0.7,0.2,0.6,Improve
+18.0,1.0,No,K pop,No,Yes,0.5,0.1,0.4,0.0,Improve
+18.0,5.0,Yes,Latin,Yes,Yes,1.0,0.6,0.0,0.0,Improve
+18.0,2.0,Yes,R&B,Yes,No,0.7,0.5,0.5,0.5,Improve
+18.0,7.0,Yes,Hip hop,Yes,Yes,0.3,0.1,0.0,0.3,Improve
+18.0,2.0,Yes,Rap,Yes,Yes,0.5,0.8,0.7,0.4,Improve
+18.0,1.0,Yes,Classical,No,No,0.2,0.0,0.0,0.5,No effect
+18.0,1.0,No,Classical,No,No,0.7,0.0,0.0,0.0,No effect
+18.0,4.0,Yes,R&B,No,No,0.8,0.0,0.0,0.2,No effect
+20.0,6.0,Yes,R&B,Yes,Yes,0.4,0.1,0.1,0.0,Improve
+19.0,3.0,Yes,Hip hop,Yes,No,0.3,0.8,0.0,0.2,Improve
+17.0,4.0,Yes,Hip hop,Yes,No,0.7,0.0,0.2,0.2,Improve
+23.0,4.0,Yes,Video game music,Yes,Yes,1.0,0.8,1.0,0.0,Improve
+18.0,1.0,Yes,Pop,Yes,No,0.7,0.1,0.1,0.1,Improve
+19.0,2.0,Yes,Pop,Yes,Yes,0.5,0.9,0.1,0.7,No effect
+89.0,24.0,Yes,Rap,No,No,0.0,0.0,0.0,0.0,No effect
+20.0,5.0,Yes,R&B,Yes,Yes,1.0,0.6,0.3,0.8,Improve
+16.0,3.0,No,Rock,Yes,Yes,0.7,0.35,0.35,0.55,Improve
+17.0,4.0,Yes,Country,Yes,Yes,0.2,0.0,0.0,0.2,Improve
+16.0,9.0,Yes,Metal,No,Yes,1.0,1.0,1.0,0.8,Improve
+20.0,1.0,Yes,Pop,No,Yes,0.8,0.9,0.6,0.5,Worsen
+30.0,1.0,Yes,Rock,Yes,Yes,0.9,0.7,0.8,0.4,Improve
+37.0,2.0,Yes,Folk,Yes,No,0.6,0.4,0.5,0.0,Improve
+44.0,1.5,No,Folk,No,No,0.8,0.5,0.9,0.4,Improve
+21.0,2.0,Yes,Metal,Yes,Yes,0.3,0.7,0.0,0.0,Improve
+19.0,4.0,Yes,Pop,Yes,No,0.9,0.1,0.0,0.9,Improve
+23.0,1.0,Yes,Rock,Yes,Yes,0.8,0.6,0.1,0.4,Improve
+26.0,1.0,No,Country,Yes,No,0.4,0.1,0.1,0.6,Improve
+18.0,3.0,Yes,Video game music,Yes,Yes,0.6,0.5,0.3,0.1,No effect
+35.0,4.0,Yes,Hip hop,Yes,No,0.7,0.8,0.6,0.5,Improve
+16.0,8.0,Yes,Rock,Yes,No,0.8,0.9,0.5,1.0,Improve
+19.0,5.0,Yes,Metal,Yes,Yes,0.8,0.6,0.7,0.0,Improve
+23.0,3.0,Yes,Rock,No,No,1.0,0.5,0.2,0.0,Improve
+17.0,8.0,Yes,Pop,Yes,Yes,0.5,0.2,0.4,0.7,No effect
+29.0,1.0,No,Country,Yes,No,0.9,0.3,0.2,0.0,No effect
+21.0,4.0,Yes,Pop,No,No,0.4,0.6,0.3,0.4,Improve
+17.0,1.0,No,Metal,Yes,Yes,0.9,0.8,0.4,0.0,Improve
+23.0,2.0,No,Rock,Yes,Yes,0.5,0.7,1.0,0.2,No effect
+17.0,1.0,Yes,Metal,Yes,Yes,0.8,0.3,0.9,0.2,No effect
+22.0,3.0,Yes,Video game music,Yes,Yes,1.0,1.0,0.6,0.8,Improve
+17.0,5.0,Yes,Hip hop,Yes,No,0.7,0.7,0.5,0.5,Improve
+19.0,5.0,Yes,Pop,Yes,Yes,1.0,0.8,0.1,0.0,Improve
+19.0,4.0,Yes,Pop,Yes,Yes,0.8,0.6,0.2,0.0,Improve
+16.0,6.0,Yes,Pop,Yes,Yes,1.0,0.7,0.6,1.0,Improve
+19.0,6.0,Yes,Pop,Yes,Yes,0.6,0.6,0.8,0.0,Improve
+13.0,1.0,Yes,Video game music,Yes,No,1.0,1.0,0.8,0.4,Worsen
+18.0,18.0,Yes,EDM,Yes,No,0.9,0.8,0.5,1.0,Improve
+26.0,1.0,Yes,Metal,Yes,Yes,0.0,0.0,0.0,0.0,No effect
+14.0,7.0,Yes,Country,Yes,No,0.7,0.3,0.1,0.2,Improve
+21.0,0.5,No,Pop,Yes,No,0.6,0.2,0.2,0.0,Improve
+21.0,2.0,Yes,R&B,Yes,Yes,0.7,0.6,0.4,0.6,Improve
+17.0,2.0,Yes,Rock,Yes,Yes,0.7,0.6,0.0,0.9,Improve
+18.0,1.0,Yes,Pop,Yes,Yes,0.3,0.2,0.2,0.5,Improve
+19.0,6.0,Yes,Rap,Yes,No,0.2,0.2,0.2,0.2,Improve
+19.0,5.0,Yes,Classical,No,No,0.2,0.3,0.2,0.1,Improve
+29.0,2.0,Yes,Hip hop,Yes,Yes,0.2,0.2,0.2,0.5,Improve
+13.563943901056993,16.895541110116902,Yes,Rock,Yes,No,0.46283909785811683,0.6127999494773453,0.12736941523818338,0.3861854478570884,Improve
+87.7426379808156,17.06507020018053,No,Folk,Yes,No,0.9819636191408115,0.27925846610191696,0.9324426779730889,0.5644594394419891,Improve
+11.523586282424152,13.512698190653312,Yes,Classical,No,Yes,0.23535727557157515,0.18928966367193945,0.13233731435669838,0.3373057219736439,Improve
+39.199012505672655,19.11324600150704,Yes,Rap,No,No,0.7668888205845142,0.14952656925070706,0.5210295177045235,0.4740148090929899,No effect
+10.910437175215876,3.455338810953764,Yes,Folk,Yes,Yes,0.446757139380041,0.8848035648635035,0.24828989219934638,0.3053101051401041,Improve
+82.54850859814609,22.552414509431177,No,Classical,Yes,Yes,0.3602456710155362,0.5490657689947732,0.5308261693813144,0.34355506740016767,Improve
+46.560282431459285,12.208994186736684,Yes,Metal,Yes,No,0.47933751852882606,0.777243254769662,0.9571492997553694,0.3389256203529922,No effect
+44.32253803117162,0.0988275654019341,No,Rock,Yes,Yes,0.940981437923714,0.38693922525653834,0.7199175439706754,0.4059872063364628,Improve
+76.60127738551007,8.845056900095571,Yes,Metal,No,No,0.8656983986830425,0.4906889914325239,0.36802610885328135,0.4164771254223668,Improve
+64.10549566745246,20.06755530172736,Yes,Pop,No,No,0.1432413151909796,0.7459527526232212,0.7995287978505484,0.25056597556778437,Improve
+12.0973042356081,23.412420122419515,Yes,Metal,No,No,0.4305346484143403,0.059299958855790647,0.2064149888579545,0.4678383815544535,Improve
+50.80749830668335,21.430891982619887,Yes,Classical,Yes,Yes,0.01568594350666907,0.7670596009323384,0.7568682085869824,0.2229459919777863,Improve
+26.60642745249296,0.3706742042952555,Yes,Pop,Yes,Yes,0.3265744059282332,0.5861880519552433,0.2058319635688361,0.16701446518392077,Improve
+41.65762534041394,15.174186874972143,No,Rock,Yes,Yes,0.34680411185939797,0.5482846094467884,0.5436282000802336,0.34547730666107235,No effect
+82.58079876656181,22.34412362084708,No,Metal,Yes,No,0.8861919910149565,0.4896308060981244,0.25836077413302583,0.4275877249451511,Improve
+38.15121400331017,18.66704556806609,Yes,Lofi,No,Yes,0.6706347139618071,0.6906639330484492,0.2812877577372055,0.399204049896088,Improve
+81.36509477019037,21.95814783721094,Yes,Video game music,Yes,Yes,0.8285689765674136,0.012510165793703782,0.3436392486433518,0.4800326164503315,Improve
+13.23076631591248,10.536961412402476,Yes,Rock,Yes,No,0.7107654573929425,0.5710352101547692,0.9861114797647677,0.5676801870601835,Improve
+67.36638725511497,2.144877419639505,Yes,Rap,Yes,No,0.053167248107177545,0.3078228106283012,0.8019354333813885,0.10803007542364187,Improve
+68.30728556402428,23.734548984427978,No,Rock,Yes,No,0.9372057420559544,0.2653219036590544,0.7892301424179496,0.6198596520423199,Improve
+49.633827197892,22.650167842095385,Yes,Hip hop,Yes,No,0.8819403039105206,0.1870381927803761,0.2971396291399281,0.5151347192822792,Improve
+21.11601444062247,13.237394298135255,Yes,Pop,No,No,0.42536253383453176,0.7735719165229488,0.430963361879752,0.339522943052035,Improve
+86.77711522429398,17.286569767131326,No,Pop,Yes,Yes,0.7612401247601861,0.2173415918294138,0.7519777592582633,0.502550323955923,Improve
+42.53769054102719,3.768027762818445,Yes,Rap,No,No,0.32966531213042893,0.39709683520439687,0.06479980048069844,0.19758417460733008,Improve
+31.6554716073926,9.914263766279308,Yes,Pop,Yes,Yes,0.2306524304009907,0.3485510418707896,0.11394061414540813,0.2735194034868983,Improve
+58.86020267375553,21.21340906303795,Yes,EDM,Yes,Yes,0.5471826192732292,0.2488928866819445,0.2158720602279096,0.40956939544600424,Improve
+13.144939350862504,12.488342069704586,Yes,R&B,Yes,No,0.09060864059056016,0.8515130593073044,0.2895880501301098,0.21639573293650388,Improve
+45.07584378875008,16.855786625556256,Yes,Folk,Yes,No,0.7295383924671162,0.2006656393115013,0.9138208492124299,0.5251095004986349,No effect
+48.82968908095,6.527523499333927,Yes,Pop,Yes,Yes,0.3248795573963055,0.0053216009117451595,0.8280916215607201,0.2926042851148561,Improve
+59.81135129522895,6.430364541172846,Yes,Metal,No,No,0.6796648882373321,0.3637339467354822,0.40775309464421633,0.3423557035471273,Improve
+84.24662473697651,9.445315031305036,Yes,Gospel,No,No,0.24833997287779921,0.6394578249760539,0.8091403631457516,0.15729194052297385,Improve
+77.54494247799092,0.6303856894892821,No,Hip hop,No,Yes,0.7050157013841104,0.42243509510987864,0.17057770337895284,0.1847896514665352,No effect
+88.03626190001788,3.3844328717790217,Yes,Gospel,Yes,No,0.9727989328295964,0.0255521169131031,0.22698436757352533,0.3531787277661486,Improve
+84.97452609017242,23.829350558863027,Yes,Country,Yes,Yes,0.22503740726941368,0.545651841022273,0.6283119188689241,0.2866946629764931,No effect
+73.70643656740448,9.53474528165078,Yes,Classical,Yes,No,0.00379501768606316,0.2579688197515376,0.6615890554624758,0.08711897628559521,Improve
+53.71467080031338,12.134813948083716,Yes,Rock,Yes,Yes,0.514303082789736,0.7520480449761888,0.7155265046196085,0.3773413235417058,No effect
+29.766984954650432,8.254949860704947,Yes,Country,Yes,Yes,0.5949006807374708,0.6676706459859938,0.16467238841440257,0.37808249176939246,Improve
+66.06823979957474,11.862237544079658,Yes,K pop,Yes,Yes,0.23464891217205297,0.21069958536566444,0.5273833001037046,0.2029431212008344,Improve
+60.522242939010745,23.83774848994832,Yes,Rock,No,No,0.545044145724677,0.9496586163253552,0.45323714446120816,0.44087744176772736,Improve
+58.281230460107466,15.728507383816243,Yes,Jazz,No,No,0.7291117137415979,0.5651776550052565,0.49098736516004227,0.46929414890409094,Improve
+83.66189700837188,14.206504267780408,No,Classical,Yes,Yes,0.7431262232579171,0.9562739501570018,0.5135697389019609,0.2842908262127304,Improve
+64.17785673234641,8.288077769492102,Yes,EDM,No,Yes,0.3765358375261565,0.030986293980792667,0.4975527091193057,0.2861834192906712,Improve
+43.32221482920267,8.312547095519825,Yes,Folk,Yes,Yes,0.6173559294735503,0.3056276044445926,0.16987368746177334,0.2769901043509714,Improve
+12.720758983547512,6.016552766510181,No,EDM,Yes,Yes,0.7800199998778967,0.78996232868815,0.14760140113907327,0.413625697113665,No effect
+36.29687558724629,22.24032849245417,Yes,Rap,Yes,No,0.9842452271719482,0.46516069163968377,0.8067992780160489,0.5883950656493057,Improve
+66.5361320929056,1.936973654556409,Yes,Classical,Yes,Yes,0.8202578635859092,0.738209978947144,0.9414342017674959,0.4092581371158973,No effect
+23.21896385433218,9.471117182148513,Yes,Pop,Yes,No,0.13788934750328238,0.48505240728123467,0.8810602478462902,0.27778557051058234,Improve
+53.95049237122675,7.735637275582869,Yes,Lofi,Yes,Yes,0.2906935903773864,0.46795065251377144,0.0541712386388995,0.11888441424401794,Worsen
+86.15171167682502,19.62387818273792,Yes,Rap,Yes,Yes,0.7082088168522773,0.836591709996916,0.6359108522974793,0.41929205446574735,No effect
+86.71956659496813,13.1973708196949,Yes,R&B,Yes,No,0.025142140778597,0.8794027119657903,0.8759833576106107,0.06797391339209605,Improve
+15.37981194546316,0.1784042734916022,Yes,Pop,No,Yes,0.4818042432358613,0.11812795850486268,0.5958009424871205,0.2930989006188705,Improve
+50.951022133306864,18.47905639589592,Yes,Folk,Yes,No,0.27912098588087975,0.43957946152800254,0.31454582510168827,0.2805255651704271,Improve
+78.87277531768214,6.176170938056464,Yes,Classical,No,No,0.6342976797661817,0.02319854574169078,0.6540495570822928,0.26905216030260004,Improve
+50.96594861232986,10.022074717787826,Yes,Jazz,Yes,Yes,0.621960995819413,0.8160493946379296,0.96919402542956,0.3301530428725471,Improve
+15.53131238591701,3.9549262919549273,Yes,Classical,Yes,No,0.8676955170798074,0.41060286789657124,0.00508535402669696,0.34159066581072306,Improve
+31.18542370447408,12.859702244463804,Yes,Metal,Yes,Yes,0.8965101123835815,0.44748784264754693,0.02575184107124584,0.47675936966103316,Improve
+46.27613064482924,13.340181454042842,Yes,Rock,Yes,Yes,0.0657386838565085,0.2654851688107466,0.9108912002406548,0.21506358971836592,No effect
+23.822200489709864,21.34173052645137,Yes,Hip hop,No,Yes,0.2082797535495632,0.7583021002444079,0.5776861840699002,0.3688601536445319,Improve
+62.26775763288208,11.07852659432602,Yes,Pop,Yes,No,0.0073075706551211095,0.8476978265782484,0.3551720646067035,0.0884928850491956,Improve
+34.39222608562879,13.816229659424843,Yes,Pop,Yes,Yes,0.983248461510494,0.11102303377037848,0.2660121362604474,0.5873960147034749,No effect
+14.781412189152457,17.360595225752498,No,Pop,No,Yes,0.853909380485155,0.8438311882931661,0.6535487940279159,0.4931508360564286,Improve
+41.57173358910086,10.30112017618552,Yes,K pop,Yes,Yes,0.3423488588309518,0.6652162560969037,0.4726884135528378,0.2102460798456597,Improve
+57.91912004963657,7.637236864541165,Yes,Classical,No,Yes,0.42119097591241045,0.7798597409976715,0.7538526596996874,0.2357285790578599,Improve
+81.63102637070843,11.860337321523978,Yes,Lofi,Yes,Yes,0.08592225886804283,0.4970726086349496,0.5574885569895307,0.08764709409797482,Improve
+15.779562091820688,19.130994556436704,Yes,Rock,Yes,Yes,0.6016246286777702,0.9485144595003661,0.3689312304132336,0.4898732062363478,Improve
+40.83931877599606,18.73674078571789,No,Metal,No,No,0.11665465735358893,0.7274769391779184,0.8293216834674813,0.26334817356912466,Improve
+17.951477283865614,21.334515901156408,Yes,Metal,Yes,No,0.4844070996421433,0.9608841117232336,0.23083100818041694,0.44762180886202324,Improve
+52.62384561481319,0.5877909973773798,Yes,Pop,Yes,Yes,0.1254221334524439,0.15933802202100478,0.3450327407391227,0.12235233969748469,Improve
+81.47576511513884,8.794355696533444,Yes,Pop,Yes,Yes,0.28251794363803706,0.1381384711739733,0.8629692529106864,0.1800675787871131,Improve
+28.05498164044445,13.407474223825282,Yes,Rock,Yes,No,0.0991945568587046,0.7331001167810489,0.10430658987908126,0.15180660628386575,Improve
+25.247984845170524,18.204026816663472,Yes,Rock,Yes,No,0.7919653652746266,0.5213742096152074,0.8585927114199462,0.6186489464455118,Improve
+48.305631715529735,5.760032519289783,Yes,Rock,Yes,No,0.8308036751930865,0.9986406408636755,0.8453632773274965,0.3798263266715352,Improve
+33.366990284765336,16.74111558572788,Yes,Classical,Yes,No,0.3889726008229638,0.957526082280084,0.3540927142370828,0.3253326651505416,No effect
+20.567530042402822,15.352303408215947,No,Pop,Yes,Yes,0.10536513743638265,0.7576912766764113,0.5669084545462978,0.2986414053999453,Improve
+58.01140057230924,8.089492707520563,Yes,Rock,Yes,Yes,0.975001514938555,0.41172845808587377,0.044016798556473107,0.4502764267465548,Improve
+39.21484278547123,15.794144144292474,No,Classical,No,Yes,0.3133074679389556,0.6846391168115449,0.2979024177485563,0.24196438335888132,Improve
+16.215268765646268,19.655886441536467,Yes,Pop,Yes,No,0.13774724477637246,0.970472134402977,0.3256337384798308,0.2962833010136473,Improve
+46.99954883744384,14.265069935097952,Yes,Rock,Yes,No,0.8517284937510057,0.5957998676728388,0.3292900386934692,0.464450259041261,Improve
+69.54510877959854,14.949133809762802,Yes,Metal,Yes,Yes,0.00905411259823285,0.1290135332348774,0.8086459736264043,0.263677157028674,Improve
+83.99783700086535,17.35089142690167,Yes,Pop,Yes,Yes,0.6132220717040971,0.7293105552060788,0.6387420885743824,0.3127190949981406,Improve
+48.160568631888985,0.5848396046646966,Yes,Hip hop,Yes,No,0.7369725300453678,0.5310210631582563,0.4956909876184299,0.36477402300511935,No effect
+83.12421359708202,11.938847022817074,No,Rock,Yes,No,0.01749926305924687,0.16796158899993918,0.10297341162563045,0.04161330050199591,No effect
+27.08148186798306,14.363989958498063,Yes,Gospel,No,Yes,0.24321398538350203,0.287579683021541,0.901609861940425,0.3702641156453342,Improve
+59.385069306404894,5.119910403810091,Yes,Country,Yes,Yes,0.3334749832863303,0.15465176304632533,0.5074668781077162,0.21232808573035772,No effect
+60.9448877685933,10.896676328741217,Yes,Rock,Yes,Yes,0.7676444976899554,0.45351516295221783,0.4813857119109398,0.40839194064918927,No effect
+23.784356514271018,4.493686744095449,Yes,Pop,Yes,No,0.1531767545545215,0.874796462255578,0.7014802147624128,0.23374211867567282,Improve
+77.52370772847884,23.68930905573937,No,Metal,Yes,No,0.5488707543727331,0.21477908129200038,0.519026377868958,0.3766015925883348,Improve
+80.86314671725742,5.503128340610947,Yes,Pop,Yes,Yes,0.017963204856956568,0.3481689839477755,0.6312803536960561,0.1103551673226217,Improve
+80.50124876334345,9.027514722415726,Yes,Rap,No,Yes,0.41333388295195944,0.02324953335604829,0.4479305943218838,0.22765088918331783,No effect
+68.58009824634753,19.116099128431348,Yes,Classical,Yes,Yes,0.7328989585899975,0.0020885733419190302,0.49696530619727053,0.5135840112546444,No effect
+56.84278559001166,10.192302151550102,Yes,Pop,Yes,Yes,0.4222918767436804,0.16514180544677048,0.9508084034205109,0.3767241334927918,Improve
+74.91995960268731,2.933559479645549,Yes,K pop,Yes,No,0.4503540344233419,0.744921038395986,0.9668208599636625,0.17138142232357426,Improve
+58.60857248871842,12.502736602876148,Yes,Pop,Yes,Yes,0.6661900741241484,0.17071185029969838,0.03602577191831302,0.3227964045623671,Improve
+45.638015796268135,22.021738458958765,Yes,Video game music,Yes,Yes,0.28434606454515043,0.07837282321481953,0.6796377560573439,0.4354127267086728,Improve
+68.54699630420416,23.78420998443772,Yes,Country,Yes,Yes,0.25402547608327153,0.8209802161907686,0.00066677133859816,0.2213101139149142,Improve
+47.11187701345423,19.210485663344368,Yes,Rock,Yes,Yes,0.7348459046165583,0.7949885229941422,0.7777011396910671,0.45052133847581644,Improve
+42.4453640451674,5.0019835404214925,No,Pop,Yes,No,0.0377016611540496,0.1952765503203615,0.9082222423766624,0.15383140093118983,Improve
+21.364871502726828,20.965449884527875,Yes,Rock,No,Yes,0.594590140103715,0.13032210555694582,0.010937805179388239,0.4436136821202357,Improve
+29.04063280374087,3.557558955005722,Yes,Rock,Yes,No,0.5127886045541132,0.7132745245439741,0.2583666560402762,0.2405888135826515,Improve
+64.14335009666694,7.919350389918763,Yes,Metal,No,Yes,0.5736081182677675,0.9544940693479728,0.07782901102698125,0.18183287080627394,Improve
+22.501925256377685,11.103216283404151,Yes,Classical,Yes,No,0.819344514883053,0.7009199858879241,0.1336575893047004,0.47192194104356255,Improve
+35.1332523180006,10.004168702038564,Yes,Rap,No,No,0.7889147668652947,0.12221097806781844,0.8842619026081071,0.5003269159230415,Improve
+24.82477759234593,22.136904193833264,Yes,Rock,Yes,No,0.2799185016586394,0.2819421188964303,0.44768502498658014,0.3884602481380993,Improve
+34.74558226151504,8.095609948659492,Yes,EDM,Yes,Yes,0.6631528370632233,0.08486886154252249,0.1628076671197073,0.3977251167875036,Improve
+84.7128346222441,15.310145874861568,No,Rock,No,Yes,0.34928194715733596,0.44150144208449194,0.22246443785553413,0.16703771110826346,No effect
+40.52876451013815,7.96716054106601,No,Rock,Yes,No,0.2598126796191206,0.7020288589708168,0.2082452397672201,0.17670466485848138,No effect
+88.70514874404999,1.49492897391323,Yes,Pop,Yes,No,0.6536282346062562,0.34700496310213347,0.9435527289176578,0.31667236665227216,Improve
+59.439285078108206,3.4159148985289587,Yes,Rap,No,No,0.35751430442107446,0.3845982803793815,0.586703618088308,0.2336285807086338,No effect
+40.93666053269543,6.773067043056841,Yes,Pop,Yes,No,0.6643242750406015,0.2633460276299471,0.6066480570473588,0.3273739777854352,No effect
+35.12404262913308,17.33011057670839,Yes,Pop,Yes,No,0.16189165936891323,0.9198548976509245,0.30725565790701614,0.26164072004584843,Improve
+82.42259231553882,16.461663781450085,No,EDM,Yes,Yes,0.02469921767500749,0.601825867292902,0.9008600567102191,0.1925790894409665,Improve
+57.187236249271855,23.77617519647562,No,Rock,Yes,No,0.92615597082723,0.6328671159671124,0.33795758798506287,0.489910818425708,Improve
+43.63863309665038,18.947980063193143,Yes,Rock,Yes,No,0.6542639628142536,0.6374373316132628,0.9021709205940039,0.47275710764867923,No effect
+29.28344852358249,13.411290477161788,No,Classical,Yes,Yes,0.4530713716174102,0.12272665744268552,0.8929950830477236,0.48259898193894085,Improve
+33.40057148437095,2.2440102172803185,Yes,Pop,No,Yes,0.6909460875428539,0.8279575929635424,0.2888192658510884,0.34639277002073404,Improve
+36.34575672391878,23.90907512694732,Yes,Metal,No,No,0.9481629250116228,0.08503214642470058,0.08373799040190533,0.6270677128155636,Improve
+65.5495867019525,1.0581804869575857,No,R&B,Yes,No,0.5764841466092783,0.8250512021834424,0.6140260693379749,0.1807885779091695,No effect
+58.95271164576924,15.58919579647349,No,Metal,Yes,Yes,0.08705011521465944,0.7088208703885658,0.7174270852971814,0.2708295533501733,Improve
+72.14727514178753,5.775759658225124,Yes,Rock,Yes,No,0.42229848301431083,0.44217476079761814,0.10571765729647309,0.19373598764835268,Improve
+24.183635635144547,10.97600965397406,Yes,Video game music,Yes,Yes,0.6378148949095802,0.3949527165064168,0.729068362161606,0.39510004233282553,Improve
+11.865773066734237,20.58539591656072,Yes,Classical,No,No,0.7602084106195917,0.6830832174561213,0.4916485917936394,0.4899536376429191,Improve
+37.93578869580825,20.920347971614795,Yes,Pop,Yes,No,0.9677035031979708,0.953139271044817,0.1857484623440847,0.5415379324267346,Improve
+83.72588201338363,15.559409456199395,Yes,Rock,Yes,No,0.4908145879995076,0.6349298578161221,0.7447396250356378,0.30490585712500445,Improve
+49.67017178257006,16.8868064077558,Yes,Metal,Yes,Yes,0.6850034502863384,0.6852823443936826,0.025324514245932073,0.31473065416701723,Improve
+36.4894191544477,3.5447593950052934,Yes,Metal,No,No,0.5337508633180625,0.9781015703632464,0.5783035930644358,0.2224882413015418,Improve
+21.65186493178708,7.904844954358199,No,Metal,Yes,No,0.9666616597830988,0.5711307598603214,0.3026272821231657,0.4353277691962406,Improve
+81.36079938056788,13.804441876927148,Yes,Pop,Yes,No,0.16521860567064073,0.9303453691164668,0.3170467739470668,0.1604303864361356,Improve
+68.21067710681682,6.312953897572174,Yes,Rap,No,Yes,0.7581789433215596,0.6808641535873684,0.24696718939503737,0.32690065619669284,No effect
+81.47487058522739,20.43268266119121,No,Metal,Yes,No,0.9451232962450508,0.5445391495221783,0.8131372085781884,0.5211221629631773,Improve
+76.74970440346017,13.77589015847877,Yes,Video game music,Yes,No,0.2723332593326373,0.3201571537734865,0.4668584191017716,0.2181520268814352,Improve
+35.74523381231289,8.428299805027095,Yes,Rock,Yes,Yes,0.6185093875522397,0.7562818956667057,0.33519976256442907,0.3323574275039293,Improve
+10.368445565093758,14.244045305747983,Yes,Folk,Yes,No,0.8500101121482431,0.9435686239896783,0.009718645719055,0.3945605114139661,Improve
+59.70267141019656,11.336278685630033,Yes,Pop,Yes,No,0.7377687013739118,0.4868191446774195,0.7270201330507561,0.44138899300616574,Improve
+77.11329310725704,4.212027110005025,Yes,Video game music,Yes,Yes,0.9265825027366802,0.13967670161559564,0.9607201471309995,0.4374647181542458,No effect
+78.9739248686382,3.163744430777381,Yes,Rock,Yes,Yes,0.4755805985306372,0.22484039961934044,0.44737795504876443,0.17598628552002102,Improve
+69.99304936490006,15.205954493191117,Yes,Rock,Yes,No,0.5051525783531806,0.8483622690292922,0.17170154472065555,0.27772187045250046,No effect
+76.06512926593186,15.048834909424905,Yes,Rock,Yes,No,0.20632064372306172,0.60092206178596,0.261497520157699,0.13801942785295324,Improve
+19.603208829721908,11.93234284984952,Yes,Video game music,Yes,No,0.2506897415316435,0.40095348888707916,0.7305870904269552,0.36518742477975913,Improve
+47.54877992129006,11.34844185734234,Yes,Rock,Yes,No,0.3502418728894342,0.07830809477692457,0.8483101123880905,0.34790315279332484,No effect
+50.48750290052069,2.453405369274055,Yes,EDM,Yes,Yes,0.7326944258294786,0.21481327785343227,0.15960976752541567,0.3230517375002098,No effect
+48.07823839362837,5.794541690702511,Yes,Metal,Yes,No,0.6676244066663413,0.20880039078676446,0.5897462204569632,0.41140972350755156,Improve
+28.83111708282541,22.32334258730553,No,Rock,Yes,Yes,0.5195074750275853,0.8416058572733174,0.03634292896852942,0.40422435878156626,Improve
+52.52874301466535,0.1747267344943424,Yes,Lofi,Yes,No,0.4676551736222569,0.7410762473373219,0.5253337393592181,0.1597711214238886,Improve
+27.20702430858292,3.0910862494752864,Yes,K pop,Yes,Yes,0.16094978903180324,0.2340580344920938,0.7841081993796244,0.2913490729463325,No effect
+88.97161504803582,10.267793622690316,Yes,Rock,No,Yes,0.9096932549278869,0.4266800389251708,0.8141101270315714,0.4077819357850861,Improve
+76.20219152263047,1.4753670110338453,Yes,Rock,Yes,No,0.1899672205783689,0.5588181863285933,0.5919267979770684,0.07065138379452533,Improve
+20.07151437019239,0.8362632756792987,Yes,Pop,Yes,Yes,0.22855535437157326,0.00905042035428771,0.0634978273281881,0.16679060783581648,Improve
+72.22401960502785,8.095544170809125,Yes,Pop,Yes,Yes,0.6348854810484679,0.5100382972339601,0.8180189296288338,0.31481024692709814,Improve
+42.008607069374186,5.851081015574411,Yes,Rap,Yes,No,0.738710796035581,0.8183189796255566,0.24753398505786092,0.29284150625763017,Improve
+83.46657665652722,16.94188476091346,Yes,Lofi,Yes,No,0.9375338973377874,0.007582482607122571,0.15311480061421626,0.48494563621052,Improve
+37.01034135091721,13.105559804657675,No,Classical,Yes,No,0.02887236099352441,0.08939360247400863,0.22538306334192204,0.13900854860252995,Improve
+80.42793187162556,2.40646303605737,Yes,Rock,No,Yes,0.7243500069668196,0.7209118593087538,0.8922375510328078,0.3182091457579797,Improve
+60.08399155192979,14.305661184865286,Yes,Rock,No,No,0.0087337600354459,0.5159200236157405,0.13907184231368908,0.1344554450508401,No effect
+38.26451273301319,11.821981169474958,Yes,Metal,Yes,Yes,0.35549107604631003,0.5905802362983975,0.0824535230549639,0.2092657960092009,Improve
+37.83366311968091,14.05076535876189,Yes,Metal,Yes,Yes,0.38494817714363,0.9519751745212164,0.1838953919349701,0.2553701762178911,Improve
+30.06264402168897,2.9704331170565164,Yes,Country,Yes,Yes,0.6027391457507064,0.383157691870184,0.5102141180419333,0.3149579392271496,No effect
+25.863357367689275,11.753062159981187,Yes,K pop,No,No,0.5252347342791858,0.5124985937296448,0.8961347866135873,0.41277576572778046,Improve
+88.06847107791342,5.914698849073476,Yes,Hip hop,No,Yes,0.36312282331027657,0.5069506744366653,0.2974372119195239,0.11572128939807125,Improve
+50.37659818407744,12.07848514276931,Yes,Rock,Yes,No,0.04490649803374136,0.04447446195143589,0.7282340755569822,0.28080053191799587,Improve
+21.067460051661307,15.336438919403776,No,K pop,No,Yes,0.362955342471904,0.3003269684495946,0.6312557412527673,0.38223287210132606,Improve
+63.26991622283155,5.908426225947744,No,Metal,Yes,No,0.053568495658895654,0.5890166773474527,0.13937582929405443,0.01067448354429639,Improve
+53.633386819295474,4.572981616550114,Yes,Rock,Yes,Yes,0.3317758307313017,0.08615142891451644,0.06111413970749435,0.16942343317150904,Improve
+61.43404797976108,6.428210082210767,Yes,Metal,No,No,0.8511340345103131,0.554667244611574,0.22460531882611798,0.35482435049174266,Improve
+64.74542414888192,21.61199835022324,Yes,Video game music,No,No,0.10874960770977882,0.38774578119098135,0.18717762722675413,0.16622109065094398,No effect
+67.22490381145751,11.867720324143685,Yes,Rap,Yes,Yes,0.2071070907017083,0.9843999286726351,0.14190524822621653,0.1410561190357776,Improve
+62.717290995576576,3.9700546074983736,No,Rock,No,No,0.6607232546864562,0.0748404355923874,0.30200748170156066,0.24128892247882777,Improve
+67.68566727002631,19.25150174131901,Yes,Video game music,No,Yes,0.2134864031700512,0.6318811561413642,0.9429611541852871,0.30407760217767227,Improve
+58.89537292292869,9.460930240833337,No,Rock,No,No,0.00891804388580475,0.23554538198152075,0.6514296133126241,0.13924151566258225,No effect
+42.74080386870938,11.756279460472284,Yes,Rock,Yes,No,0.11841743208754885,0.5118820825297462,0.821383689248506,0.2457482425255429,Improve
+30.36804018293481,10.995349602339273,Yes,Jazz,Yes,No,0.5460355275044794,0.21890605480382738,0.6313290344719564,0.4676592663360834,Improve
+18.346621563628474,7.032330957658869,Yes,Metal,Yes,Yes,0.8656016398208806,0.7141006285911902,0.7010378581406074,0.47281596707976553,No effect
+86.97324977681296,21.63742241110547,Yes,Rock,Yes,No,0.4181070657335562,0.2857692072632194,0.9945510779804962,0.352281262242354,Improve
+52.8413344962372,4.24526587120105,Yes,Metal,Yes,Yes,0.03744179642898826,0.30202887288186897,0.1883786377598805,0.11315529366052235,Improve
+39.63011536470143,12.486930812839372,Yes,Rock,Yes,No,0.4375830146719305,0.7594388611395605,0.8596354358175218,0.3947709058353788,Improve
+42.78977021822182,12.992352149384327,No,Metal,No,Yes,0.24243985212728392,0.4650091831221119,0.47997105514155536,0.2457269098518712,No effect
+57.76701298831179,15.84748924641859,No,Rock,No,Yes,0.44149921883614696,0.884763130804496,0.8959714040010198,0.2991299147433245,Improve
+21.931591111179262,18.47633212074202,No,Classical,Yes,No,0.6226837680248842,0.7231205488397515,0.24451132308243123,0.46062220028539114,No effect
+44.54659619469688,12.56801876675349,No,Lofi,No,No,0.7994250949200935,0.9096064965764669,0.8827836292614354,0.5181342077822729,Improve
+14.115290382818865,6.332501960110054,No,Video game music,Yes,No,0.015245712093443381,0.5425424201711548,0.3515459041577888,0.11989576269716054,No effect
+86.1965785084708,10.28653481405155,Yes,Rock,Yes,No,0.8951756243295709,0.7958372440355691,0.9368985735405071,0.3673619051078604,Improve
+64.41481663703948,17.537513256519578,Yes,Rock,Yes,No,0.3546485412060053,0.8119865065703193,0.6194127725598987,0.26097127157672545,Improve
+11.041124517476678,14.58803215567482,Yes,Hip hop,No,No,0.9110900762320145,0.6130952488790016,0.224558731450223,0.48730612221242453,Improve
+45.61252512960622,19.71650466615705,No,Rock,Yes,No,0.35075553590296277,0.38520353893698633,0.6563163472371062,0.3573326815489624,Improve
+56.26304630033484,8.408398669816652,No,Rock,Yes,No,0.3954526917971164,0.5699574222317056,0.5441616289879441,0.29025757404787017,Improve
+66.96670100348636,23.12986838722816,Yes,Rock,Yes,No,0.4890133097614376,0.9612615659218005,0.7984742485105141,0.35987727384679025,Improve
+88.00897189996776,10.216931400313632,Yes,Rock,No,No,0.28383526201201914,0.2574594513004207,0.2956401112387141,0.1667861819300871,No effect
+65.38059606461145,15.3597063456578,Yes,Classical,Yes,No,0.7297868948394919,0.13320372594233287,0.8787956562493514,0.43001231265035383,No effect
+50.66061791237472,10.129041805311571,Yes,Video game music,No,Yes,0.9746920647533435,0.5515195886265029,0.7629422167325131,0.5201731153683511,Improve
+43.80748837514302,15.62443744787578,Yes,Rock,No,No,0.02414554275232616,0.5870856475834588,0.6599233538144308,0.2689988037382865,Improve
+69.54067286523573,10.976712400544065,Yes,Pop,Yes,No,0.6880641640730805,0.823724574418119,0.0315606119941989,0.2882434501723966,No effect
+85.15537771577125,1.6314932714744428,Yes,Folk,Yes,Yes,0.0804879138404786,0.3262179435372081,0.14669571118762947,-0.030724299118290686,Improve
+39.05438174458403,22.59052001096456,Yes,Metal,No,Yes,0.7086570629956511,0.14729643669362968,0.35219969494944403,0.527192794873362,Improve
+64.43444488930807,2.1388853503164293,No,Pop,Yes,Yes,0.9109804200394512,0.9656181873740677,0.16017642845037028,0.34875500081180977,Improve
+36.77397394420521,15.332965652744448,No,Rock,Yes,Yes,0.6936899142499181,0.48260908689386534,0.5782327517980297,0.4770894617684128,Improve
+15.665214334631948,8.075650442084182,Yes,Pop,Yes,Yes,0.25204249534863143,0.5442938210430113,0.9472565186588977,0.38695399892180793,No effect
+70.45614328728743,11.144840122608349,Yes,Pop,Yes,No,0.624839559865534,0.8997524035145933,0.5909023568420766,0.3250581303390834,Improve
+28.37212413994025,3.4198366371443534,Yes,EDM,Yes,No,0.23603952783033702,0.9945370769408257,0.4868677734991679,0.1592170854643544,Improve
+88.89133958198977,18.79699627951183,Yes,Rock,No,Yes,0.849536805861318,0.5546689724313524,0.9278750467966608,0.490011276917891,Improve
+52.7553433321599,9.4991602512454,Yes,Rock,Yes,Yes,0.7467296073488754,0.6099224032280117,0.14617495964107186,0.299186049857574,Improve
+29.7384898363036,9.308058723812067,Yes,Metal,Yes,Yes,0.15623803783451218,0.02783537374499423,0.7356149620121741,0.33976874974327564,No effect
+60.43814426634361,9.753772376868062,Yes,Rock,No,Yes,0.11224057444181457,0.4549945879937307,0.4916167239226411,0.15594301788267576,Improve
+79.20044152664941,21.14491635099923,Yes,Pop,Yes,Yes,0.22493706304040129,0.4356597344941249,0.6281528298396221,0.2638350413228129,Improve
+69.02627028820791,12.465366346234417,Yes,Pop,Yes,No,0.131999825061902,0.7695968245922122,0.8158611778716743,0.1348019752199795,No effect
+56.14503257512093,8.15146874057568,No,K pop,Yes,Yes,0.6515499198363762,0.42966510829131854,0.09787239499110878,0.271557651964472,Improve
+52.6797989731408,20.415000636534465,Yes,Metal,Yes,No,0.363216672570167,0.14254951160405405,0.8639019906246423,0.38331611298971024,Improve
+17.488251595287892,8.155157489408431,Yes,Pop,No,Yes,0.8469059112795925,0.9243150812357234,0.32749326448991134,0.4900069226670656,Improve
+47.60776685048268,3.2259397593671384,Yes,EDM,Yes,Yes,0.9547800177468435,0.11674427486698769,0.8132204917344591,0.44545619848315143,No effect
+59.33083398627964,21.20996903409431,Yes,Pop,Yes,No,0.5652227665059163,0.6335666413728702,0.06497618729115229,0.3328080138729502,Improve
+27.40805717272136,7.174607123774618,No,Classical,No,No,0.41796976809731756,0.44966305030459386,0.9280798340880295,0.33449420642881134,Improve
+54.63564363357768,18.985651179697005,Yes,Rock,Yes,Yes,0.281525520029397,0.03702456048869706,0.3578431913829752,0.3126274274053862,Worsen
+12.70341640516734,18.753632604686985,Yes,Rock,Yes,No,0.6600379264289042,0.7032386941957356,0.6980040229097281,0.5501641799316087,No effect
+54.64364994424452,3.4829404504952475,Yes,Rock,Yes,Yes,0.2068389736055063,0.6023363971637511,0.9981202057790522,0.18146077320838108,No effect
+49.67931418081827,3.5915137955226184,Yes,Pop,Yes,No,0.1671006246298805,0.2453276004706031,0.3895262692199055,0.16846140130712806,Improve
+53.479374031761154,11.299966830987431,No,Folk,Yes,Yes,0.5543921523790714,0.22064750603959835,0.6233604509922538,0.3956254145594773,Improve
+73.1881226363212,12.601475388642363,No,R&B,Yes,Yes,0.9225888145244999,0.27260978762045696,0.6244676578997799,0.4067395211745014,Improve
+39.186915839569885,13.447284172619856,Yes,Rock,Yes,No,0.5379059616350774,0.6742221148941998,0.10376095673640351,0.3467070989885656,Improve
+52.50891180683352,0.6707967112415538,Yes,Classical,Yes,Yes,0.22076182826921542,0.7614229780338275,0.2227497312991764,0.06495917126023051,Improve
+65.60830374643199,2.313321204310661,No,Metal,Yes,No,0.1736426710386617,0.4156743047892423,0.3948524523607273,0.09805821082967404,Improve
+57.24610784759587,19.92829574164617,Yes,Country,Yes,No,0.7978547508815667,0.8443157316073643,0.8747072629642444,0.5093722013849452,Improve
+34.260105380300615,13.566207061972424,Yes,Metal,Yes,Yes,0.324212188329429,0.6779881303265677,0.23036794512791747,0.311273220328942,Improve
+38.25813666389016,2.261462260213846,Yes,Jazz,Yes,No,0.11239709572932466,0.4283272415610604,0.7242057795368305,0.15686448585964266,No effect
+82.48342422556449,12.410699450077717,No,Video game music,Yes,Yes,0.576211405762054,0.9916490307741558,0.5237903502846493,0.25554259610444513,Improve
+14.274581870078451,17.917989351041104,Yes,Rock,Yes,No,0.49289878958809635,0.7252758480373814,0.7524530820792406,0.500791820623919,No effect
+44.72651211217974,21.85094169745633,Yes,Rock,No,Yes,0.8253019355433666,0.28112416191488243,0.8344738421295489,0.5384226698362502,Improve
+16.373750481636623,0.0946942722844257,Yes,Video game music,Yes,No,0.5618759561164727,0.9777284007211412,0.19418576012358169,0.22720856546561805,No effect
+51.10461401812474,22.50310001490689,Yes,Rock,Yes,Yes,0.9092580113881874,0.7300453822153635,0.334319526646212,0.5429873414994479,Improve
+44.09033853926172,9.86160350332938,No,EDM,Yes,Yes,0.57202718658366,0.94719695990327,0.6590314760100906,0.3783836242065534,Improve
+21.8848638589079,17.555621539790906,Yes,Pop,Yes,No,0.17353410657583757,0.20189176132610376,0.9378280233819568,0.35973817541136005,Improve
+87.89032313662307,21.43133110140855,Yes,R&B,Yes,No,0.5164172152278325,0.09365769600526784,0.2986006709365201,0.31436301476658024,Improve
+51.23493040964862,14.420428046659676,Yes,Folk,Yes,No,0.0721726160178291,0.27309946820364883,0.4758474273591152,0.2615913117048888,Improve
+74.82626178414732,3.2099669769014865,Yes,Classical,No,No,0.5683826009864361,0.7243174430390442,0.8893290840558603,0.2371047946754173,Improve
+75.47021907874259,4.388763590511026,Yes,Classical,Yes,Yes,0.6145604474732191,0.2914135604303917,0.4273072341670437,0.24279720387311626,Improve
+18.41820031051686,1.849120015712363,Yes,Classical,Yes,Yes,0.7759129152778297,0.11676584992427319,0.16912227213977715,0.40011376278719074,Improve
+49.34181485070408,1.103106768472383,Yes,Rap,Yes,Yes,0.924862622413748,0.6796002142695675,0.1888910451490844,0.3178124236152609,No effect
+35.82012528666386,1.796354679436524,Yes,Rock,Yes,Yes,0.6374038179464754,0.4678211894627835,0.8204352085162674,0.38253448545589464,Improve
+25.951513513979343,9.653632610424484,Yes,Pop,Yes,Yes,0.024066361400894458,0.45426203543419774,0.8788763668557076,0.1921818517665557,Improve
+16.908208590341587,13.445084888242764,Yes,Metal,Yes,Yes,0.9853225931626335,0.6865030419351293,0.9847036430609831,0.6640590524274637,Improve
+82.50426480569409,6.702555159467365,Yes,Rock,No,No,0.6424351299797979,0.47405937880856186,0.32515861326985923,0.27482863056677387,No effect
+12.334098497021555,6.916331056411496,Yes,Video game music,No,Yes,0.6724755082882949,0.1828873490859368,0.41380021460631167,0.4560550888748932,Improve
+71.86140644852422,17.61485804473219,Yes,Rock,No,Yes,0.9194214220867911,0.7017432576444896,0.620462183563574,0.5036715438016641,Improve
+20.32204600712537,9.603642230024082,No,Video game music,Yes,Yes,0.5287877231859357,0.31631045883893494,0.4298920830617897,0.3276702844837319,No effect
+88.2303267638464,3.9955657667889337,No,Metal,No,No,0.9105036740934335,0.8813449369301358,0.9040296064441848,0.3698863220346556,Improve
+63.52470608766877,2.2438246050152726,Yes,Gospel,Yes,Yes,0.6104901668927805,0.10948213174585464,0.764831639494711,0.34756573706800303,No effect
+82.50265217534715,12.1762912150331,Yes,EDM,Yes,Yes,0.6374702707964832,0.785732641124144,0.8295961945633161,0.2867236284593502,Improve
+10.067983866025168,16.760162274637246,Yes,Classical,Yes,Yes,0.3721352539899807,0.2651524288463142,0.5569671296933525,0.38768335173959295,Improve
+29.84843525521735,10.297256607318658,Yes,Country,Yes,Yes,0.6265377339660965,0.38999755983081863,0.721576012704402,0.3693863830466415,No effect
+63.322066292058985,23.06611386547824,No,Folk,Yes,No,0.9942177368891209,0.755228377609942,0.4454218443738287,0.5060774475065615,No effect
+44.07098477016719,5.051486002560121,Yes,Jazz,No,Yes,0.8703197716488212,0.1756205365712672,0.9441957174995526,0.4992713413297324,Improve
+63.86375632129528,6.481024172709534,Yes,Pop,Yes,No,0.5420082853491812,0.9538867288820072,0.7606325319375143,0.33397824255793557,Improve
+16.402313283952196,19.660630321705668,No,Rock,No,Yes,0.6681228477651563,0.8104310432492916,0.6691098508523603,0.5064305276051664,Worsen
+38.76379879820603,17.245830939610357,Yes,Rock,Yes,Yes,0.3199191875047658,0.5297856236555373,0.8375663918838054,0.37452143368810314,Improve
+20.11010958882772,17.835412861186857,No,Metal,No,Yes,0.745975074887358,0.561204482156116,0.1180293357119209,0.4568755221891422,Improve
+19.22076752906183,5.053715623799463,Yes,Metal,Yes,Yes,0.3689846201152014,0.8396519846513086,0.9060200390949186,0.3686805150235867,Improve
+88.85445973596362,17.284345492833374,Yes,Country,No,Yes,0.7729152623239806,0.97399092072713,0.11326551315169298,0.30997530476115803,Improve
+40.40550557263871,1.2585378302798027,Yes,Hip hop,Yes,Yes,0.0709980055606585,0.7416310666712138,0.5933057476995804,0.1654159381953002,Improve
+61.36700441092538,14.312135805932936,Yes,Rock,Yes,Yes,0.7193810395429391,0.42724046366380664,0.8019273774255871,0.4583021001505074,No effect
+11.922347890399388,9.247519437850396,Yes,Pop,Yes,Yes,0.15004797692241678,0.0008672368124437099,0.49815499337027225,0.2446457728942498,Improve
+74.28170985283415,5.359527366321929,No,K pop,Yes,No,0.2998409756355513,0.09720836221674,0.4235052767092046,0.18590800447905984,Improve
+56.865162257455225,0.3325166039500802,No,Rock,Yes,No,0.6671304346450778,0.2504012774356398,0.6051573932704183,0.3220088932015249,No effect
+34.446121724033375,1.0223826581086095,Yes,Pop,Yes,Yes,0.9434992702616711,0.8704778131553613,0.2711776630783161,0.42086038107209467,Improve
+62.09571890534048,8.730503022092668,Yes,K pop,Yes,Yes,0.6262138757521473,0.10321165638191021,0.2557204700654335,0.26520153481261477,Improve
+86.06698087669129,13.551756059577905,Yes,EDM,Yes,No,0.1647291813888917,0.004583320622621781,0.6541919246861204,0.2662318327026944,Improve
+47.51477438813769,23.4661830846227,Yes,Video game music,Yes,Yes,0.5831270934857495,0.08377969678294206,0.25026894157112656,0.5066131284297465,No effect
+69.3887821908604,8.532072308842515,No,Rock,No,Yes,0.47228240629522567,0.8971699260320076,0.3613382878042902,0.20544239738487607,Improve
