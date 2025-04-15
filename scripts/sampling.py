@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 
-def sample_dataset(file_path, output_path, n_samples=1000, n_clusters=10):
+def sample_dataset(file_path, output_path, n_samples=2000, n_clusters=10):
     """
     Sample the dataset using PCA and K-means clustering.
 
