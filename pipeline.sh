@@ -1,7 +1,13 @@
 #!/bin/bash
 
 
+OUTPUT_DIR="tmp"
 DIRECTORY="scripts/pipeline"
+
+# check if the output directory exists, if not create it
+if [ ! -d "$OUTPUT_DIR" ]; then
+    mkdir "$OUTPUT_DIR"
+fi
 
 # execute the python scripts in the correct order
 scripts=(
@@ -22,4 +28,5 @@ for script in "${scripts[@]}"; do
     fi
 done
 
-echo "Pipeline completed successfully."
+echo "pipeline completed successfully."
+echo "the output files are in the $OUTPUT_DIR directory."
