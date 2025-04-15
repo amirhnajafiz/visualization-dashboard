@@ -73,7 +73,8 @@ if __name__ == "__main__":
     ]
 
     for dataset in datasets:
-        print(f"Processing {dataset['path']}...")
+        print(f"\tfiltering {dataset['path']} with columns {dataset['columns']} and saving to {dataset['output_path']}")
+        print(f"\tnumber of columns: {len(dataset['columns'])}")
 
         # read the dataset
         df = pd.read_csv(dataset["path"])
