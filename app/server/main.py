@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from src import router
 
 
@@ -6,6 +7,9 @@ from src import router
 # create a Flask app
 app = Flask(__name__, static_folder='public/static', template_folder='public')
 app.config["JSON_SORT_KEYS"] = False
+
+# set CORS middleware for the app
+CORS(app)
 
 # configure the routes
 router.configure_routes(app)
