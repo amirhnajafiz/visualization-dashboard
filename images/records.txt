@@ -1,0 +1,37 @@
+Number of columns: 23
+Number of rows: 1995
+
+Number of unique values in each column:
+acousticness         99
+bpm                  61
+danceability         85
+energy               98
+genre                11
+instrumentalness     63
+liveness             90
+loudness            651
+mode                  2
+popularity           84
+speechiness          63
+tempo                68
+valence              96
+age                  70
+hours               140
+while working         2
+exploratory           2
+foreign               2
+anxiety              73
+depression           72
+insomnia             69
+ocd                  60
+effects               3
+
+Top 5 rows of the dataset:
+   acousticness   bpm  danceability  energy    genre  instrumentalness  liveness  ...  exploratory  foreign  anxiety  depression  insomnia   ocd    effects
+0          0.99  0.65          0.40    0.18    K pop              0.00      0.09  ...          Yes       No     0.45        0.74      0.97  0.17    Improve
+1          0.00  0.65          0.51    0.89     Rock              0.01      0.23  ...          Yes       No     0.19        0.56      0.59  0.07    Improve
+2          0.07  0.65          0.82    0.72     Rock              0.16      0.07  ...          Yes       No     0.49        0.63      0.74  0.30    Improve
+3          0.71  0.67          0.61    0.45     Rock              0.00      0.13  ...          Yes       No     0.90        0.80      0.94  0.37    Improve
+4          0.57  0.65          0.24    0.54  Hip hop              0.37      0.09  ...           No      Yes     0.71        0.42      0.17  0.18  No effect
+
+[5 rows x 23 columns]
