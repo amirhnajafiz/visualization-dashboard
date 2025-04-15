@@ -41,8 +41,10 @@ def merge_songs_and_attributes():
     combined_df = combined_df.reindex(columns=merged_songs_df.columns.union(spotify_2000_df.columns).union(songs_attributes.columns, sort=False))
     combined_df = combined_df.reset_index(drop=True)
 
-    # fill missing values using linear interpolation
+    # fill missing values using linear regression
     combined_df = combined_df.interpolate(method='linear', limit_direction='both')
+    # remove duplicates
+    combined_df = combined_df.drop_duplicates()
 
     # save the merged dataset if needed
     combined_df.to_csv('tmp/merged_attributes_dataset.csv', index=False)
@@ -64,7 +66,7 @@ def merge_attributes_and_mental_health():
     combined_df = combined_df.reindex(columns=songs_attributes.columns.union(mental_health_df.columns, sort=False))
     combined_df = combined_df.reset_index(drop=True)
 
-    # fill missing values using linear interpolation
+    # fill missing values using linear regression
     combined_df = combined_df.interpolate(method='linear', limit_direction='both')
     # remove duplicates
     combined_df = combined_df.drop_duplicates()
