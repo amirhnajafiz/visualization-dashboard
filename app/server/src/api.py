@@ -14,7 +14,7 @@ def get_columns():
 
     # read the CSV file
     df = pd.read_csv(config.DATASET_PATH)
-    
+
     # filter columns based on ctype
     if ctype == 'numeric':
         df = df.select_dtypes(include=['number'])
