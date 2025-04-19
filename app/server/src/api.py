@@ -39,9 +39,9 @@ def get_data_by_columns():
 
 def get_mean_by_columns():
     """
-    Get the mean of the specified columns from the CSV file.
-    For numeric columns, return the mean.
-    For non-numeric columns, return the value with the highest count.
+    Get the mean of the specified columns from the CSV file, grouped by 'genre'.
+    For numeric columns, return the mean within each group.
+    For non-numeric columns, return the value with the highest count within each group.
     """
     # get the columns from the request
     columns = request.args.getlist('columns')
@@ -49,19 +49,29 @@ def get_mean_by_columns():
     # read the CSV file
     df = pd.read_csv(config.DATASET_PATH)
     
+    # ensure 'genre' column exists
+    if 'genre' not in df.columns:
+        return jsonify({"error": "'genre' column not found in the dataset"}), 400
+    
+    # group the data by 'genre'
+    grouped = df.groupby('genre')
+    
     # calculate the mean for numeric columns and the most frequent value for non-numeric columns
     result = {}
-    if len(columns) > 0:
-        for column in columns:
-            if pd.api.types.is_numeric_dtype(df[column]):
-                result[column] = df[column].mean()
-            else:
-                result[column] = df[column].mode()[0]  # most frequent value
-    else:
-        for column in df.columns:
-            if pd.api.types.is_numeric_dtype(df[column]):
-                result[column] = df[column].mean()
-            else:
-                result[column] = df[column].mode()[0]  # most frequent value
+    for genre, group in grouped:
+        result[genre] = {}
+        if len(columns) > 0:
+            for column in columns:
+                if column in group.columns:
+                    if pd.api.types.is_numeric_dtype(group[column]):
+                        result[genre][column] = group[column].mean()
+                    else:
+                        result[genre][column] = group[column].mode()[0]  # most frequent value
+        else:
+            for column in group.columns:
+                if pd.api.types.is_numeric_dtype(group[column]):
+                    result[genre][column] = group[column].mean()
+                else:
+                    result[genre][column] = group[column].mode()[0]  # most frequent value
     
     return jsonify(result), 200
