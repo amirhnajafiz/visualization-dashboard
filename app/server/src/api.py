@@ -40,6 +40,8 @@ def get_data_by_columns():
 def get_mean_by_columns():
     """
     Get the mean of the specified columns from the CSV file.
+    For numeric columns, return the mean.
+    For non-numeric columns, return the value with the highest count.
     """
     # get the columns from the request
     columns = request.args.getlist('columns')
@@ -47,10 +49,19 @@ def get_mean_by_columns():
     # read the CSV file
     df = pd.read_csv(config.DATASET_PATH)
     
-    # calculate the mean for the specified columns
+    # calculate the mean for numeric columns and the most frequent value for non-numeric columns
+    result = {}
     if len(columns) > 0:
-        means = df[columns].mean().to_dict()
+        for column in columns:
+            if pd.api.types.is_numeric_dtype(df[column]):
+                result[column] = df[column].mean()
+            else:
+                result[column] = df[column].mode()[0]  # most frequent value
     else:
-        means = df.mean().to_dict()
+        for column in df.columns:
+            if pd.api.types.is_numeric_dtype(df[column]):
+                result[column] = df[column].mean()
+            else:
+                result[column] = df[column].mode()[0]  # most frequent value
     
-    return jsonify(means), 200
+    return jsonify(result), 200
