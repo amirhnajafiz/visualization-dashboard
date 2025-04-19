@@ -5,6 +5,27 @@ from src import config
 
 
 
+def get_columns():
+    """
+    Get the columns of the CSV file.
+    """
+    # read the columns type (numeric or non-numeric)
+    ctype = request.args.get('ctype')
+
+    # read the CSV file
+    df = pd.read_csv(config.DATASET_PATH)
+    
+    # filter columns based on ctype
+    if ctype == 'numeric':
+        df = df.select_dtypes(include=['number'])
+    elif ctype == 'non-numeric':
+        df = df.select_dtypes(exclude=['number'])
+
+    # get the columns
+    columns = df.columns.tolist()
+    
+    return jsonify(columns), 200
+
 def get_data_by_columns():
     """
     Get data from the CSV file based on the specified columns with pagination.
