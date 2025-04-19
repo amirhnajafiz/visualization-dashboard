@@ -36,3 +36,21 @@ def get_data_by_columns():
         "per_page": per_page,
         "total_pages": (len(filtered_df) + per_page - 1) // per_page,
     }), 200
+
+def get_mean_by_columns():
+    """
+    Get the mean of the specified columns from the CSV file.
+    """
+    # get the columns from the request
+    columns = request.args.getlist('columns')
+    
+    # read the CSV file
+    df = pd.read_csv(config.DATASET_PATH)
+    
+    # calculate the mean for the specified columns
+    if len(columns) > 0:
+        means = df[columns].mean().to_dict()
+    else:
+        means = df.mean().to_dict()
+    
+    return jsonify(means), 200
