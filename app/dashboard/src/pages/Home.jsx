@@ -2,13 +2,11 @@ import { useEffect, useState } from 'react';
 import BarChart from '../components/BarChart.jsx';
 import "./Home.css";
 
-const API_URL = 'http://localhost:5000/api';
-
 function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/data?page=1&columns=genre`)
+    fetch('/api/data?page=1&columns=genre')
       .then(res => res.json())
       .then(json => {
         setData(json["records"]);
