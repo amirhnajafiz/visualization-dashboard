@@ -1,2 +1,2 @@
 # Dataset path for the application
-DATASET_PATH="../../assets/datasets/dataset.csv"
+DATASET_PATH="datasets/dataset.csv"
