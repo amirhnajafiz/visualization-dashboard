@@ -140,3 +140,8 @@ __pycache__/
 # Temporary files
 *.tmp
 tmp/
+assets/datasets/universal_top_spotify_songs.csv
+assets/datasets/all_platforms_merged.csv
+
+# Configs
+*.~lock.*
