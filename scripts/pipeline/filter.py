@@ -67,8 +67,8 @@ if __name__ == "__main__":
         {
             "path": "assets/archive/mxmh_survey_results.csv",
             "output_path": "tmp/mxmh_survey_results.csv",
-            "columns": ["Age", "Hours per day", "While working", "Fav genre", "Exploratory", "Foreign languages", "Anxiety", "Depression", "Insomnia", "OCD", "Music effects"],
-            "new_columns": ["age", "hours", "while working", "genre", "exploratory", "foreign", "anxiety", "depression", "insomnia", "ocd", "effects"]
+            "columns": ["Age", "Hours per day", "While working", "Fav genre", "Exploratory", "Foreign languages", "Anxiety", "Depression", "Insomnia", "OCD", "Music effects", "Frequency [Classical]", "Frequency [Country]", "Frequency [EDM]", "Frequency [Folk]", "Frequency [Gospel]", "Frequency [Hip hop]", "Frequency [Jazz]", "Frequency [K pop]", "Frequency [Latin]", "Frequency [Lofi]", "Frequency [Metal]", "Frequency [Pop]", "Frequency [R&B]", "Frequency [Rap]", "Frequency [Rock]", "Frequency [Video game music]"],
+            "new_columns": ["age", "hours", "while working", "genre", "exploratory", "foreign", "anxiety", "depression", "insomnia", "ocd", "effects", "frequency [classical]", "frequency [country]", "frequency [edm]", "frequency [folk]", "frequency [gospel]", "frequency [hip hop]", "frequency [jazz]", "frequency [k pop]", "frequency [latin]", "frequency [lofi]", "frequency [metal]", "frequency [pop]", "frequency [r&b]", "frequency [rap]", "frequency [rock]", "frequency [video game music]"]
         },
     ]
 

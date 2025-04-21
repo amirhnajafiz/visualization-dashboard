@@ -13,14 +13,14 @@ def normalize(df: pd.DataFrame, columns: list) -> pd.DataFrame:
     Returns:
         pd.DataFrame: The normalized DataFrame.
     """
-    # Create a copy of the DataFrame to avoid modifying the original
+    # create a copy of the DataFrame to avoid modifying the original
     df_normalized = df.copy()
 
-    # Normalize the specified columns
+    # normalize the specified columns
     for column in columns:
         if column in df_normalized.columns:
             max_value = df_normalized[column].max()
-            if max_value != 0:  # Avoid division by zero
+            if max_value != 0:  # avoid division by zero
                 df_normalized[column] = df_normalized[column] / max_value
 
     return df_normalized
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     datasets = [
         {
             "path": "tmp/spotify_2000_tops.csv",
-            "columns": ["bpm", "energy", "danceability", "loudness", "speechiness", "acousticness", "liveness", "valence", "popularity"]
+            "columns": ["energy", "danceability", "loudness", "speechiness", "acousticness", "liveness", "valence", "popularity"]
         },
         {
             "path": "tmp/spotify_music_dataset.csv",
