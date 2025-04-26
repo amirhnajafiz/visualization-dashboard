@@ -299,12 +299,26 @@ function createChoropleth(data, attr) {
                     type: "POST",
                     url: "/api/wordcloud",
                     contentType: "application/json",
-                    data: JSON.stringify({ country: d.id }),  // Send country ID to server
+                    data: JSON.stringify({ country: d.id }),
                     dataType: "json",
                     success: function(response) {
-                        createWordCloud(response);   // Create WordCloud based on this country
+                        createWordCloud(response);
                     },
                     error: function(err) {
+                        console.log(err);
+                    }
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: "/api/correlation",
+                    contentType: "application/json",
+                    data: JSON.stringify({ country: worldmap_country }),
+                    dataType: "json",
+                    success: function (response) {
+                        createCorrelogram(response);
+                    },
+                    error: function (err) {
                         console.log(err);
                     }
                 });
