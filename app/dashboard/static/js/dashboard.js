@@ -71,6 +71,21 @@ function resetDashboard() {
             console.log(err);
         }
     });
+
+    //Correlogram
+    $.ajax({
+        type: "POST",
+        url: "/api/correlation",
+        contentType: "application/json",
+        data: JSON.stringify({}),
+        success: function (response) {
+            createCorrelogram(response);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+    
 }
 
 $(document).ready(function () {
