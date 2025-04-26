@@ -1,0 +1,8 @@
+Flask
+pandas
+geojson
+numpy
+scikit-learn
+livereload
+prince
+pycountry
