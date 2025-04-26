@@ -488,6 +488,8 @@ function createChoropleth(data, attr) {
     });
 
     pcpTrigger.registerListener(function(val) {
+        console.log("attr: ", selected_attr)
+        console.log("selected countries: ", selected_countries)
         updateChoropleth(data, selected_attr, selected_countries)
     });
 }
