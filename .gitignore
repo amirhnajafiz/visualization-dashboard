@@ -145,3 +145,4 @@ assets/datasets/all_platforms_merged.csv
 
 # Configs
 *.~lock.*
+.vscode/settings.json
