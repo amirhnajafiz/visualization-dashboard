@@ -102,8 +102,6 @@ function plot_pcp(pcp_data1) {
         .data(pcp_data)
         .enter()
         .append("path")
-        // .on("mouseover", highlight)
-        // .on("mouseleave", doNotHighlight)
         .attr("d", line)
         .attr("class", function(d) { return "line " + d.id })
         .style('stroke', function(d) {
@@ -225,13 +223,14 @@ function plot_pcp(pcp_data1) {
         if (actives.length === 0) {
             foreground.style("display", null);
         } else {
-            foreground
-                .style("display", d => actives.every(brushObj =>
-                    brushObj.extent[0] <= y[brushObj.dimension](d[brushObj.dimension]) &&
-                    y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
-                ) ? null : "none")
-                .style("stroke", d => color(d.id))
-                .style("opacity", 0.8);
+            foreground.style("stroke", d => actives.every(brushObj =>
+                brushObj.extent[0] <= y[brushObj.dimension](d[brushObj.dimension]) &&
+                y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
+            ) ? color(d.id) : "none")
+            .style("opacity", d => actives.every(brushObj =>
+                brushObj.extent[0] <= y[brushObj.dimension](d[brushObj.dimension]) &&
+                y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
+            ) ? 0.8 : 0);
         }
     }
 
@@ -330,8 +329,6 @@ function plot_pcp(pcp_data1) {
             .append("path")
             .merge(foregroundpath)
             .attr("class", "foreground")
-            // .on("mouseover", highlight)
-            // .on("mouseleave", doNotHighlight)
             .transition().duration(1000)
             .attr("d", line)
             .attr("class", function(d) { return "line " + d.id })
