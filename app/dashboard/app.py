@@ -12,6 +12,43 @@ import prince
 import copy
 import pycountry
 
+iso3_to_country_name = {
+    "ARG": "Argentina",
+    "AUS": "Australia",
+    "BGR": "Bulgaria",
+    "BLR": "Belarus",
+    "BRA": "Brazil",
+    "CHL": "Chile",
+    "CZE": "Czech Republic",
+    "DEU": "Germany",
+    "DNK": "Denmark",
+    "EST": "Estonia",
+    "FIN": "Finland",
+    "GRC": "Greece",
+    "GTM": "Guatemala",
+    "HKG": "Hong Kong",
+    "HUN": "Hungary",
+    "IDN": "Indonesia",
+    "IND": "India",
+    "ISR": "Israel",
+    "ITA": "Italy",
+    "JPN": "Japan",
+    "MAR": "Morocco",
+    "MEX": "Mexico",
+    "MYS": "Malaysia",
+    "NGA": "Nigeria",
+    "NIC": "Nicaragua",
+    "NLD": "Netherlands",
+    "PAK": "Pakistan",
+    "PHL": "Philippines",
+    "POL": "Poland",
+    "ROU": "Romania",
+    "SAU": "Saudi Arabia",
+    "SLV": "El Salvador",
+    "SVK": "Slovakia",
+    "URY": "Uruguay",
+    "VEN": "Venezuela"
+}
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -64,20 +101,20 @@ with open(GEO_JSON_PATH) as f:
 
 @app.route("/api/country", methods=['POST'])
 def get_country_map_data():
-    selected_metric = request.get_json().get("metric", "anxiety")
+    filters = request.get_json()
+    selected_metric = filters.get("metric", "anxiety")
+    selected_countries = filters.get('countries', None)
 
     local_gj = copy.deepcopy(gj)
 
     for f in local_gj["features"]:
-        iso3 = f['id']
+        country = f['id']
 
-        if iso3:
-            values = raw_data[raw_data['country'] == iso3][selected_metric]
-            values = values[values.notna()]
-            val = values.mean() if not values.empty else 0
-            f[selected_metric] = float(val)
+        if selected_countries and country not in selected_countries:
+            f[selected_metric] = 0 # grey out unselected countries
         else:
-            f[selected_metric] = 0
+            val = raw_data[raw_data['country'] == country][selected_metric].mean()
+            f[selected_metric] = float(val) if not np.isnan(val) else 0
 
     return jsonify(local_gj)
 
@@ -95,11 +132,32 @@ def get_country_summary():
 def get_pcp_data():
     filters = request.get_json()
     df = raw_data.copy()
-    if 'country' in filters:
-        df = df[df['country'] == filters['country']]
-    if 'cluster' in filters:
-        df = df[df['cluster'] == int(filters['cluster'])]
-    return jsonify(df[cluster_features + ['country', 'cluster']].to_dict(orient='records'))
+
+    if filters.get('countries'):
+        df = df[df['country'].isin(filters['countries'])]
+
+    pcp_columns = [
+        'country',
+        'anxiety',
+        'depression',
+        'insomnia',
+        'ocd',
+        'bpm',
+        'valence',
+        'energy',
+        'hours',
+        'age'
+    ]
+
+    # Aggregate: group by country, take MEAN of features
+    grouped = df[pcp_columns].groupby('country').mean().reset_index()
+
+    grouped["id"] = grouped["country"]
+    grouped["location"] = grouped["country"].map(iso3_to_country_name)
+
+    final_cols = ['id', 'location', 'anxiety', 'depression', 'insomnia', 'ocd', 'bpm', 'valence', 'energy', 'hours', 'age']
+    
+    return jsonify(grouped[final_cols].to_dict(orient="records"))
 
 @app.route("/api/wordcloud", methods=['POST'])
 def get_wordcloud_data():
@@ -134,14 +192,10 @@ def get_correlation_data():
     filters = request.get_json()
     df = raw_data.copy()
 
-    if 'country' in filters and filters['country'] != "world":
-        df = df[df['country'] == filters['country']]
-
-    if df.empty:
-        return jsonify([])
+    if filters.get('countries'):
+        df = df[df['country'].isin(filters['countries'])]
 
     corr = df[['age', 'hours', 'bpm', 'anxiety', 'depression', 'insomnia', 'ocd']].corr()
-
     corr_reset = corr.reset_index()
     corr_reset.rename(columns={"index": ""}, inplace=True)
 
@@ -153,7 +207,6 @@ def get_correlation_data():
                 "y": col,
                 "value": row[col]
             })
-
     return jsonify(result)
 
 @app.route("/api/mca", methods=['POST'])
