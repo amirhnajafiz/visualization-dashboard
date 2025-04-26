@@ -104,7 +104,6 @@ def get_pcp_data():
 @app.route("/api/wordcloud", methods=['POST'])
 def get_wordcloud_data():
     filters = request.get_json()
-    print(filters)
     df = raw_data.copy()
     if 'country' in filters:
         df = df[df['country'] == filters['country']]
@@ -129,6 +128,33 @@ def predict_anxiety():
     X_input = pd.DataFrame([input_data])
     prediction = kreg.predict(X_input)[0]
     return jsonify({"predicted_anxiety": float(prediction)})
+
+@app.route("/api/correlation", methods=['POST'])
+def get_correlation_data():
+    filters = request.get_json()
+    df = raw_data.copy()
+
+    if 'country' in filters and filters['country'] != "world":
+        df = df[df['country'] == filters['country']]
+
+    if df.empty:
+        return jsonify([])
+
+    corr = df[['age', 'hours', 'bpm', 'anxiety', 'depression', 'insomnia', 'ocd']].corr()
+
+    corr_reset = corr.reset_index()
+    corr_reset.rename(columns={"index": ""}, inplace=True)
+
+    result = []
+    for col in corr_reset.columns[1:]:
+        for idx, row in corr_reset.iterrows():
+            result.append({
+                "x": row[""],
+                "y": col,
+                "value": row[col]
+            })
+
+    return jsonify(result)
 
 @app.route("/api/mca", methods=['POST'])
 def get_mca():
