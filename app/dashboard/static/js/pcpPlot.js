@@ -1,7 +1,7 @@
 // https://observablehq.com/@d3/brushable-parallel-coordinates
 
 var outerWidthpcp = 900,
-    outerHeightpcp = 350,
+    outerHeightpcp = 500,
     marginspcp = { top: 30, right: 50, bottom: 10, left: 80 },
     innerWidthpcp = outerWidthpcp - marginspcp.left - marginspcp.right,
     innerHeightpcp = outerHeightpcp - marginspcp.top - marginspcp.bottom;
