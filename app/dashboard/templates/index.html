@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="//d3js.org/queue.v1.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.0/d3-tip.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="static/css/worldmap.css" />
+    <link rel="stylesheet" href="static/css/lineChart.css" />
+    <link rel="stylesheet" href="static/css/dashboard.css" />
+    <link rel="stylesheet" href="static/css/pcp.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+        integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+        crossorigin>
+
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+        integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+        crossorigin></script>
+
+    <script type="text/javascript" src="static/js/global_vars.js"></script>
+    <script src="static/lib/d3.layout.cloud.js"></script>
+
+    <!-- Load color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="/static/assets/bgnew.mp4" type="video/mp4">
+    </video>
+    <div class="navbar-nav navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div id="dashboardHeader">
+                <h3>Mood in the Music</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-5" style="padding-right: 5px;">
+                <div class="dash-unit">
+                    <dtitle id="worldTitle">Global Patterns of Music and Mental Health</dtitle>
+                    <hr>
+                    <div class='row'>
+                    </div>
+                    <div class="row" title="Choropleth">
+                        <div id="worldmap-legend-svg" class="col-sm-1"></div>
+                        <div id="worldmap" class="col-sm-11"></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="col-sm-7" style="padding-left: 5px;">
+                <div class="dash-unit" title="Time-Series line plot">
+                    <dtitle id="lineTitle">AVERAGE DAILY NEW_CASES OF WORLD BETWEEN 2020-1-1 TO 2021-4-17</dtitle>
+                    <select id='musicattr'>
+                        <option value="anxiety">Anxiety</option>
+                        <option value="depression">Depression</option>
+                        <option value="insomnia">Insomnia</option>
+                        <option value="ocd">OCD</option>
+                        <option value="valence">Valence</option>
+                        <option value="energy">Energy</option>
+                        <option value="bpm">BPM</option>
+                    </select>
+                    <button id="resetAll" class="button" onClick="console.log('HI')">Reset</button>
+                    <hr>
+                    <div id="linechart"></div>
+                </div>
+            </div> -->
+
+        </div>
+        <div class="row">
+            <!-- <div class="col-sm-6" style="padding-right: 5px;">
+                <div class="dash-unit" title="Parallel Axis Coordinate Plot">
+                    <dtitle id="pcpTitle">PARALLEL CO-ORDINATES PLOT BETWEEN 2020-1-1 TO 2021-4-17</dtitle>
+                    <hr>
+                    <div id="pcp">
+                        <svg id='svgpcplot'></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2" style="padding-left: 5px; padding-right: 5px;">
+                <div class="dash-unit" title="Covid Statistics Dashboard">
+                    <dtitle id="statTitle">Covid Statistics</dtitle>
+                    <hr>
+                    <div id="covidstats">
+                        <div id='svgcovidstats'></div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="dash-unit">
+                <dtitle>MCA Plot</dtitle>
+                <hr>
+                <div id="mcaplot"></div>
+            </div>
+            <div class="col-sm-4" style="padding-left: 5px;">
+                <div class="dash-unit" title="Word Cloud">
+                    <dtitle id="wordCloudTitle">Most Frequent Music Effects</dtitle>
+                    <hr>
+                    <div id="wordcloud">
+                        <svg id='svgWordCloud'></svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="static/js/dashboard.js"></script>
+    <script type="text/javascript" src="static/js/choropleth.js"></script>
+    <script type="text/javascript" src="static/js/lineChart.js"></script>
+    <script type="text/javascript" src="static/js/wordCloud.js"></script>
+    <script type="text/javascript" src="static/js/pcpPlot.js"></script>
+    <script src="static/js/mcaPlot.js"></script>
+    <script src="static/js/stats.js"></script>
+
+</body>
+
+</html>
