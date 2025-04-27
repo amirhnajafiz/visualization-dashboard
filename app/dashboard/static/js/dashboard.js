@@ -85,6 +85,24 @@ function resetDashboard() {
             console.log(err);
         }
     });
+
+    //Stacked Barchart
+    $.ajax({
+        type: "POST",
+        url: "/api/stackedbar",
+        contentType: "application/json",
+        data: JSON.stringify({
+            mental_feature: "anxiety",
+            countries: []
+        }),
+        dataType: "json",
+        success: function(response) {
+            createStackedBar(response.data, response.target);
+        },
+        error: function(err) {
+            console.log("Error loading stacked bar chart:", err);
+        }
+    });
     
 }
 
@@ -106,6 +124,26 @@ $(document).ready(function () {
             },
             error: function (err) {
                 console.log(err);
+            }
+        });
+    });
+
+    $("#mentalFeatureSelector").on("change", function() {
+        const selectedFeature = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "/api/stackedbar",
+            contentType: "application/json",
+            data: JSON.stringify({
+                mental_feature: selectedFeature,
+                countries: selected_countries
+            }),
+            dataType: "json",
+            success: function(response) {
+                createStackedBar(response.data, response.target);
+            },
+            error: function(err) {
+                console.log("Error updating stacked bar:", err);
             }
         });
     });
