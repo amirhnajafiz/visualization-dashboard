@@ -229,6 +229,35 @@ def get_mca():
     coords['cluster'] = raw_data['cluster'].values
     return jsonify(coords.to_dict(orient='records'))
 
+@app.route("/api/stackedbar", methods=["POST"])
+def get_stackedbar_data():
+    filters = request.get_json()
+    target = filters.get("mental_feature", "anxiety")  # default anxiety
+
+    df = raw_data.copy()
+
+    # Optional: if filtering by selected countries
+    if "countries" in filters and filters["countries"]:
+        df = df[df['country'].isin(filters["countries"])]
+
+    # Group by genre and calculate mean mental health score
+    grouped = df.groupby('genre')[[target]].mean().reset_index()
+
+    # For stability: pick Top 15 genres
+    grouped = grouped.sort_values(by=target, ascending=False).head(15)
+
+    result = []
+    for _, row in grouped.iterrows():
+        result.append({
+            "genre": row['genre'],
+            "score": row[target]
+        })
+
+    return jsonify({
+        "data": result,
+        "target": target
+    })
+
 @app.route("/")
 def home():
     return render_template("index.html")
