@@ -6,15 +6,34 @@ body {
     padding: 0;
 }
 
+#dashboardHeader {
+    position: relative;
+    margin: 0px 16px 4px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(100px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 #dashboardHeader h3 {
     text-align: center;
     color: white;
     font-weight: bold;
     padding-bottom: 0;
-    margin-bottom: 0;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
 }
+
+#resetAll {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-75%);
+  }
 
 .dash-unit {
     padding: 16px 8px;
