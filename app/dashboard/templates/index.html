@@ -66,7 +66,20 @@
                         <div id="worldmap-legend-svg" class="col-sm-1"></div>
                         <div id="worldmap" class="col-sm-11"></div>
                     </div>
-
+                </div>
+            </div>
+            <div class="col-sm-7" style="padding-left: 4px;">
+                <div class="dash-unit" title="Stacked Barchart">
+                    <dtitle id="lineTitle">Genre Preferences Across Mental Health Dimensions</dtitle>
+                    <select id="mentalFeatureSelector">
+                        <option value="anxiety">Anxiety</option>
+                        <option value="depression">Depression</option>
+                        <option value="insomnia">Insomnia</option>
+                        <option value="ocd">OCD</option>
+                    </select>
+                    <button id="resetAll" class="button" onClick="console.log('HI')">Reset</button>
+                    <hr>
+                    <div id="stackedbar"></div>
                 </div>
             </div>
             <!-- <div class="col-sm-7" style="padding-left: 4px;">
@@ -130,6 +143,7 @@
     <script type="text/javascript" src="static/js/lineChart.js"></script>
     <script type="text/javascript" src="static/js/wordCloud.js"></script>
     <script type="text/javascript" src="static/js/pcpPlot.js"></script>
+    <script type="text/javascript" src="static/js/stackedBarChart.js"></script>
     <script src="static/js/mcaPlot.js"></script>
     <script src="static/js/correlogram.js"></script>
     <script src="static/js/stats.js"></script>
