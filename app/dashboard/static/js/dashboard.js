@@ -115,7 +115,7 @@ $(document).ready(function () {
 
     $('#musicattr').on('change', function () {
         const selected_metric = $(this).val();
-
+        selected_attr = selected_metric
         $.ajax({
             type: "POST",
             url: "/api/country",

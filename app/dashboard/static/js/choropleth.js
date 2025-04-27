@@ -313,13 +313,30 @@ function createChoropleth(data, attr) {
                     type: "POST",
                     url: "/api/correlation",
                     contentType: "application/json",
-                    data: JSON.stringify({ country: worldmap_country }),
+                    data: JSON.stringify({ country: d.id }),
                     dataType: "json",
                     success: function (response) {
                         createCorrelogram(response);
                     },
                     error: function (err) {
                         console.log(err);
+                    }
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: "/api/stackedbar",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        mental_health_metric: selected_attr,
+                        countries: [d.id]
+                    }),
+                    dataType: "json",
+                    success: function(response) {
+                        createStackedBar(response);
+                    },
+                    error: function(err) {
+                        console.log("Error updating stacked bar:", err);
                     }
                 });
 
@@ -422,12 +439,12 @@ function createChoropleth(data, attr) {
     function reset() {
         svg.transition()
             .duration(750)
-            .call(zoom.transform, d3.zoomIdentity); // updated for d3 v4
+            .call(zoom.transform, d3.zoomIdentity);
     }
 
     function zoomed() {
         g.style("stroke-width", 1.5 / d3.event.transform.k + "px");
-        g.attr("transform", d3.event.transform); // updated for d3 v4
+        g.attr("transform", d3.event.transform);
     }
 
     function stopped() {
