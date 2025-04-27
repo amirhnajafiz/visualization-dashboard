@@ -92,12 +92,12 @@ function resetDashboard() {
         url: "/api/stackedbar",
         contentType: "application/json",
         data: JSON.stringify({
-            mental_feature: "anxiety",
+            mental_health_metric: "anxiety",
             countries: []
         }),
         dataType: "json",
         success: function(response) {
-            createStackedBar(response.data, response.target);
+            createStackedBar(response);
         },
         error: function(err) {
             console.log("Error loading stacked bar chart:", err);
@@ -135,12 +135,12 @@ $(document).ready(function () {
             url: "/api/stackedbar",
             contentType: "application/json",
             data: JSON.stringify({
-                mental_feature: selectedFeature,
+                mental_health_metric: selectedFeature,
                 countries: selected_countries
             }),
             dataType: "json",
             success: function(response) {
-                createStackedBar(response.data, response.target);
+                createStackedBar(response);
             },
             error: function(err) {
                 console.log("Error updating stacked bar:", err);
