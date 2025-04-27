@@ -231,32 +231,29 @@ def get_mca():
 
 @app.route("/api/stackedbar", methods=["POST"])
 def get_stackedbar_data():
-    filters = request.get_json()
-    target = filters.get("mental_feature", "anxiety")  # default anxiety
+    payload = request.get_json()
+    metric = payload.get("mental_health_metric", "anxiety")
+    countries = payload.get("countries", [])
 
     df = raw_data.copy()
 
-    # Optional: if filtering by selected countries
-    if "countries" in filters and filters["countries"]:
-        df = df[df['country'].isin(filters["countries"])]
+    # Filter if countries are selected
+    if countries:
+        df = df[df['country'].isin(countries)]
 
-    # Group by genre and calculate mean mental health score
-    grouped = df.groupby('genre')[[target]].mean().reset_index()
+    # Bin mental health metric into Low, Moderate, High
+    bins = [0, 0.33, 0.66, 1.0]
+    labels = ['Low', 'Moderate', 'High']
+    df['health_bucket'] = pd.cut(df[metric], bins=bins, labels=labels, include_lowest=True)
 
-    # For stability: pick Top 15 genres
-    grouped = grouped.sort_values(by=target, ascending=False).head(15)
+    # Count genres within each health bucket
+    grouped = df.groupby(['health_bucket', 'genre'], observed=True).size().reset_index(name='count')
 
-    result = []
-    for _, row in grouped.iterrows():
-        result.append({
-            "genre": row['genre'],
-            "score": row[target]
-        })
+    # Pivot to wide format for stacked bar
+    pivot = grouped.pivot(index='health_bucket', columns='genre', values='count')
+    pivot = pivot.reset_index()
 
-    return jsonify({
-        "data": result,
-        "target": target
-    })
+    return pivot.to_json(orient='records')
 
 @app.route("/")
 def home():
