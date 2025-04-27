@@ -1,4 +1,7 @@
 function resetDashboard() {
+    selected_countries = []
+    maxPCPCountry = 0;
+    worldmap_country = "world"
     const selected_metric = "anxiety";
     $("#musicattr").val(selected_metric);
 
