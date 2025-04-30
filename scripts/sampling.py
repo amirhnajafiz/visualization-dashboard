@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 
-def sample_dataset(file_path, output_path, n_samples=2000, n_clusters=10):
+def sample_dataset(file_path, output_path, n_samples=3000, n_clusters=20):
     """
     Sample the dataset using PCA and K-means clustering.
 
@@ -34,9 +34,11 @@ def sample_dataset(file_path, output_path, n_samples=2000, n_clusters=10):
 
     # sample data points from each cluster proportionally
     sampled_indices = []
+    cluster_sizes = []
     for cluster in range(n_clusters):
         cluster_indices = numeric_df[numeric_df['cluster'] == cluster].index
         cluster_size = len(cluster_indices)
+        cluster_sizes.append(cluster_size)
         n_cluster_samples = max(1, int((cluster_size / len(numeric_df)) * n_samples))
         sampled_indices.extend(np.random.choice(cluster_indices, n_cluster_samples, replace=False))
 
@@ -46,25 +48,42 @@ def sample_dataset(file_path, output_path, n_samples=2000, n_clusters=10):
     sampled_df.to_csv(output_path, index=False)
 
     # plot PCA results
-    plt.figure(figsize=(12, 6))
-    plt.subplot(1, 2, 1)
+    plt.figure(figsize=(16, 8))
+
+    # PCA with K-means Clusters
+    plt.subplot(2, 2, 1)
     plt.scatter(numeric_df['pca_1'], numeric_df['pca_2'], c=numeric_df['cluster'], cmap='viridis', s=10)
     plt.title('PCA with K-means Clusters')
     plt.xlabel('PCA Component 1')
     plt.ylabel('PCA Component 2')
 
-    # plot sampled data points
-    plt.subplot(1, 2, 2)
+    # Sampled Data Points
+    plt.subplot(2, 2, 2)
     sampled_pca = numeric_df.loc[sampled_indices]
     plt.scatter(sampled_pca['pca_1'], sampled_pca['pca_2'], c=sampled_pca['cluster'], cmap='viridis', s=10)
     plt.title('Sampled Data Points')
     plt.xlabel('PCA Component 1')
     plt.ylabel('PCA Component 2')
 
+    # Histogram of Cluster Sizes
+    plt.subplot(2, 2, 3)
+    plt.bar(range(n_clusters), cluster_sizes, color='skyblue')
+    plt.title('Cluster Sizes')
+    plt.xlabel('Cluster')
+    plt.ylabel('Number of Points')
+
+    # Proportion of Samples per Cluster
+    plt.subplot(2, 2, 4)
+    sampled_cluster_sizes = sampled_pca['cluster'].value_counts().sort_index()
+    plt.bar(range(n_clusters), sampled_cluster_sizes, color='orange')
+    plt.title('Sampled Points per Cluster')
+    plt.xlabel('Cluster')
+    plt.ylabel('Number of Samples')
+
     plt.tight_layout()
     plt.show()
 
 # example usage
-file_path = 'tmp/mental_health_with_country.csv'
-output_path = '../assets/datasets/dataset.csv'
+file_path = 'tmp/merged_attributes_and_mental_health_with_country.csv'
+output_path = 'assets/datasets/dataset.csv'
 sample_dataset(file_path, output_path)
