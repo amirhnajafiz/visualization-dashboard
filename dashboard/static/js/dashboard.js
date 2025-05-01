@@ -29,7 +29,7 @@ function resetDashboard() {
             plot_pcp(response);
         },
         error: function (err) {
-            console.log(err);
+            console.log("Error:", err);
         }
     });
 
@@ -47,33 +47,19 @@ function resetDashboard() {
         }
     });
 
-    // MCA Plot
-    $.ajax({
-        type: "POST",
-        url: "/api/mca",
-        contentType: "application/json",
-        data: JSON.stringify({}),
-        success: function (response) {
-            plotMCA(response);
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
-
     // Cluster Summary
-    $.ajax({
-        type: "POST",
-        url: "/api/cluster",
-        contentType: "application/json",
-        data: JSON.stringify({}),
-        success: function (response) {
-            plotStats(response);
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/api/cluster",
+    //     contentType: "application/json",
+    //     data: JSON.stringify({}),
+    //     success: function (response) {
+    //         plotStats(response);
+    //     },
+    //     error: function (err) {
+    //         console.log(err);
+    //     }
+    // });
 
     //Correlogram
     $.ajax({
