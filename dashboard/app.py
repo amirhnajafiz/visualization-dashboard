@@ -11,44 +11,15 @@ from livereload import Server
 import prince
 import copy
 import pycountry
+from flask import Response
+import json
 
-iso3_to_country_name = {
-    "ARG": "Argentina",
-    "AUS": "Australia",
-    "BGR": "Bulgaria",
-    "BLR": "Belarus",
-    "BRA": "Brazil",
-    "CHL": "Chile",
-    "CZE": "Czech Republic",
-    "DEU": "Germany",
-    "DNK": "Denmark",
-    "EST": "Estonia",
-    "FIN": "Finland",
-    "GRC": "Greece",
-    "GTM": "Guatemala",
-    "HKG": "Hong Kong",
-    "HUN": "Hungary",
-    "IDN": "Indonesia",
-    "IND": "India",
-    "ISR": "Israel",
-    "ITA": "Italy",
-    "JPN": "Japan",
-    "MAR": "Morocco",
-    "MEX": "Mexico",
-    "MYS": "Malaysia",
-    "NGA": "Nigeria",
-    "NIC": "Nicaragua",
-    "NLD": "Netherlands",
-    "PAK": "Pakistan",
-    "PHL": "Philippines",
-    "POL": "Poland",
-    "ROU": "Romania",
-    "SAU": "Saudi Arabia",
-    "SLV": "El Salvador",
-    "SVK": "Slovakia",
-    "URY": "Uruguay",
-    "VEN": "Venezuela"
-}
+def get_country_name(iso3_code):
+    try:
+        return pycountry.countries.get(alpha_3=iso3_code).name
+    except Exception:
+        print(f"❗ No match found for ISO3 code: {iso3_code}")
+        return None
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -153,11 +124,11 @@ def get_pcp_data():
     grouped = df[pcp_columns].groupby('country').mean().reset_index()
 
     grouped["id"] = grouped["country"]
-    grouped["location"] = grouped["country"].map(iso3_to_country_name)
+    grouped["location"] = grouped["country"].map(get_country_name)
 
     final_cols = ['id', 'location', 'anxiety', 'depression', 'insomnia', 'ocd', 'bpm', 'valence', 'energy', 'hours', 'age']
-    
     return jsonify(grouped[final_cols].to_dict(orient="records"))
+
 
 @app.route("/api/wordcloud", methods=['POST'])
 def get_wordcloud_data():
