@@ -17,6 +17,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+
     <!-- <link rel="stylesheet" href="static/css/worldmap.css" />
     <link rel="stylesheet" href="static/css/lineChart.css" /> -->
     <link rel="stylesheet" href="static/css/dashboard.css" />
@@ -50,7 +51,7 @@
         <div class="row" id="dashboardHeader">
             <div style="flex-grow: 1">
                 <h3>Mood in the Music</h3>
-              </div>
+            </div>
             <div>
                 <button id="resetAll" class="button">Reset</button>
             </div>
@@ -59,7 +60,7 @@
 
     <div id="dashboard" class="container-fluid">
         <div class="row">
-            <div class="col-sm-5" style="padding-right: 4px;">
+            <div class="col-sm-5" style="padding-right: 8px;">
                 <div class="dash-unit">
                     <dtitle id="worldTitle">Global Patterns of Music and Mental Health</dtitle>
                     <hr>
@@ -71,22 +72,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3" style="padding-left: 4px;">
-                <div class="dash-unit" title="Stacked Barchart">
-                    <dtitle id="lineTitle">Genre Preferences Across Mental Health</dtitle>
-                    <select id="mentalFeatureSelector">
-                        <option value="anxiety">Anxiety</option>
-                        <option value="depression">Depression</option>
-                        <option value="insomnia">Insomnia</option>
-                        <option value="ocd">OCD</option>
-                    </select>
-                    <hr>
-                    <div id="stackedbar"></div>
-                </div>
+            <div class="dash-unit" title="Stacked Barchart">
+                <dtitle id="lineTitle">Genre Preferences Across Mental Health</dtitle>
+                <select id="mentalFeatureSelector">
+                    <option value="anxiety">Anxiety</option>
+                    <option value="depression">Depression</option>
+                    <option value="insomnia">Insomnia</option>
+                    <option value="ocd">OCD</option>
+                </select>
+                <hr>
+                <div id="stackedbar"></div>
             </div>
-            <div class="col-sm-4" style="padding-left: 4px;">
-                <div class="dash-unit" title="Stacked Barchart">
-                    <dtitle id="lineTitle">XXX YYY ZZZ</dtitle>
+            <div style="padding-left: 8px;">
+                <div class="dash-unit" title="t-SNE">
+                    <dtitle id="lineTitle">Emotional Audio Landscape (t-SNE Projection)</dtitle>
+                    <div style="margin-top: 10px;">
+                        <label for="perplexitySlider"><strong>Perplexity:</strong> <span id="perplexityValue">15</span></label>
+                        <input type="range" id="perplexitySlider" min="5" max="30" step="1" value="15" />
+                      </div>
                     <hr>
                     <div id="tsnePlot"></div>
                 </div>
@@ -120,15 +123,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-sm-2" style="padding-left: 4px; padding-right: 4px;">
-                <div class="dash-unit" title="Music Statistics Dashboard">
-                    <dtitle id="statTitle">Music Statistics</dtitle>
-                    <hr>
-                    <div id="Musicstats">
-                        <div id='svgMusicstats'></div>
-                    </div>
-                </div>
-            </div> -->
             <div class="dash-unit">
                 <dtitle>Correlogram</dtitle>
                 <hr>
@@ -147,7 +141,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="static/js/dashboard.js"></script>
+    <script src="static/lib/tsne.umd.js"></script>
     <script type="text/javascript" src="static/js/choropleth.js"></script>
     <!-- <script type="text/javascript" src="static/js/lineChart.js"></script> -->
     <script type="text/javascript" src="static/js/wordCloud.js"></script>
@@ -156,7 +150,8 @@
     <!-- <script src="static/js/mcaPlot.js"></script> -->
     <script src="static/js/correlogram.js"></script>
     <!-- <script src="static/js/stats.js"></script> -->
-     <script type="text/javascript" src="static/js/tsnePlot.js"></script>
+    <script type="text/javascript" src="static/js/tsnePlot.js"></script>
+    <script type="text/javascript" src="static/js/dashboard.js"></script>
 
 </body>
 
