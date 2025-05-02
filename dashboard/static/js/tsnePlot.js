@@ -9,6 +9,7 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
     const margin = { top: 20, right: 20, bottom: 30, left: 40 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
+    const clusterLabels = ["Calm", "Energetic", "Melancholic", "Upbeat", "Aggressive", "Dreamy", "Lively", "Serene"];
 
     const svg = d3.select(target).append("svg")
         .attr("width", width)
@@ -21,8 +22,9 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
         .attr("class", "d3-tip")
         .offset([-10, 0])
         .html(function (d) {
-            return `<strong>Cluster:</strong> <span class='details'>${d.cluster}</span><br>` +
-                `<strong>Country:</strong> <span class='details'>${d.country}</span>`;
+            return `<strong>Song Type:</strong> <span class='details'>${clusterLabels[d.cluster]}</span><br>` +
+                `<strong>Genre:</strong> <span class='details'>${d.genre}</span><br>` +
+                    `<strong>Country:</strong> <span class='details'>${d.country}</span>`;
         });
 
     svg.call(tip);
@@ -35,6 +37,8 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
     const positions = new Array(data.length).fill().map(() => ({ x: 0, y: 0 }));
 
     const clusterColor = d3.scaleOrdinal(d3.schemeCategory10);
+
+    let labelGroup = g.append("g");
 
     function assignClusters(Y, k = clusterCount) {
         // Basic k-means clustering
@@ -78,7 +82,7 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
             centroids = newCentroids;
         }
 
-        return clusters;
+        return { clusters, centroids };
     }
 
     let nodes = g.selectAll("circle")
@@ -110,9 +114,9 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
         const x = d3.scaleLinear().domain(xExtent).range([0, innerWidth]);
         const y = d3.scaleLinear().domain(yExtent).range([innerHeight, 0]);
 
-        // Assign clusters
-        const clusterAssignments = assignClusters(Y, clusterCount);
-        clusterAssignments.forEach((cluster, i) => {
+        // Assign clusters and centroids
+        const { clusters, centroids } = assignClusters(Y, clusterCount);
+        clusters.forEach((cluster, i) => {
             data[i].cluster = cluster;
         });
 
@@ -124,6 +128,20 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
         nodes
             .attr("transform", (d, i) => `translate(${positions[i].x},${positions[i].y})`)
             .attr("fill", (d, i) => clusterColor(d.cluster));
+
+        // Draw cluster labels
+        labelGroup.selectAll("text").remove();
+        centroids.forEach((centroid, i) => {
+            labelGroup.append("text")
+                .attr("x", x(centroid[0]))
+                .attr("y", y(centroid[1]))
+                .attr("text-anchor", "middle")
+                .attr("dy", "-0.6em")
+                .attr("fill", "white")
+                .attr("font-size", "12px")
+                .attr("font-weight", "bold")
+                .text(clusterLabels[i % clusterLabels.length]);
+        });
 
         requestAnimationFrame(updatePlot);
     }
