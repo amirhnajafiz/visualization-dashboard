@@ -11,8 +11,7 @@ from livereload import Server
 import prince
 import copy
 import pycountry
-from flask import Response
-import json
+from sklearn.manifold import TSNE
 
 def get_country_name(iso3_code):
     try:
@@ -225,6 +224,35 @@ def get_stackedbar_data():
     pivot = pivot.reset_index()
 
     return pivot.to_json(orient='records')
+
+@app.route("/api/tsne", methods=["POST"])
+def get_tsne():
+    payload = request.get_json()
+    features = payload.get("features", ["valence", "energy", "danceability", "tempo", "acousticness", "liveness"])
+    perplexity = float(payload.get("perplexity", 30))
+    learning_rate = float(payload.get("learning_rate", 200))
+    max_iter = int(payload.get("max_iter", 1000))
+    countries = payload.get("countries", [])
+
+    df = raw_data.copy()
+
+    if countries:
+        df = df[df['country'].isin(countries)]
+
+    # Normalize features
+    X = StandardScaler().fit_transform(df[features])
+    perplexity = min(30, len(X) - 1)
+
+    tsne = TSNE(n_components=2, perplexity=perplexity, learning_rate=learning_rate, max_iter=max_iter, random_state=42)
+    X_embedded = tsne.fit_transform(X)
+
+    df["tsne_x"] = X_embedded[:, 0]
+    df["tsne_y"] = X_embedded[:, 1]
+
+    # Select only necessary columns to return
+    response_data = df[["tsne_x", "tsne_y", "genre", "country"] + features].to_dict(orient="records")
+    print(df[["tsne_x", "tsne_y", "genre", "country"]])
+    return jsonify(response_data)
 
 @app.route("/")
 def home():

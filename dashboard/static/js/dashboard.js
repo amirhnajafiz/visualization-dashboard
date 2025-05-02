@@ -61,7 +61,7 @@ function resetDashboard() {
     //     }
     // });
 
-    //Correlogram
+    // Correlogram
     $.ajax({
         type: "POST",
         url: "/api/correlation",
@@ -75,7 +75,7 @@ function resetDashboard() {
         }
     });
 
-    //Stacked Barchart
+    // Stacked Barchart
     $.ajax({
         type: "POST",
         url: "/api/stackedbar",
@@ -90,6 +90,23 @@ function resetDashboard() {
         },
         error: function(err) {
             console.log("Error loading stacked bar chart:", err);
+        }
+    });
+
+    // t-SNE
+    $.ajax({
+        url: "/api/tsne",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({
+            features: ["valence", "energy", "danceability", "tempo"],
+            countries: []
+        }),
+        success: function(response) {
+            createTSNEPlot(response, "#tsnePlot");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error fetching t-SNE data:", error);
         }
     });
     
