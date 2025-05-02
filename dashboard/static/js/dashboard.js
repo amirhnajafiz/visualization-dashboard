@@ -103,7 +103,7 @@ function resetDashboard() {
             countries: []
         }),
         success: function(response) {
-            createTSNEPlot(response, "#tsnePlot");
+            createTSNEAnimatedPlot(response, "#tsnePlot", ["valence", "energy", "danceability", "tempo"]);
         },
         error: function(xhr, status, error) {
             console.error("Error fetching t-SNE data:", error);
@@ -150,6 +150,25 @@ $(document).ready(function () {
             },
             error: function(err) {
                 console.log("Error updating stacked bar:", err);
+            }
+        });
+    });
+
+    $("#perplexitySlider").on("input", function () {
+        const perplexity = +this.value;
+        $("#perplexityValue").text(perplexity);
+    
+        // Re-fetch data or re-run t-SNE locally
+        $.ajax({
+            url: "/api/tsne",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+                features: ["valence", "energy", "danceability", "tempo"],
+            }),
+            success: function (response) {
+                d3.select("#tsnePlot").html(""); // Clear old plot
+                createTSNEAnimatedPlot(response, "#tsnePlot", ["valence", "energy", "danceability", "tempo"], perplexity);
             }
         });
     });
