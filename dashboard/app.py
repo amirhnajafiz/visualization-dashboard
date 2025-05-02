@@ -12,6 +12,9 @@ import prince
 import copy
 import pycountry
 from sklearn.manifold import TSNE
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 
 def get_country_name(iso3_code):
     try:
@@ -229,29 +232,27 @@ def get_stackedbar_data():
 def get_tsne():
     payload = request.get_json()
     features = payload.get("features", ["valence", "energy", "danceability", "tempo", "acousticness", "liveness"])
-    perplexity = float(payload.get("perplexity", 30))
-    learning_rate = float(payload.get("learning_rate", 200))
-    max_iter = int(payload.get("max_iter", 1000))
     countries = payload.get("countries", [])
+    sample_size = int(payload.get("sample_size", 300))
 
     df = raw_data.copy()
 
     if countries:
         df = df[df['country'].isin(countries)]
 
-    # Normalize features
-    X = StandardScaler().fit_transform(df[features])
-    perplexity = min(30, len(X) - 1)
+    # Stratified sampling by genre
+    grouped = df.groupby("genre")
+    df_sampled = grouped.apply(lambda x: x.sample(min(len(x), max(1, sample_size // len(grouped))))).reset_index(drop=True)
 
-    tsne = TSNE(n_components=2, perplexity=perplexity, learning_rate=learning_rate, max_iter=max_iter, random_state=42)
-    X_embedded = tsne.fit_transform(X)
+    X = StandardScaler().fit_transform(df_sampled[features])
 
-    df["tsne_x"] = X_embedded[:, 0]
-    df["tsne_y"] = X_embedded[:, 1]
+    # Add normalized features back to DataFrame for frontend t-SNE
+    for i, feature in enumerate(features):
+        df_sampled[f"norm_{feature}"] = X[:, i]
 
-    # Select only necessary columns to return
-    response_data = df[["tsne_x", "tsne_y", "genre", "country"] + features].to_dict(orient="records")
-    print(df[["tsne_x", "tsne_y", "genre", "country"]])
+    # Return original metadata and normalized features
+    response_data = df_sampled[["genre", "country"] + [f"norm_{f}" for f in features]].to_dict(orient="records")
+
     return jsonify(response_data)
 
 @app.route("/")
