@@ -4,7 +4,7 @@ function createWordCloud(data) {
     // Clear existing wordcloud
     document.getElementById("wordcloud").innerHTML = "";
 
-    const outerWidth = 400;
+    const outerWidth = 390;
     const outerHeight = 500;
     const margin = { top: 10, right: 10, bottom: 10, left: 10 };
     const innerWidth = outerWidth - margin.left - margin.right;

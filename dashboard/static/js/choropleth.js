@@ -5,7 +5,7 @@ function createChoropleth(data, attr) {
     attr = selected_attr
 
     var width = 650;
-    var height = 338;
+    var height = 372;
 
     const lowColor = 'rgb(177, 250, 173)';
     const highColor = 'rgb(2, 85, 1)';

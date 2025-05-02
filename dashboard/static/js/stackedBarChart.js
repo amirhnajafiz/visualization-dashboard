@@ -3,7 +3,7 @@ function createStackedBar(data) {
 
     var svg = d3.select("#stackedbar").append("svg")
         .attr("width", 450)
-        .attr("height", 300),
+        .attr("height", 295),
         margin = { top: 20, right: 20, bottom: 30, left: 50 },
         width = +svg.attr("width") - margin.left - margin.right - 50,
         height = +svg.attr("height") - margin.top - margin.bottom,
