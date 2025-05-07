@@ -1,420 +1,533 @@
 // https://observablehq.com/@d3/brushable-parallel-coordinates
 
 var outerWidthpcp = 900,
-    outerHeightpcp = 500,
-    marginspcp = { top: 30, right: 50, bottom: 10, left: 80 },
-    innerWidthpcp = outerWidthpcp - marginspcp.left - marginspcp.right,
-    innerHeightpcp = outerHeightpcp - marginspcp.top - marginspcp.bottom;
+  outerHeightpcp = 500,
+  marginspcp = { top: 30, right: 50, bottom: 10, left: 80 },
+  innerWidthpcp = outerWidthpcp - marginspcp.left - marginspcp.right,
+  innerHeightpcp = outerHeightpcp - marginspcp.top - marginspcp.bottom;
 
-var pcp_data
-var countrytoid = {}
-var countries = []
+var pcp_data;
+var countrytoid = {};
+var countries = [];
 
 function plot_pcp(pcp_data1) {
-    selected_countries = []
-    pcp_data = pcp_data1
+  selected_countries = [];
+  pcp_data = pcp_data1;
 
-    maxPCPCountry = Object.keys(pcp_data).length
+  maxPCPCountry = Object.keys(pcp_data).length;
 
+  countrytoid = {};
+  countries = [];
+  idcountries = [];
+  pcp_data.forEach((element) => {
+    countries.push(element["location"]);
+    countrytoid[element["location"]] = element["id"];
+    idcountries.push(element["id"]);
+  });
 
-    countrytoid = {}
-    countries = []
-    idcountries = []
-    pcp_data.forEach(element => {
-        countries.push(element["location"])
-        countrytoid[element["location"]] = element["id"]
-        idcountries.push(element["id"])
+  d3.select("#pcp").html("");
+  var plotOuter = d3
+    .select("#pcp")
+    .append("svg")
+    .attr("width", outerWidthpcp)
+    .attr("height", outerHeightpcp);
+
+  plotInner = plotOuter
+    .append("g")
+    .attr("id", "inner-plot")
+    .attr("width", innerWidthpcp)
+    .attr("height", innerHeightpcp)
+    .attr(
+      "transform",
+      "translate(" + marginspcp.left + "," + marginspcp.top + ")"
+    );
+
+  var x,
+    y = {},
+    dimensions,
+    dragging = {},
+    background,
+    foreground;
+
+  var svg = plotInner;
+
+  // Extract the list of dimensions as keys and create a y scale for each.
+  dimensions = d3.keys(pcp_data[0]).filter(function (key) {
+    if (key !== "" && key !== "location" && key != "id") {
+      y[key] = d3
+        .scaleLinear()
+        .domain(
+          d3.extent(pcp_data, function (d) {
+            return +d[key];
+          })
+        )
+        .range([innerHeightpcp, 0]);
+      return key;
+    }
+    if (key === "location") {
+      // console.log(pcp_data.location)
+      y[key] = d3.scaleBand().domain(countries).range([innerHeightpcp, 0]);
+      return key;
+    }
+  });
+
+  dimensions.sort(function (a, b) {
+    if (a === "location") return -1;
+    if (b === "location") return 1;
+    return 0;
+  });
+
+  // Creata a x scale for each dimension
+  x = d3.scalePoint().domain(dimensions).range([0, innerWidthpcp]);
+
+  const glassColors = [
+    "#00CED1",
+    "#20B2AA",
+    "#40E0D0",
+    "#48D1CC",
+    "#87CEFA",
+    "#7FFFD4",
+    "#AFEEEE",
+    "#B0E0E6",
+    "#ADD8E6",
+    "#E0FFFF",
+  ];
+
+  var color = d3.scaleOrdinal().domain(idcountries).range(glassColors);
+
+  // Add grey background lines for context.
+  background = svg
+    .append("g")
+    .attr("class", "background")
+    .selectAll("path")
+    .data(pcp_data)
+    .enter()
+    .append("path")
+    .attr("d", line);
+
+  // Add blue foreground lines for focus.
+  foreground = svg
+    .append("g")
+    .attr("class", "foreground")
+    .selectAll("path")
+    .data(pcp_data)
+    .enter()
+    .append("path")
+    .attr("d", line)
+    .attr("class", function (d) {
+      return "line " + d.id;
+    })
+    .style("stroke", function (d) {
+      return color(d.id);
+    })
+    .style("opacity", 0.4);
+
+  // Add a group element for each dimension.
+  var g = svg
+    .selectAll(".dimension")
+    .data(dimensions)
+    .enter()
+    .append("g")
+    .attr("class", "dimension")
+    .attr("transform", function (d) {
+      return "translate(" + x(d) + ")";
+    })
+    .call(
+      d3
+        .drag()
+        .on("start", function (d) {
+          svg
+            .selectAll(".line")
+            .transition()
+            .duration(200)
+            .style("stroke", "lightgrey")
+            .style("opacity", "0.2");
+          dragging[d] = x(d);
+          // background.attr("visibility", "hidden");
+        })
+        .on("drag", function (d) {
+          dragging[d] = Math.min(innerWidthpcp, Math.max(0, d3.event.x));
+          foreground.attr("d", line);
+          dimensions.sort(function (a, b) {
+            return position(a) - position(b);
+          });
+          x.domain(dimensions);
+          g.attr("transform", function (d) {
+            return "translate(" + position(d) + ")";
+          });
+        })
+        .on("end", function (d) {
+          delete dragging[d];
+          transition(d3.select(this)).attr(
+            "transform",
+            "translate(" + x(d) + ")"
+          );
+          transition(foreground).attr("d", line);
+
+          svg
+            .selectAll(".line")
+            .transition()
+            .duration(200)
+            .delay(1000)
+            .style("stroke", function (d) {
+              return color(d.id);
+            })
+            .style("opacity", "0.4");
+        })
+    );
+
+  // Add an axis and title.
+  g.append("g")
+    .attr("class", "axispcp")
+    .each(function (d) {
+      d3.select(this).call(d3.axisLeft().scale(y[d]));
+    })
+    .append("text")
+    .style("text-anchor", "middle")
+    .attr("transform", "rotate(-10)")
+    .attr("fill", "rgb(156, 152, 152)")
+    .attr("font-size", "13")
+    .attr("y", -9)
+    .text(function (d) {
+      return d;
+    })
+    .style("stroke", "rgb(200, 200, 200)")
+    .style("cursor", "move");
+
+  d3.selectAll(".dimension").each(function (d) {
+    if (d === "location") {
+      d3.select(this).selectAll("text").style("font-size", "9px");
+    }
+  });
+
+  d3.selectAll(".axispcp text").style("fill", "rgb(155, 155, 155)");
+
+  // Add and store a brush for each axis.
+  g.append("g")
+    .attr("class", "brush")
+    .each(function (d) {
+      d3.select(this).call(
+        (y[d].brush = d3
+          .brushY()
+          .extent([
+            [-10, 0],
+            [10, innerHeightpcp],
+          ])
+          .on("start", brushstart)
+          .on("brush", brush)
+          .on("end", brushend))
+      );
+    })
+    .selectAll("rect")
+    .attr("x", -8)
+    .attr("width", 16);
+
+  function position(d) {
+    var v = dragging[d];
+    return v == null ? x(d) : v;
+  }
+
+  function transition(g) {
+    return g.transition().duration(500);
+  }
+
+  // Take a row of the csv as input, and return x and y coordinates of the line to draw for this raw.
+  function line(d) {
+    return d3.line()(
+      dimensions.map(function (key) {
+        return [x(key), y[key](d[key])];
+      })
+    );
+  }
+
+  function brushstart() {
+    // console.log("here")
+    d3.event.sourceEvent.stopPropagation();
+  }
+
+  // Handles a brush event, toggling the display of foreground lines.
+  function brush() {
+    // Get a set of dimensions with active brushes and their current extent.
+    var actives = [];
+    svg
+      .selectAll(".brush")
+      .filter(function (d) {
+        // console.log(d3.brushSelection(this));
+        return d3.brushSelection(this);
+      })
+      .each(function (key) {
+        actives.push({
+          dimension: key,
+          extent: d3.brushSelection(this),
+        });
+      });
+    // Change line visibility based on brush extent.
+    if (actives.length === 0) {
+      foreground.style("display", null);
+    } else {
+      foreground
+        .style("stroke", (d) =>
+          actives.every(
+            (brushObj) =>
+              brushObj.extent[0] <=
+                y[brushObj.dimension](d[brushObj.dimension]) &&
+              y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
+          )
+            ? color(d.id)
+            : "none"
+        )
+        .style("opacity", (d) =>
+          actives.every(
+            (brushObj) =>
+              brushObj.extent[0] <=
+                y[brushObj.dimension](d[brushObj.dimension]) &&
+              y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
+          )
+            ? 0.8
+            : 0
+        );
+    }
+  }
+
+  function brushend() {
+    // Get a set of dimensions with active brushes and their current extent.
+    var actives = [];
+    svg
+      .selectAll(".brush")
+      .filter(function (d) {
+        // console.log(d3.brushSelection(this));
+        return d3.brushSelection(this);
+      })
+      .each(function (key) {
+        actives.push({
+          dimension: key,
+          extent: d3.brushSelection(this),
+        });
+      });
+    // Change line visibility based on brush extent.
+    if (actives.length === 0) {
+      foreground.style("display", null);
+    } else {
+      foreground.style("display", function (d) {
+        return actives.every(function (brushObj) {
+          return (
+            brushObj.extent[0] <=
+              y[brushObj.dimension](d[brushObj.dimension]) &&
+            y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
+          );
+        })
+          ? null
+          : "none";
+      });
+    }
+    // console.log("selected countries on PCP file: ", selected_countries)
+    var lastActive = actives[actives.length - 1];
+    if (lastActive && lastActive.dimension === "location") {
+      selected_countries = [];
+    }
+    d3.select(".foreground")
+      .selectAll("path")
+      .each(function (d) {
+        if (d3.select(this).style("display") !== "none") {
+          if (!selected_countries.includes(d.id)) {
+            selected_countries.push(d.id);
+          }
+        }
+      });
+    if (selected_countries.length == maxPCPCountry) {
+      d3.select(".foreground")
+        .selectAll("path")
+        .each(function (d) {
+          d3.select(this)
+            .style("stroke", color(d.id))
+            .style("opacity", 0.4)
+            .style("stroke-width", 1);
+        });
+    }
+    if (selected_countries.length == 0) {
+      d3.select(".foreground")
+        .selectAll("path")
+        .each(function (d) {
+          d3.select(this)
+            .style("stroke", color(d.id))
+            .style("opacity", 0.4)
+            .style("stroke-width", 1);
+        });
+    }
+    pcpTrigger.a = selected_countries;
+    // console.log(selected_countries)
+  }
+
+  function update_pcp(pcp_data1) {
+    // console.log("update")
+    pcp_data = pcp_data1;
+    maxPCPCountry = Object.keys(pcp_data).length;
+    countrytoid = {};
+    countries = [];
+    pcp_data.forEach((element) => {
+      countries.push(element["location"]);
+      countrytoid[element["location"]] = element["id"];
     });
 
-    d3.select("#pcp").html("")
-    var plotOuter = d3.select("#pcp").append("svg")
-        .attr("width", outerWidthpcp)
-        .attr("height", outerHeightpcp)
-
-
-    plotInner = plotOuter
-        .append('g')
-        .attr('id', 'inner-plot')
-        .attr('width', innerWidthpcp)
-        .attr('height', innerHeightpcp)
-        .attr('transform', 'translate(' + marginspcp.left + ',' + marginspcp.top + ')')
-
-    var x,
-        y = {},
-        dimensions,
-        dragging = {},
-        background,
-        foreground;
-
-    var svg = plotInner;
-
-
-    // Extract the list of dimensions as keys and create a y scale for each.
-    dimensions = d3.keys(pcp_data[0]).filter(function(key) {
-        if (key !== "" && key !== "location" && key != "id") {
-            y[key] = d3.scaleLinear()
-                .domain(d3.extent(pcp_data, function(d) { return +d[key]; }))
-                .range([innerHeightpcp, 0]);
-            return key;
-        }
-        if (key === "location") {
-            // console.log(pcp_data.location)
-            y[key] = d3.scaleBand()
-                .domain(countries)
-                .range([innerHeightpcp, 0]);
-            return key;
-        }
-    });
-
-    dimensions.sort(function(a, b) {
-        if (a === "location") return -1;
-        if (b === "location") return 1;
-        return 0;
+    dimensions = d3.keys(pcp_data[0]).filter(function (key) {
+      if (key !== "" && key !== "location" && key != "id") {
+        y[key] = d3
+          .scaleLinear()
+          .domain(
+            d3.extent(pcp_data, function (d) {
+              return +d[key];
+            })
+          )
+          .range([innerHeightpcp, 0]);
+        return key;
+      }
+      if (key === "location") {
+        y[key] = d3.scaleBand().domain(countries).range([innerHeightpcp, 0]);
+        return key;
+      }
     });
 
     // Creata a x scale for each dimension
-    x = d3.scalePoint()
-        .domain(dimensions)
-        .range([0, innerWidthpcp]);
+    x.domain(dimensions);
 
-
-    const glassColors = [
-        "#00CED1", "#20B2AA", "#40E0D0", "#48D1CC",
-        "#87CEFA", "#7FFFD4", "#AFEEEE", "#B0E0E6", "#ADD8E6", "#E0FFFF"
-    ];
-
-    var color = d3.scaleOrdinal()
-        .domain(idcountries)
-        .range(glassColors);
-
-    // Add grey background lines for context.
-    background = svg.append("g")
-        .attr("class", "background")
-        .selectAll("path")
-        .data(pcp_data)
-        .enter().append("path")
-        .attr("d", line);
+    var backgroundpath = d3
+      .select(".background")
+      .selectAll("path")
+      .data(pcp_data);
+    backgroundpath
+      .enter()
+      .append("path")
+      .merge(backgroundpath)
+      .attr("class", "background")
+      .transition()
+      .duration(1000)
+      .attr("d", line);
+    backgroundpath.exit().remove();
 
     // Add blue foreground lines for focus.
-    foreground = svg.append("g")
-        .attr("class", "foreground")
-        .selectAll("path")
-        .data(pcp_data)
-        .enter()
-        .append("path")
-        .attr("d", line)
-        .attr("class", function(d) { return "line " + d.id })
-        .style('stroke', function(d) {
-            return color(d.id);
-        })
-        .style("opacity", 0.4)
-
+    var foregroundpath = d3
+      .select(".foreground")
+      .selectAll("path")
+      .data(pcp_data);
+    foregroundpath
+      .enter()
+      .append("path")
+      .merge(foregroundpath)
+      .attr("class", "foreground")
+      .transition()
+      .duration(1000)
+      .attr("d", line)
+      .attr("class", function (d) {
+        return "line " + d.id;
+      })
+      .style("stroke", function (d) {
+        return color(d.id);
+      })
+      .style("opacity", 0.4);
+    foregroundpath.exit().remove();
 
     // Add a group element for each dimension.
-    var g = svg.selectAll(".dimension")
-        .data(dimensions)
-        .enter().append("g")
-        .attr("class", "dimension")
-        .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
-        .call(d3.drag()
-            .on("start", function(d) {
-                svg.selectAll(".line")
-                    .transition().duration(200)
-                    .style("stroke", "lightgrey")
-                    .style("opacity", "0.2")
-                dragging[d] = x(d);
-                // background.attr("visibility", "hidden");
-            })
-            .on("drag", function(d) {
-                dragging[d] = Math.min(innerWidthpcp, Math.max(0, d3.event.x));
-                foreground.attr("d", line);
-                dimensions.sort(function(a, b) { return position(a) - position(b); });
-                x.domain(dimensions);
-                g.attr("transform", function(d) { return "translate(" + position(d) + ")"; })
-            })
-            .on("end", function(d) {
-                delete dragging[d];
-                transition(d3.select(this)).attr("transform", "translate(" + x(d) + ")");
-                transition(foreground).attr("d", line);
+    var dimensionprev = d3.selectAll(".dimension").data(dimensions);
+    d3.selectAll(".dimension")
+      .data(dimensions)
+      .enter()
+      .append("g")
+      .merge(dimensionprev)
+      .attr("class", "dimension")
+      .transition()
+      .duration(1000)
+      .attr("transform", function (d) {
+        return "translate(" + x(d) + ")";
+      });
 
-                svg.selectAll(".line")
-                    .transition().duration(200).delay(1000)
-                    .style("stroke", function(d) { return (color(d.id)) })
-                    .style("opacity", "0.4")
-            }));
+    dimensionprev.exit().remove();
 
     // Add an axis and title.
-    g.append("g")
-        .attr("class", "axispcp")
-        .each(function(d) { d3.select(this).call(d3.axisLeft().scale(y[d])); })
-        .append("text")
-        .style("text-anchor", "middle")
-        .attr("transform", "rotate(-10)")
-        .attr("fill", "rgb(156, 152, 152)")
-        .attr("font-size", "13")
-        .attr("y", -9)
-        .text(function(d) { return d; })
-        .style("stroke", "rgb(200, 200, 200)")
-        .style("cursor", "move");
+    d3.selectAll(".axispcp").each(function (d) {
+      d3.select(this)
+        .transition()
+        .duration(1000)
+        .call(d3.axisLeft().scale(y[d]));
+    });
 
-        d3.selectAll(".dimension")
-        .each(function(d) {
-            if (d === "location") {
-                d3.select(this).selectAll("text")
-                    .style("font-size", "9px");
-            }
-        });
+    d3.selectAll(".axispcp text").style("fill", "rgb(155, 155, 155)");
 
-    d3.selectAll(".axispcp text")
-        .style("fill", "rgb(155, 155, 155)");
+    d3.select(".foreground")
+      .selectAll("path")
+      .each(function (d) {
+        if (d.id === currLine) {
+          d3.select(this)
+            .style("stroke", "#8000ff")
+            .style("opacity", 1)
+            .style("stroke-width", 2.5);
+        } else {
+          d3.select(this)
+            .style("stroke", color(d.id))
+            .style("opacity", 0.4)
+            .style("stroke-width", 1);
+        }
+      });
 
     // Add and store a brush for each axis.
-    g.append("g")
-        .attr("class", "brush")
-        .each(function(d) {
-            d3.select(this).call(y[d].brush = d3.brushY()
-                .extent([
-                    [-10, 0],
-                    [10, innerHeightpcp]
-                ])
-                .on("start", brushstart)
-                .on("brush", brush)
-                .on("end", brushend));
-        })
-        .selectAll("rect")
-        .attr("x", -8)
-        .attr("width", 16);
+    d3.selectAll(".brush")
+      .each(function (d) {
+        d3.select(this).call(
+          (y[d].brush = d3
+            .brushY()
+            .extent([
+              [-10, 0],
+              [10, innerHeightpcp],
+            ])
+            .on("start", brushstart)
+            .on("brush", brush)
+            .on("end", brushend))
+        );
+      })
+      .selectAll("rect")
+      .attr("x", -8)
+      .attr("width", 16);
+  }
 
-    function position(d) {
-        var v = dragging[d];
-        return v == null ? x(d) : v;
-    }
-
-    function transition(g) {
-        return g.transition().duration(500);
-    }
-
-    // Take a row of the csv as input, and return x and y coordinates of the line to draw for this raw.
-    function line(d) {
-        return d3.line()(dimensions.map(function(key) { return [x(key), y[key](d[key])]; }));
-    }
-
-    function brushstart() {
-        // console.log("here")
-        d3.event.sourceEvent.stopPropagation();
-    }
-
-    // Handles a brush event, toggling the display of foreground lines.
-    function brush() {
-        // Get a set of dimensions with active brushes and their current extent.
-        var actives = [];
-        svg.selectAll(".brush")
-            .filter(function(d) {
-                // console.log(d3.brushSelection(this));
-                return d3.brushSelection(this);
-            })
-            .each(function(key) {
-                actives.push({
-                    dimension: key,
-                    extent: d3.brushSelection(this)
-                });
-            });
-        // Change line visibility based on brush extent.
-        if (actives.length === 0) {
-            foreground.style("display", null);
+  function update_pcp_countries(w_country) {
+    d3.select(".foreground")
+      .selectAll("path")
+      .each(function (d) {
+        if (d.id === w_country) {
+          d3.select(this)
+            .style("stroke", "#8000ff")
+            .style("opacity", 1)
+            .style("stroke-width", 2.5);
+          currLine = w_country;
         } else {
-            foreground.style("stroke", d => actives.every(brushObj =>
-                brushObj.extent[0] <= y[brushObj.dimension](d[brushObj.dimension]) &&
-                y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
-            ) ? color(d.id) : "none")
-            .style("opacity", d => actives.every(brushObj =>
-                brushObj.extent[0] <= y[brushObj.dimension](d[brushObj.dimension]) &&
-                y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1]
-            ) ? 0.8 : 0);
-        }
-    }
-
-    function brushend() {
-        // Get a set of dimensions with active brushes and their current extent.
-        var actives = [];
-        svg.selectAll(".brush")
-            .filter(function(d) {
-                // console.log(d3.brushSelection(this));
-                return d3.brushSelection(this);
-            })
-            .each(function(key) {
-                actives.push({
-                    dimension: key,
-                    extent: d3.brushSelection(this)
-                });
-            });
-        // Change line visibility based on brush extent.
-        if (actives.length === 0) {
-            foreground.style("display", null);
-        } else {
-            foreground.style("display", function(d) {
-                return actives.every(function(brushObj) {
-                    return brushObj.extent[0] <= y[brushObj.dimension](d[brushObj.dimension]) && y[brushObj.dimension](d[brushObj.dimension]) <= brushObj.extent[1];
-                }) ? null : "none";
-            });
-        }
-        // console.log("selected countries on PCP file: ", selected_countries)
-        var lastActive = actives[actives.length - 1];
-        if (lastActive && lastActive.dimension === "location") {
-            selected_countries = []
-        }
-        d3.select('.foreground').selectAll('path').each(function(d) {
-            if (d3.select(this).style("display") !== "none") {
-                if (!selected_countries.includes(d.id)) {
-                    selected_countries.push(d.id);
-                }
-            }
-        })
-        if (selected_countries.length == maxPCPCountry) {
-            d3.select('.foreground').selectAll('path').each(function(d) {
-                d3.select(this).style("stroke", color(d.id)).style("opacity", 0.4).style("stroke-width", 1)
-            })
-        }
-        if (selected_countries.length == 0) {
-            d3.select('.foreground').selectAll('path').each(function(d) {
-                d3.select(this).style("stroke", color(d.id)).style("opacity", 0.4).style("stroke-width", 1)
-            })
-        }
-        pcpTrigger.a = selected_countries
-            // console.log(selected_countries)
-    }
-
-    function update_pcp(pcp_data1) {
-        // console.log("update")
-        pcp_data = pcp_data1
-        maxPCPCountry = Object.keys(pcp_data).length
-        countrytoid = {}
-        countries = []
-        pcp_data.forEach(element => {
-            countries.push(element["location"])
-            countrytoid[element["location"]] = element["id"]
-        });
-
-        dimensions = d3.keys(pcp_data[0]).filter(function(key) {
-            if (key !== "" && key !== "location" && key != "id") {
-                y[key] = d3.scaleLinear()
-                    .domain(d3.extent(pcp_data, function(d) { return +d[key]; }))
-                    .range([innerHeightpcp, 0]);
-                return key;
-            }
-            if (key === "location") {
-                y[key] = d3.scaleBand()
-                    .domain(countries)
-                    .range([innerHeightpcp, 0]);
-                return key;
-            }
-        });
-
-        // Creata a x scale for each dimension
-        x.domain(dimensions)
-
-        var backgroundpath = d3.select(".background").selectAll("path").data(pcp_data)
-        backgroundpath.enter()
-            .append("path")
-            .merge(backgroundpath)
-            .attr("class", "background")
-            .transition().duration(1000)
-            .attr("d", line);
-        backgroundpath.exit().remove()
-
-        // Add blue foreground lines for focus.
-        var foregroundpath = d3.select(".foreground").selectAll("path").data(pcp_data)
-        foregroundpath
-            .enter()
-            .append("path")
-            .merge(foregroundpath)
-            .attr("class", "foreground")
-            .transition().duration(1000)
-            .attr("d", line)
-            .attr("class", function(d) { return "line " + d.id })
-            .style('stroke', function(d) { return color(d.id); })
+          d3.select(this)
+            .style("stroke", color(d.id))
             .style("opacity", 0.4)
-        foregroundpath.exit().remove()
+            .style("stroke-width", 1);
+        }
+      });
+  }
 
-        // Add a group element for each dimension.
-        var dimensionprev = d3.selectAll(".dimension").data(dimensions)
-        d3.selectAll(".dimension")
-            .data(dimensions)
-            .enter().append("g")
-            .merge(dimensionprev)
-            .attr("class", "dimension")
-            .transition().duration(1000)
-            .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
+  worldMapTrigger2.registerListener(function (val) {
+    update_pcp_countries(worldmap_country);
+  });
 
-        dimensionprev.exit().remove()
-
-        // Add an axis and title.
-        d3.selectAll(".axispcp")
-            .each(function(d) { d3.select(this).transition().duration(1000).call(d3.axisLeft().scale(y[d])); })
-
-        d3.selectAll(".axispcp text")
-            .style("fill", "rgb(155, 155, 155)");
-
-        d3.select('.foreground').selectAll('path').each(function(d) {
-            if (d.id === currLine) {
-                d3.select(this).style("stroke", "#8000ff").style("opacity", 1)
-                    .style("stroke-width", 2.5)
-            } else {
-                d3.select(this).style("stroke", color(d.id)).style("opacity", 0.4).style("stroke-width", 1)
-            }
-        })
-
-        // Add and store a brush for each axis.
-        d3.selectAll(".brush")
-            .each(function(d) {
-                d3.select(this).call(y[d].brush = d3.brushY()
-                    .extent([
-                        [-10, 0],
-                        [10, innerHeightpcp]
-                    ])
-                    .on("start", brushstart)
-                    .on("brush", brush)
-                    .on("end", brushend));
-            })
-            .selectAll("rect")
-            .attr("x", -8)
-            .attr("width", 16);
-
-    }
-
-    function update_pcp_countries(w_country) {
-        d3.select('.foreground').selectAll('path').each(function(d) {
-            if (d.id === w_country) {
-                d3.select(this).style("stroke", "#8000ff").style("opacity", 1)
-                    .style("stroke-width", 2.5)
-                currLine = w_country
-            } else {
-                d3.select(this).style("stroke", color(d.id)).style("opacity", 0.4).style("stroke-width", 1)
-            }
-        })
-    }
-
-    worldMapTrigger2.registerListener(function(val) {
-        update_pcp_countries(worldmap_country)
+  worldMapTrigger3.registerListener(function (val) {
+    dates = val;
+    $(document).ready(function () {
+      $.ajax({
+        type: "POST",
+        url: "/api/pcp",
+        contentType: "application/json",
+        data: JSON.stringify(dates),
+        dataType: "json",
+        success: function (response) {
+          pcpData = response;
+          update_pcp(pcpData);
+        },
+        error: function (err) {
+          console.log(err);
+        },
+      });
     });
-
-    worldMapTrigger3.registerListener(function(val) {
-        dates = val
-        $(document).ready(function() {
-            $.ajax({
-                type: "POST",
-                url: "/api/pcp",
-                contentType: "application/json",
-                data: JSON.stringify(dates),
-                dataType: "json",
-                success: function(response) {
-                    pcpData = (response)
-                    update_pcp(pcpData)
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
-        });
-    });
+  });
 }
