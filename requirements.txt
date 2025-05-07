@@ -1,7 +1,9 @@
 Flask==3.1.0
 pandas==2.2.3
 scikit-learn==1.6.1
-kneed==0.8.5
 numpy==2.2.3
 matplotlib==3.10.1
-flask-cors==5.0.1
+geojson==3.2.0
+livereload==2.7.1
+prince==0.14.0
+pycountry==24.6.1
