@@ -1,124 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
 
-    <script src="//d3js.org/d3.v4.min.js"></script>
-    <script src="//d3js.org/queue.v1.min.js"></script>
-    <script src="//d3js.org/topojson.v1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.0/d3-tip.js"></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//d3js.org/d3.v4.min.js"></script>
+  <script src="//d3js.org/queue.v1.min.js"></script>
+  <script src="//d3js.org/topojson.v1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.0/d3-tip.js"></script>
 
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- <link rel="stylesheet" href="static/css/worldmap.css" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- <link rel="stylesheet" href="static/css/worldmap.css" />
     <link rel="stylesheet" href="static/css/lineChart.css" /> -->
-    <link rel="stylesheet" href="static/css/dashboard.css" />
-    <link rel="stylesheet" href="static/css/pcp.css" />
+  <link rel="stylesheet" href="static/css/dashboard.css" />
+  <link rel="stylesheet" href="static/css/pcp.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-      integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-      crossorigin
-    />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    crossorigin />
 
-    <script
-      src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-      integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-      crossorigin
-    ></script>
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+    crossorigin></script>
 
-    <script type="text/javascript" src="static/js/global_vars.js"></script>
-    <script src="static/lib/d3.layout.cloud.js"></script>
+  <script type="text/javascript" src="static/js/global_vars.js"></script>
+  <script src="static/lib/d3.layout.cloud.js"></script>
 
-    <!-- Load color scale -->
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <!-- Load color scale -->
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
-  </head>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+</head>
 
-  <body>
-    <video autoplay muted loop id="myVideo">
-      <source src="/static/assets/bgnew.mp4" type="video/mp4" />
-    </video>
-    <div class="navbar-nav navbar-inverse navbar-fixed-top">
-      <div class="row" id="dashboardHeader">
-        <div style="flex-grow: 1">
-          <h3>Mood in the Music</h3>
-        </div>
-        <div>
-          <button id="resetAll" class="button">Reset</button>
-        </div>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="/static/assets/bgnew.mp4" type="video/mp4" />
+  </video>
+  <div class="navbar-nav navbar-inverse navbar-fixed-top">
+    <div class="row" id="dashboardHeader">
+      <div style="flex-grow: 1">
+        <h3>Mood in the Music</h3>
+      </div>
+      <div>
+        <button id="resetAll" class="button">Reset</button>
       </div>
     </div>
+  </div>
 
-    <div id="dashboard" class="container-fluid">
-      <div class="row">
-        <div class="col-sm-5" style="padding-right: 8px">
-          <div class="dash-unit">
-            <dtitle id="worldTitle"
-              >Global Patterns of Music and Mental Health</dtitle
-            >
-            <hr />
-            <div class="row"></div>
-            <div class="row" title="Choropleth">
-              <div id="worldmap-legend-svg" class="col-sm-1"></div>
-              <div id="worldmap" class="col-sm-11"></div>
-            </div>
-          </div>
-        </div>
-        <div class="dash-unit" title="Stacked Barchart">
-          <dtitle id="lineTitle">Genre Preferences Across Mental Health</dtitle>
-          <select id="mentalFeatureSelector">
-            <option value="anxiety">Anxiety</option>
-            <option value="depression">Depression</option>
-            <option value="insomnia">Insomnia</option>
-            <option value="ocd">OCD</option>
-          </select>
+  <div id="dashboard" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-5" style="padding-right: 8px">
+        <div class="dash-unit">
+          <dtitle id="worldTitle">Global Patterns of Music and Mental Health</dtitle>
           <hr />
-          <div id="stackedbar"></div>
-        </div>
-        <div style="padding-left: 8px">
-          <div class="dash-unit" title="t-SNE">
-            <dtitle id="lineTitle"
-              >Emotional Audio Landscape (t-SNE Projection)</dtitle
-            >
-            <div
-              style="margin-top: 10px"
-              title="Lower = local emotion clusters, Higher = global emotional structure"
-            >
-              <label for="perplexitySlider"
-                ><strong>Perplexity:</strong>
-                <span id="perplexityValue">15</span></label
-              >
-              <input
-                type="range"
-                id="perplexitySlider"
-                min="5"
-                max="30"
-                step="1"
-                value="15"
-              />
-            </div>
-            <hr />
-            <div id="tsnePlot"></div>
+          <div class="row"></div>
+          <div class="row" title="Choropleth">
+            <div id="worldmap-legend-svg" class="col-sm-1"></div>
+            <div id="worldmap" class="col-sm-11"></div>
           </div>
         </div>
-        <!-- <div class="col-sm-7" style="padding-left: 4px;">
+      </div>
+      <div class="dash-unit" title="Stacked Barchart">
+        <dtitle id="lineTitle">Genre Preferences Across Mental Health</dtitle>
+        <select id="mentalFeatureSelector">
+          <option value="anxiety">Anxiety</option>
+          <option value="depression">Depression</option>
+          <option value="insomnia">Insomnia</option>
+          <option value="ocd">OCD</option>
+        </select>
+        <hr />
+        <div id="stackedbar"></div>
+      </div>
+      <div style="padding-left: 8px">
+        <div class="dash-unit" title="t-SNE">
+          <dtitle id="lineTitle">Emotional Audio Landscape (t-SNE Projection)</dtitle>
+          <div style="margin-top: 10px" title="Lower = local emotion clusters, Higher = global emotional structure">
+            <label for="perplexitySlider"><strong>Perplexity:</strong>
+              <span id="perplexityValue">15</span></label>
+            <input type="range" id="perplexitySlider" min="5" max="30" step="1" value="15" />
+          </div>
+          <hr />
+          <div id="tsnePlot"></div>
+        </div>
+      </div>
+      <!-- <div class="col-sm-7" style="padding-left: 4px;">
                 <div class="dash-unit" title="Time-Series line plot">
                     <dtitle id="lineTitle">AVERAGE DAILY NEW_CASES OF WORLD BETWEEN 2020-1-1 TO 2021-4-17</dtitle>
                     <select id='musicattr'>
@@ -135,47 +109,46 @@
                     <div id="linechart"></div>
                 </div>
             </div> -->
-      </div>
-      <div class="row" style="padding-top: 8px">
-        <div class="col-sm-6" style="padding-right: 8px">
-          <div class="dash-unit" title="Parallel Axis Coordinate Plot">
-            <dtitle id="pcpTitle"
-              >Parallel Coordinates of Mental Health and Music
-              Attributes</dtitle
-            >
-            <hr />
-            <div id="pcp">
-              <svg id="svgpcplot"></svg>
-            </div>
+    </div>
+    <div class="row" style="padding-top: 8px">
+      <div class="col-sm-6" style="padding-right: 8px">
+        <div class="dash-unit" title="Parallel Axis Coordinate Plot">
+          <dtitle id="pcpTitle">Parallel Coordinates of Mental Health and Music
+            Attributes</dtitle>
+          <hr />
+          <div id="pcp">
+            <svg id="svgpcplot"></svg>
           </div>
         </div>
-        <div class="dash-unit">
-          <dtitle>Correlogram</dtitle>
+      </div>
+      <div class="dash-unit">
+        <dtitle>Correlogram</dtitle>
+        <hr />
+        <div id="correlogram"></div>
+      </div>
+      <div style="padding-left: 8px">
+        <div class="dash-unit" title="Word Cloud">
+          <dtitle id="wordCloudTitle">Top Genres</dtitle>
           <hr />
-          <div id="correlogram"></div>
-        </div>
-        <div style="padding-left: 8px">
-          <div class="dash-unit" title="Word Cloud">
-            <dtitle id="wordCloudTitle">Top Genres</dtitle>
-            <hr />
-            <div id="wordcloud">
-              <svg id="svgWordCloud"></svg>
-            </div>
+          <div id="wordcloud">
+            <svg id="svgWordCloud"></svg>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="static/lib/tsne.umd.js"></script>
-    <script type="text/javascript" src="static/js/choropleth.js"></script>
-    <!-- <script type="text/javascript" src="static/js/lineChart.js"></script> -->
-    <script type="text/javascript" src="static/js/wordCloud.js"></script>
-    <script type="text/javascript" src="static/js/pcpPlot.js"></script>
-    <script type="text/javascript" src="static/js/stackedBarChart.js"></script>
-    <!-- <script src="static/js/mcaPlot.js"></script> -->
-    <script src="static/js/correlogram.js"></script>
-    <!-- <script src="static/js/stats.js"></script> -->
-    <script type="text/javascript" src="static/js/tsnePlot.js"></script>
-    <script type="text/javascript" src="static/js/dashboard.js"></script>
-  </body>
+  <script src="static/lib/tsne.umd.js"></script>
+  <script type="text/javascript" src="static/js/choropleth.js"></script>
+  <!-- <script type="text/javascript" src="static/js/lineChart.js"></script> -->
+  <script type="text/javascript" src="static/js/wordCloud.js"></script>
+  <script type="text/javascript" src="static/js/pcpPlot.js"></script>
+  <script type="text/javascript" src="static/js/stackedBarChart.js"></script>
+  <!-- <script src="static/js/mcaPlot.js"></script> -->
+  <script src="static/js/correlogram.js"></script>
+  <!-- <script src="static/js/stats.js"></script> -->
+  <script type="text/javascript" src="static/js/tsnePlot.js"></script>
+  <script type="text/javascript" src="static/js/dashboard.js"></script>
+</body>
+
 </html>
