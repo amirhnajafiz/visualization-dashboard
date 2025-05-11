@@ -105,11 +105,9 @@ def get_country_summary():
 
 @app.route("/api/pcp", methods=['POST'])
 def get_pcp_data():
-    filters = request.get_json()
+    payload = request.get_json()
     df = raw_data.copy()
-
-    if filters.get('countries'):
-        df = df[df['country'].isin(filters['countries'])]
+    countries = payload.get("countries", [])
 
     pcp_columns = [
         'country',
@@ -124,14 +122,19 @@ def get_pcp_data():
         'age'
     ]
 
-    # Aggregate: group by country, take MEAN of features
-    grouped = df[pcp_columns].groupby('country').mean().reset_index()
+    if countries:
+        df = df[df['country'].isin(countries)]
+        # No grouping, just rename for consistency
+        df["id"] = df["country"]
+        df["location"] = df["country"].map(get_country_name)
+        final_df = df[["id", "location"] + pcp_columns[1:]]  # drop duplicate 'country'
+    else:
+        grouped = df[pcp_columns].groupby('country').mean().reset_index()
+        grouped["id"] = grouped["country"]
+        grouped["location"] = grouped["country"].map(get_country_name)
+        final_df = grouped[["id", "location"] + pcp_columns[1:]]
 
-    grouped["id"] = grouped["country"]
-    grouped["location"] = grouped["country"].map(get_country_name)
-
-    final_cols = ['id', 'location', 'anxiety', 'depression', 'insomnia', 'ocd', 'bpm', 'valence', 'energy', 'hours', 'age']
-    return jsonify(grouped[final_cols].to_dict(orient="records"))
+    return jsonify(final_df.to_dict(orient="records"))
 
 
 @app.route("/api/wordcloud", methods=['POST'])
