@@ -19,20 +19,20 @@ function createStackedBar(data) {
 
     // Color palette
     var colorRange = [
-        "#40E0D0",
-        "#FFD700",
-        "#FF6347",
-        "#6A5ACD",
-        "#3CB371",
-        "#FF69B4",
-        "#9370DB",
-        "#FF4500",
-        "#FF8C00",
-        "#BA55D3",
-        "#32CD32",
-        "#00FA9A",
-        "#DC143C",
-        "#DA70D6"
+        "#1f77b4", // Blue
+        "#eb4034", // Crimson
+        "#a65628", // Earth Brown
+        "#d62728", // Red
+        "#9467bd", // Purple
+        "#8c564b", // Brown
+        "#bcbd22", // Olive
+        "#7f7f7f", // Gray
+        "#f781bf", // Light pink
+        "#F98128", // Orange
+        "#17becf", // Cyan
+        "#2ca02c", // Green
+        "#4daf4a", // Light green
+        "#984ea3"  // Violet
     ];
     var z = d3.scaleOrdinal(colorRange);
 
