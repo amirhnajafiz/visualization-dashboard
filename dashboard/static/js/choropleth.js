@@ -16,47 +16,47 @@ function createChoropleth(data, attr) {
     var tip = d3.tip()
         .attr('class', 'd3-tip')
         .offset([-10, 0])
-        .html(function(d) {
+        .html(function (d) {
             return "<strong>Country: </strong><span class='details'>" + d.properties.name +
-       "<br></span>" + "<strong>" + attr + ": </strong><span class='details'>" +
-       (+d[attr]).toFixed(2) + "</span>";
+                "<br></span>" + "<strong>" + attr + ": </strong><span class='details'>" +
+                (+d[attr]).toFixed(2) + "</span>";
         })
 
-    tip.direction(function(d) {
+    tip.direction(function (d) {
         if (d.properties.name === 'Antarctica') return 'n'
-            // Americas
+        // Americas
         if (d.properties.name === 'Greenland') return 's'
         if (d.properties.name === 'Canada') return 'e'
         if (d.properties.name === 'United States of America') return 'e'
         if (d.properties.name === 'Mexico') return 'e'
-            // Europe
+        // Europe
         if (d.properties.name === 'Iceland') return 's'
         if (d.properties.name === 'Norway') return 's'
         if (d.properties.name === 'Sweden') return 's'
         if (d.properties.name === 'Finland') return 's'
         if (d.properties.name === 'Russia') return 'w'
-            // Asia
+        // Asia
         if (d.properties.name === 'China') return 'w'
         if (d.properties.name === 'Japan') return 's'
-            // Oceania
+        // Oceania
         if (d.properties.name === 'Indonesia') return 'w'
         if (d.properties.name === 'Papua New Guinea') return 'w'
         if (d.properties.name === 'Australia') return 'w'
         if (d.properties.name === 'New Zealand') return 'w'
-            // otherwise if not specified
+        // otherwise if not specified
         return 'n'
     })
 
-    tip.offset(function(d) {
+    tip.offset(function (d) {
         // [top, left]
         if (d.properties.name === 'Antarctica') return [0, 0]
-            // Americas
+        // Americas
         if (d.properties.name === 'Greenland') return [10, -10]
         if (d.properties.name === 'Canada') return [24, -28]
         if (d.properties.name === 'USA') return [-5, 8]
         if (d.properties.name === 'Mexico') return [12, 10]
         if (d.properties.name === 'Chile') return [0, -15]
-            // Europe
+        // Europe
         if (d.properties.name === 'Iceland') return [15, 0]
         if (d.properties.name === 'Norway') return [10, -28]
         if (d.properties.name === 'Sweden') return [10, -8]
@@ -64,9 +64,9 @@ function createChoropleth(data, attr) {
         if (d.properties.name === 'France') return [-9, 66]
         if (d.properties.name === 'Italy') return [-8, -6]
         if (d.properties.name === 'Russia') return [5, 385]
-            // Africa
+        // Africa
         if (d.properties.name === 'Madagascar') return [-10, 10]
-            // Asia
+        // Asia
         if (d.properties.name === 'China') return [-16, -8]
         if (d.properties.name === 'Mongolia') return [-5, 0]
         if (d.properties.name === 'Pakistan') return [-10, 13]
@@ -76,12 +76,12 @@ function createChoropleth(data, attr) {
         if (d.properties.name === 'Laos') return [-12, -8]
         if (d.properties.name === 'Vietnam') return [-12, -4]
         if (d.properties.name === 'Japan') return [5, 5]
-            // Oceania
+        // Oceania
         if (d.properties.name === 'Indonesia') return [0, -5]
         if (d.properties.name === 'Papua New Guinea') return [-5, -10]
         if (d.properties.name === 'Australia') return [-15, 0]
         if (d.properties.name === 'New Zealand') return [-15, 0]
-            // otherwise if not specified
+        // otherwise if not specified
         return [-10, 0]
     })
 
@@ -120,7 +120,7 @@ function createChoropleth(data, attr) {
         .enter()
         .append("path")
         .attr("d", path)
-        // .attr("class", "state");
+    // .attr("class", "state");
 
     var countries_path_arr = paths._groups[0]
 
@@ -159,13 +159,13 @@ function createChoropleth(data, attr) {
         .style("fill", "url(#gradient)")
         .attr("transform", "translate(0,10)");
 
-    maxVal = d3.max(data.features, function(d) { return +d[attr] })
-    minVal = d3.min(data.features, function(d) { return +d[attr] })
+    maxVal = d3.max(data.features, function (d) { return +d[attr] })
+    minVal = d3.min(data.features, function (d) { return +d[attr] })
     var y = d3.scaleLinear()
         .range([h, 0])
         .domain([minVal, maxVal]);
 
-    var yAxis = d3.axisRight(y).tickFormat(function(d) {
+    var yAxis = d3.axisRight(y).tickFormat(function (d) {
         if (d >= 100000)
             return (d / 1000000).toFixed(2) + 'M';
         else return d;
@@ -182,8 +182,8 @@ function createChoropleth(data, attr) {
     function updateChoropleth(data, attr, countries) {
         attr = selected_attr
 
-        maxVal = d3.max(data.features, function(d) { return +d[attr] })
-        minVal = d3.min(data.features, function(d) { return +d[attr] })
+        maxVal = d3.max(data.features, function (d) { return +d[attr] })
+        minVal = d3.min(data.features, function (d) { return +d[attr] })
         var ramp = d3.scaleSqrt().domain([minVal, maxVal]).range([lowColor, highColor])
 
         g.selectAll("path")
@@ -193,7 +193,7 @@ function createChoropleth(data, attr) {
             .on("click", click)
             .style("stroke", "#FFFFFF")
             .style("stroke-width", 0.2)
-            .style("fill", function(d) {
+            .style("fill", function (d) {
                 var retVal;
                 if (String(+d[attr]) === "NaN" || String(d[attr]) === "0") {
                     return "grey"
@@ -212,7 +212,7 @@ function createChoropleth(data, attr) {
         if ((selected_countries.length == 0) || (selected_countries.length == maxPCPCountry)) {
             if (worldmap_country == "world") {
                 for (i = 0; i < countries_path_arr.length; i++) {
-                    d3.select(countries_path_arr[i]).style("fill", function(p) {
+                    d3.select(countries_path_arr[i]).style("fill", function (p) {
                         if (String(+p[attr]) === "NaN") {
                             return "grey"
                         }
@@ -224,7 +224,7 @@ function createChoropleth(data, attr) {
                     })
                 }
             } else {
-                d3.select(countries_path_arr[i]).style("fill", function(p) {
+                d3.select(countries_path_arr[i]).style("fill", function (p) {
                     if (String(+p[attr]) === "NaN") {
                         return "grey"
                     }
@@ -240,7 +240,7 @@ function createChoropleth(data, attr) {
 
         } else if (selected_countries.length !== 0) {
             for (i = 0; i < countries_path_arr.length; i++) {
-                d3.select(countries_path_arr[i]).style("fill", function(p) {
+                d3.select(countries_path_arr[i]).style("fill", function (p) {
                     if (String(+p[attr]) === "NaN") {
                         return "grey"
                     }
@@ -301,11 +301,26 @@ function createChoropleth(data, attr) {
                     contentType: "application/json",
                     data: JSON.stringify({ country: d.id }),
                     dataType: "json",
-                    success: function(response) {
+                    success: function (response) {
                         createWordCloud(response);
                     },
-                    error: function(err) {
+                    error: function (err) {
                         console.log(err);
+                    }
+                });
+
+                $.ajax({
+                    type: "POST",
+                    url: "/api/pcp",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        countries: [d.id]
+                    }),
+                    success: function (response) {
+                        plot_pcp(response);
+                    },
+                    error: function (err) {
+                        console.log("Error:", err);
                     }
                 });
 
@@ -332,17 +347,17 @@ function createChoropleth(data, attr) {
                         countries: [d.id]
                     }),
                     dataType: "json",
-                    success: function(response) {
+                    success: function (response) {
                         createStackedBar(response);
                     },
-                    error: function(err) {
+                    error: function (err) {
                         console.log("Error updating stacked bar:", err);
                     }
                 });
 
 
                 for (i = 0; i < countries_path_arr.length; i++) {
-                    d3.select(countries_path_arr[i]).style("fill", function(p) {
+                    d3.select(countries_path_arr[i]).style("fill", function (p) {
                         if (String(+p[attr]) === "NaN" || String(+p[attr]) === "0") {
                             return "grey"
                         }
@@ -366,7 +381,7 @@ function createChoropleth(data, attr) {
                 worldMapTrigger.a = d.id
 
                 for (i = 0; i < countries_path_arr.length; i++) {
-                    d3.select(countries_path_arr[i]).style("fill", function(p) {
+                    d3.select(countries_path_arr[i]).style("fill", function (p) {
                         if (String(+p[attr]) === "NaN" || String(+p[attr]) === "0") {
                             return "grey"
                         }
@@ -389,7 +404,7 @@ function createChoropleth(data, attr) {
                         .style("opacity", 1)
                         .style("stroke", "white")
                         .style("stroke-width", 0.2)
-                        .style("fill", function(p) {
+                        .style("fill", function (p) {
                             if (String(+p[attr]) === "NaN" || String(+p[attr]) === "0") {
                                 return "grey"
                             }
@@ -407,7 +422,7 @@ function createChoropleth(data, attr) {
                         .style("opacity", 1)
                         .style("stroke", "white")
                         .style("stroke-width", 0.2)
-                        .style("fill", function(p) {
+                        .style("fill", function (p) {
                             if (String(+p[attr]) === "NaN" || String(+p[attr]) === "0") {
                                 return "grey"
                             }
@@ -422,7 +437,7 @@ function createChoropleth(data, attr) {
             .range([h, 0])
             .domain([minVal, maxVal]);
 
-        var yAxis = d3.axisRight(y).tickFormat(function(d) {
+        var yAxis = d3.axisRight(y).tickFormat(function (d) {
             if (d >= 100000)
                 return (d / 1000000).toFixed(2) + 'M';
             else return d;
@@ -460,51 +475,51 @@ function createChoropleth(data, attr) {
     updateChoropleth(data, selected_attr, selected_countries)
 
 
-    lineChartTrigger.registerListener(function(val) {
+    lineChartTrigger.registerListener(function (val) {
         dates = {}
         dates.start = selected_start_date
         dates.end = selected_end_date
         worldMapTrigger3.a = dates
         finalVal = { "date": dates, "country": worldmap_country }
         statsTrigger.a = finalVal
-        $(document).ready(function() {
+        $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: "/worldmap",
                 contentType: "application/json",
                 data: JSON.stringify(dates),
                 dataType: "json",
-                success: function(response) {
+                success: function (response) {
                     worldData = (response)
 
                     updateChoropleth(worldData, selected_attr, selected_countries)
                 },
-                error: function(err) {
+                error: function (err) {
                     console.log(err);
                 }
             });
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: "/wordcloud",
                 contentType: "application/json",
                 data: JSON.stringify(dates),
                 dataType: "json",
-                success: function(response) {
+                success: function (response) {
                     wordCloudData = (response)
 
                     createWordCloud(wordCloudData)
                 },
-                error: function(err) {
+                error: function (err) {
                     console.log(err);
                 }
             });
         });
     });
 
-    pcpTrigger.registerListener(function(val) {
+    pcpTrigger.registerListener(function (val) {
         console.log("attr: ", selected_attr)
         console.log("selected countries: ", selected_countries)
         updateChoropleth(data, selected_attr, selected_countries)
