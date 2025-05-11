@@ -294,21 +294,10 @@ function createChoropleth(data, attr) {
 
                 worldMapTrigger.a = d.id
 
-
-                $.ajax({
-                    type: "POST",
-                    url: "/api/wordcloud",
-                    contentType: "application/json",
-                    data: JSON.stringify({ country: d.id }),
-                    dataType: "json",
-                    success: function (response) {
-                        createWordCloud(response);
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    }
-                });
-
+                const sel_country = d.id
+                updateWordCloud(sel_country);
+                updateCorrelogram(sel_country);
+                updateStackedBarchart([sel_country]);
                 $.ajax({
                     type: "POST",
                     url: "/api/pcp",
@@ -321,37 +310,6 @@ function createChoropleth(data, attr) {
                     },
                     error: function (err) {
                         console.log("Error:", err);
-                    }
-                });
-
-                $.ajax({
-                    type: "POST",
-                    url: "/api/correlation",
-                    contentType: "application/json",
-                    data: JSON.stringify({ country: d.id }),
-                    dataType: "json",
-                    success: function (response) {
-                        createCorrelogram(response);
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    }
-                });
-
-                $.ajax({
-                    type: "POST",
-                    url: "/api/stackedbar",
-                    contentType: "application/json",
-                    data: JSON.stringify({
-                        mental_health_metric: selected_attr,
-                        countries: [d.id]
-                    }),
-                    dataType: "json",
-                    success: function (response) {
-                        createStackedBar(response);
-                    },
-                    error: function (err) {
-                        console.log("Error updating stacked bar:", err);
                     }
                 });
 
@@ -523,5 +481,59 @@ function createChoropleth(data, attr) {
         console.log("attr: ", selected_attr)
         console.log("selected countries: ", selected_countries)
         updateChoropleth(data, selected_attr, selected_countries)
+        // updateWordCloud(selected_countries);
+        // updateCorrelogram(selected_countries);
+        updateStackedBarchart(selected_countries);
+    });
+}
+
+function updateStackedBarchart(countries) {
+    $.ajax({
+        type: "POST",
+        url: "/api/stackedbar",
+        contentType: "application/json",
+        data: JSON.stringify({
+            mental_health_metric: selected_attr,
+            countries: countries
+        }),
+        dataType: "json",
+        success: function (response) {
+            createStackedBar(response);
+        },
+        error: function (err) {
+            console.log("Error updating stacked bar:", err);
+        }
+    });
+}
+
+function updateCorrelogram(country) {
+    $.ajax({
+        type: "POST",
+        url: "/api/correlation",
+        contentType: "application/json",
+        data: JSON.stringify({ country: country }),
+        dataType: "json",
+        success: function (response) {
+            createCorrelogram(response);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
+
+function updateWordCloud(country) {
+    $.ajax({
+        type: "POST",
+        url: "/api/wordcloud",
+        contentType: "application/json",
+        data: JSON.stringify({ country: country }),
+        dataType: "json",
+        success: function (response) {
+            createWordCloud(response);
+        },
+        error: function (err) {
+            console.log(err);
+        }
     });
 }
