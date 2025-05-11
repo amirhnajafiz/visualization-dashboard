@@ -10,7 +10,6 @@ function createChoropleth(data, attr) {
     const lowColor = 'rgb(177, 250, 173)';
     const highColor = 'rgb(2, 85, 1)';
 
-    var clicked_countries = []
     var clicked_ptr = []
 
     var tip = d3.tip()
@@ -289,7 +288,7 @@ function createChoropleth(data, attr) {
             if (String(+d[attr]) !== "0") {
                 clicked_ptr.push({ ptr: this, color: ramp(+d[attr]) })
                 clicked_countries.push(d.id)
-
+                // selected_countries.push(d.id)
                 worldmap_country = d.id;
 
                 worldMapTrigger.a = d.id

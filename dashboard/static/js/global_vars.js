@@ -7,6 +7,7 @@ var worldmap_country = "world";
 var selected_attr = "anxiety";  // default music/mental health metric
 
 var selected_countries = [];
+var clicked_countries = []
 var maxPCPCountry = 0;
 var currLine = "none";
 

@@ -142,7 +142,7 @@ $(document).ready(function () {
             contentType: "application/json",
             data: JSON.stringify({
                 mental_health_metric: selectedFeature,
-                countries: selected_countries
+                countries: selected_countries.length === 0 ? clicked_countries : selected_countries
             }),
             dataType: "json",
             success: function(response) {

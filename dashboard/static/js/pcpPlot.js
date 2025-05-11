@@ -11,7 +11,7 @@ var countrytoid = {}
 var countries = []
 
 function plot_pcp(pcp_data1) {
-    selected_countries = []
+    // selected_countries = []
     pcp_data = pcp_data1
 
     maxPCPCountry = Object.keys(pcp_data).length
