@@ -117,24 +117,6 @@ $(document).ready(function () {
 
     $('#resetAll').click(resetDashboard);
 
-    $('#musicattr').on('change', function () {
-        const selected_metric = $(this).val();
-        selected_attr = selected_metric
-        $.ajax({
-            type: "POST",
-            url: "/api/country",
-            contentType: "application/json",
-            data: JSON.stringify({ metric: selected_metric }),
-            dataType: "json",
-            success: function (response) {
-                createChoropleth(response, selected_metric);
-            },
-            error: function (err) {
-                console.log(err);
-            }
-        });
-    });
-
     $("#mapMentalFeatureSelector").on("change", function() {
         const selected_metric = $(this).val();
         selected_attr = selected_metric
