@@ -130,7 +130,7 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
             .attr("fill", (d, i) => clusterColor(d.cluster));
 
         // Draw cluster labels
-        labelGroup.selectAll("text").remove();
+        labelGroup.raise().selectAll("text").remove();
         centroids.forEach((centroid, i) => {
             labelGroup.append("text")
                 .attr("x", x(centroid[0]))

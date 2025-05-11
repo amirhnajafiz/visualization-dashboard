@@ -143,6 +143,7 @@ __pycache__/
 tmp/
 assets/datasets/universal_top_spotify_songs.csv
 assets/datasets/all_platforms_merged.csv
+data/
 
 # Configs
 *.~lock.*
