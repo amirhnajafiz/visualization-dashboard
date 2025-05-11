@@ -58,9 +58,16 @@
     <div class="row">
       <div class="col-sm-5" style="padding-right: 8px">
         <div class="dash-unit">
-          <dtitle id="worldTitle">Global Patterns of Music and Mental Health</dtitle>
+          <div class="row" style="margin-left: 16px; margin-right: 16px; justify-content: space-between;">
+            <dtitle id="worldTitle">Global Patterns of Music and Mental Health</dtitle>
+          <select id="mapMentalFeatureSelector">
+            <option value="anxiety">Anxiety</option>
+            <option value="depression">Depression</option>
+            <option value="insomnia">Insomnia</option>
+            <option value="ocd">OCD</option>
+          </select>
+          </div>
           <hr />
-          <div class="row"></div>
           <div class="row" title="Choropleth">
             <div id="worldmap-legend-svg" class="col-sm-1"></div>
             <div id="worldmap" class="col-sm-11"></div>
