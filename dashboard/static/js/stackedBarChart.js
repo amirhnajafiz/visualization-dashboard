@@ -26,8 +26,8 @@ function createStackedBar(data) {
         "#9467bd", // Purple
         "#8c564b", // Brown
         "#bcbd22", // Olive
-        "#7f7f7f", // Gray
         "#f781bf", // Light pink
+        "#7f7f7f", // Gray
         "#F98128", // Orange
         "#17becf", // Cyan
         "#2ca02c", // Green
