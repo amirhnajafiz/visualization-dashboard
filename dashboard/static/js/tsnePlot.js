@@ -11,6 +11,10 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
     const innerHeight = height - margin.top - margin.bottom;
     const clusterLabels = ["Calm", "Energetic", "Melancholic", "Upbeat", "Aggressive", "Dreamy", "Lively", "Serene"];
 
+    const mentalColor = d3.scaleOrdinal()
+    .domain(["Low Anxiety", "Moderate Anxiety", "High Anxiety"])
+    .range(["#1f77b4", "#ff7f0e", "#d62728"]);
+    
     const svg = d3.select(target).append("svg")
         .attr("width", width)
         .attr("height", height);
@@ -19,13 +23,13 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
     const tip = d3.tip()
-        .attr("class", "d3-tip")
-        .offset([-10, 0])
-        .html(function (d) {
-            return `<strong>Song Type:</strong> <span class='details'>${clusterLabels[d.cluster]}</span><br>` +
-                `<strong>Genre:</strong> <span class='details'>${d.genre}</span><br>` +
-                    `<strong>Country:</strong> <span class='details'>${d.country}</span>`;
-        });
+    .attr("class", "d3-tip")
+    .offset([-10, 0])
+    .html(function (d) {
+        return `<strong>Anxiety Group:</strong> <span class='details'>${d.anxiety_group}</span><br>` +
+               `<strong>Genre:</strong> <span class='details'>${d.genre}</span><br>` +
+               `<strong>Country:</strong> <span class='details'>${d.country}</span>`;
+    });
 
     svg.call(tip);
 
@@ -86,23 +90,24 @@ function createTSNEAnimatedPlot(data, target, features, perplexity = 15, cluster
     }
 
     let nodes = g.selectAll("circle")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("r", 5)
-        .attr("opacity", 0.8)
-        .on("mouseover", function (event, d) {
-            tip.show.call(this, event, d);
-            d3.select(this)
-                .attr("stroke", "white")
-                .attr("stroke-width", 2);
-        })
-        .on("mouseout", function (event, d) {
-            tip.hide.call(this, event, d);
-            d3.select(this)
-                .attr("stroke", null)
-                .attr("stroke-width", null);
-        });
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("opacity", 0.8)
+    .attr("fill", d => mentalColor(d.anxiety_group))
+    .on("mouseover", function (event, d) {
+        tip.show.call(this, event, d);
+        d3.select(this)
+            .attr("stroke", "white")
+            .attr("stroke-width", 2);
+    })
+    .on("mouseout", function (event, d) {
+        tip.hide.call(this, event, d);
+        d3.select(this)
+            .attr("stroke", null)
+            .attr("stroke-width", null);
+    });
 
     function updatePlot() {
         tsne.step();

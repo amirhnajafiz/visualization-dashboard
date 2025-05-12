@@ -251,12 +251,23 @@ def get_tsne():
 
     X = StandardScaler().fit_transform(df_sampled[features])
 
-    # Add normalized features back to DataFrame for frontend t-SNE
+    # Add normalized features back to DataFrame
     for i, feature in enumerate(features):
         df_sampled[f"norm_{feature}"] = X[:, i]
 
-    # Return original metadata and normalized features
-    response_data = df_sampled[["genre", "country"] + [f"norm_{f}" for f in features]].to_dict(orient="records")
+    # Optional: derive mental health groups, e.g., Anxiety buckets
+    def categorize_anxiety(val):
+        if val >= 0.66:
+            return "High Anxiety"
+        elif val >= 0.33:
+            return "Moderate Anxiety"
+        else:
+            return "Low Anxiety"
+
+    df_sampled["anxiety_group"] = df_sampled["anxiety"].apply(categorize_anxiety)
+
+    # Return metadata, mental health, and normalized features
+    response_data = df_sampled[["genre", "country", "anxiety", "depression", "insomnia", "anxiety_group"] + [f"norm_{f}" for f in features]].to_dict(orient="records")
 
     return jsonify(response_data)
 
