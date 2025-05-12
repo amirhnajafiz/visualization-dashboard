@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # read the dataset as CSV
-df = pd.read_csv('assets/datasets/dataset.csv')
+df = pd.read_csv('dashboard/data/dataset.csv')
 
 # print the number of columns and rows
 print(f"Number of columns: {df.shape[1]}")

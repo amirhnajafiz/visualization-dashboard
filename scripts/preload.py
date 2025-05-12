@@ -4,7 +4,7 @@ import random
 
 
 # read the dataset
-df = pd.read_csv('assets/datasets/dataset.csv')
+df = pd.read_csv('dashboard/data/dataset.csv')
 
 # make 'mode' column values either 0 or 1, they are currently between 0 and 1
 df['mode'] = df['mode'].apply(lambda x: 1 if x > 0.5 else 0)
@@ -66,4 +66,4 @@ for country in countries_exceeding_rows:
 print(df['country'].value_counts())
 
 # save the dataset
-df.to_csv('assets/datasets/dataset.csv', index=False)
+df.to_csv('dashboard/data/dataset.csv', index=False)

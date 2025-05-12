@@ -85,5 +85,5 @@ def sample_dataset(file_path, output_path, n_samples=5000, n_clusters=25):
 
 # example usage
 file_path = 'tmp/merged_attributes_and_mental_health_with_country.csv'
-output_path = 'assets/datasets/dataset.csv'
+output_path = 'dashboard/data/dataset.csv'
 sample_dataset(file_path, output_path)
