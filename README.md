@@ -30,6 +30,15 @@ The data processing pipeline is a crucial component of this project, enabling th
 
 This pipeline ensures that the data is preprocessed effectively, enabling accurate and meaningful analysis in the visualization dashboard.
 
+## How to run?
+
+Clone the repository, enter the dashboard directory and run:
+
+```sh
+python3 -m pip install -r requirements.txt
+python3 app.py --reload=True --debug=False --port=5000
+```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
