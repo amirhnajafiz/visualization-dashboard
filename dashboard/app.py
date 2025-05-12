@@ -1,5 +1,5 @@
 import argparse, os, warnings
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, send_from_directory
 import pandas as pd
 import geojson
 import numpy as np
@@ -272,6 +272,10 @@ def get_tsne():
     response_data = df_sampled[["genre", "country", "anxiety", "depression", "insomnia", "anxiety_group"] + [f"norm_{f}" for f in features]].to_dict(orient="records")
 
     return jsonify(response_data)
+
+@app.route("/favicon.ico")
+def favicon():
+    return send_from_directory("static", 'favicon.ico')
 
 @app.route("/")
 def home():
