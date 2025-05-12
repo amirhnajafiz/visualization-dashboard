@@ -1,4 +1,4 @@
-import os
+import argparse, os, warnings
 from flask import Flask, jsonify, render_template, request
 import pandas as pd
 import geojson
@@ -11,7 +11,6 @@ from livereload import Server
 import prince
 import copy
 import pycountry
-import warnings
 
 
 
@@ -25,10 +24,12 @@ def get_country_name(iso3_code):
         print(f"❗ No match found for ISO3 code: {iso3_code}")
         return None
 
+
+# Initialize Flask app
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
-# Load data
+# Load datasets
 DATA_PATH = os.path.join("data", "dataset.csv")
 GEO_JSON_PATH = os.path.join("data", "countries.geo.json")
 
@@ -74,6 +75,8 @@ with open(GEO_JSON_PATH) as f:
             for col in country_summary.columns[1:]:
                 f[col] = row[col]
 
+
+# Define routes
 @app.route("/api/country", methods=['POST'])
 def get_country_map_data():
     filters = request.get_json()
@@ -135,7 +138,6 @@ def get_pcp_data():
         final_df = grouped[["id", "location"] + pcp_columns[1:]]
 
     return jsonify(final_df.to_dict(orient="records"))
-
 
 @app.route("/api/wordcloud", methods=['POST'])
 def get_wordcloud_data():
@@ -277,10 +279,18 @@ def home():
 
 
 if(__name__ == "__main__"):
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    # Add input arguments
+    parser = argparse.ArgumentParser(description="Run the Flask app")
+    parser.add_argument("--reload", type=bool, default=False, help="Enable livereload for development")
+    parser.add_argument("--port", type=int, default=5000, help="Port to run the app on")
+    parser.add_argument("--debug", type=bool, default=False, help="Enable debug mode")
+    args = parser.parse_args()
+    
+    app.config['TEMPLATES_AUTO_RELOAD'] = args.reload
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     
+    # Run the app
     server = Server(app.wsgi_app)
     server.watch('templates/')
     server.watch('static/')
-    server.serve(port=5000, debug=True)
+    server.serve(port=args.port, debug=args.debug)
