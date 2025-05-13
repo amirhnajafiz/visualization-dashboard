@@ -2,6 +2,8 @@
 
 Welcome to the **Visualization Dashboard for Mental Health and Music Features Analysis**! This project is an innovative tool designed to bridge the gap between mental health metrics and music features, offering users a comprehensive platform to explore, analyze, and visualize data interactively. By leveraging advanced data processing techniques and machine learning models, this dashboard empowers users to uncover meaningful insights and patterns.
 
+![](assets/images/dashboard.jpg)
+
 ## Overview
 
 The dashboard provides an intuitive interface for exploring the intricate relationships between mental health indicators and musical attributes. Whether you're a researcher, data enthusiast, or mental health advocate, this tool equips you with the resources to delve deep into the data and generate actionable insights.
