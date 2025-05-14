@@ -149,17 +149,6 @@ function createStackedBar(data) {
         .text(function (d) { return d; });
 }
 
-// // Interaction triggers:
-// worldMapTrigger.registerListener(function(countryID) {
-//     currentCountries = countryID === "world" ? [] : [countryID];
-//     fetchStackedBarChart(currentMetric, currentCountries);
-// });
-
-// pcpTrigger.registerListener(function(selectedCountryIDs) {
-//     currentCountries = selectedCountryIDs;
-//     fetchStackedBarChart(currentMetric, currentCountries);
-// });
-
 // // Dropdown change (you should create a dropdown manually)
 // $("#stackedBarDropdown").on("change", function() {
 //     currentMetric = $(this).val();
