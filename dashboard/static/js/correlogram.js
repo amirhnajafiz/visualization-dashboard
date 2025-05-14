@@ -64,13 +64,6 @@ function createCorrelogram(correlationData) {
         .attr("y", 5)
         .attr("font-size", "12px")
         .attr("font-weight", "bold")
-        // .attr("transform", function(d) {
-        //     if (d.x === d.y) {
-        //         return "rotate(45)";
-        //     } else {
-        //         return null;
-        //     }
-        // })
         .text(function (d) {
             return d.x === d.y ? d.x : d.value.toFixed(2);
         })
