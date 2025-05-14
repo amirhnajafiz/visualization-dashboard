@@ -148,12 +148,3 @@ function createStackedBar(data) {
         .attr("fill", "white")
         .text(function (d) { return d; });
 }
-
-// // Dropdown change (you should create a dropdown manually)
-// $("#stackedBarDropdown").on("change", function() {
-//     currentMetric = $(this).val();
-//     fetchStackedBarChart(currentMetric, currentCountries);
-// });
-
-// // Initial fetch
-// fetchStackedBarChart(currentMetric, currentCountries);
