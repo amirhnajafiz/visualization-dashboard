@@ -48,20 +48,6 @@ function resetDashboard() {
         }
     });
 
-    // Cluster Summary
-    // $.ajax({
-    //     type: "POST",
-    //     url: "/api/cluster",
-    //     contentType: "application/json",
-    //     data: JSON.stringify({}),
-    //     success: function (response) {
-    //         plotStats(response);
-    //     },
-    //     error: function (err) {
-    //         console.log(err);
-    //     }
-    // });
-
     // Correlogram
     $.ajax({
         type: "POST",
