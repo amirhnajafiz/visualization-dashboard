@@ -95,7 +95,6 @@ function createCorrelogram(correlationData) {
             }
         });
 
-    // Color legend (gradient bar)
     var aS = d3.scaleLinear()
         .range([-margin.top + 5, height + margin.bottom - 5])
         .domain([1, -1]);
